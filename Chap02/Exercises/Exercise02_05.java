@@ -23,17 +23,17 @@ public class Exercise02_05 {
 		//xの値の入力を促す
 		System.out.print("xの値:");
 		//xの実数値を読み込む
-		double xNumber = standardInput.nextDouble(); 
+		double realNumberX = standardInput.nextDouble(); 
 		
 		//yの値の入力を促す
 		System.out.print("yの値:");
 		//yの実数値を読み込む
-		double yNumber = standardInput.nextDouble();
+		double realNumberY = standardInput.nextDouble();
 		
 		// xNumberとyNumberの合計値を表示
-		System.out.println("合計は" + ( xNumber + yNumber ) + "です。");
+		System.out.println("合計は" + ( realNumberX + realNumberY ) + "です。");
 		// xxNumberとyNumberの平均値を表示
-		System.out.println("平均は" + ( xNumber + yNumber ) / 2 + "です。");
+		System.out.println("平均は" + ( realNumberX + realNumberY ) / 2 + "です。");
 				
 	}
 }

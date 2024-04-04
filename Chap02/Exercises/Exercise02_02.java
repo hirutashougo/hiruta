@@ -16,29 +16,29 @@ public class Exercise02_02 {
 	 */
 	public static void main(String[] args) {
 		//xはint型の変数
-		int x;
+		int numberX;
 		//yはint型の変数
-		int y;
+		int numberY;
 		//zはint型の変数
-		int z;
+		int numberZ;
 		
 		//xに63を代入
-		x = 63;
+		numberX = 63;
 		//yに18を代入
-		y = 18;
+		numberY = 18;
 		//zに44を代入
-		z = 44;
+		numberZ = 44;
 		
 		//xの値を表示
-		System.out.println("xの値は" + x + "です。");
+		System.out.println("xの値は" + numberX + "です。");
 		//yの値を表示
-		System.out.println("yの値は" + y + "です。");
+		System.out.println("yの値は" + numberY + "です。");
 		//zの値を表示
-		System.out.println("zの値は" + z + "です。");
+		System.out.println("zの値は" + numberZ + "です。");
 		//合計を表示
-		System.out.println("合計は" + ( x + y + z ) + "です。");
+		System.out.println("合計は" + ( numberX + numberY + numberZ ) + "です。");
 		//平均を表示
-		System.out.println("平均は" + ( x + y + z ) / 3 + "です。");
+		System.out.println("平均は" + ( numberX + numberY + numberZ ) / 3 + "です。");
 		
 
 	}

@@ -1,17 +1,32 @@
 package Chap02.Exercises;
-
+//Randomライブラリの読み込み
 import java.util.Random;
-//クラスの宣言
+/*
+ * クラス名:Exercise02_09_01
+ * 概要:0.0以上1.0未満の実数値をランダムに生成して表示
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/02
+ */
 public class Exercise02_09_01 {
-	//mainメソッドの宣言
+	/*
+	 *関数名:main
+	 *概要:0.0以上1.0未満の実数値をランダムに生成して表示
+	 *引数:なし
+	 *戻り値:なし
+	 *作成者:S.Hiruta
+	 *作成日:2024/04/02
+	 */
 	public static void main(String[] args) {
-
-		Random rand = new Random();
+		//ランダムの範囲を指定する定数を定義
+		final double RANDOM_RANGE = 1.0;
+		// Randomクラスの変数を定義
+		Random randomVariable = new Random();
 		
-		double lucky = rand.nextDouble(1.0);   //0～1.0の乱数
+		//定義した定数の範囲内で乱数を生成
+		double randomRealNumber = randomVariable.nextDouble(RANDOM_RANGE);
 		
 		//乱数の表示
-		System.out.println(lucky);
+		System.out.println(randomRealNumber);
 
 	}
 

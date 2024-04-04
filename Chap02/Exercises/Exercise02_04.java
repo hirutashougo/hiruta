@@ -23,12 +23,12 @@ public class Exercise02_04 {
     	//整数値の入力を促す
 		System.out.print("整数値:");
 		//loadedNumberに整数値を読み込む
-		int loadedNumber = standerdImput.nextInt();
+		int integralNumber = standerdImput.nextInt();
 		
 		// loadedNumber + 10の値を表示
-		System.out.println("10を加えた値は" + ( loadedNumber + 10 ) + "です。");
+		System.out.println("10を加えた値は" + ( integralNumber + 10 ) + "です。");
 		// loadedNumber - 10の値を表示
-		System.out.println("10を減じた値は" + ( loadedNumber - 10 ) + "です。");
+		System.out.println("10を減じた値は" + ( integralNumber - 10 ) + "です。");
 				
 	}
 

@@ -16,24 +16,24 @@ public class Exercise02_01 {
 	 */
 	public static void main(String[] args) {
 		//xを初期値0でint型の変数
-		int x = 0;
+		int numberX = 0;
 		//yを初期値0でint型の変数
-		int y = 0;
+		int NumberY = 0;
 		
 		//xに63.3を代入
-		x = 63.3;
+		numberX = 63.3;
 		//yに18.2を代入
-		y = 18.2;
+		NumberY = 18.2;
 		//int型変数には整数値しか入らない為エラー
 		
 		//コンソールにxの値を出力して終了
-		System.out.println("xの値は" + x + "です。");
+		System.out.println("xの値は" + numberX + "です。");
 		//コンソールにyの値を出力して終了
-		System.out.println("yの値は" + y + "です。"); 
+		System.out.println("yの値は" + NumberY + "です。"); 
 		//コンソールにxとyの合計値を出力して終了
-		System.out.println("合計は" + ( x + y ) + "です。");
+		System.out.println("合計は" + ( numberX + NumberY ) + "です。");
 		//コンソールにxとyの平均値を出力して終了
-		System.out.println("平均は" + ( x + y ) / 2 + "です。");
+		System.out.println("平均は" + ( numberX + NumberY ) / 2 + "です。");
 	}
 
 }
