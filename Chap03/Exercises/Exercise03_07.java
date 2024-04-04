@@ -1,26 +1,55 @@
 package Chap03.Exercises;
 
-//読み込んだ整数値を3で割った結果を表示
-
+//Scannerの読み込み
 import java.util.Scanner;
 
+/*
+ * クラス名:Exercise03_07
+ * 読み込んだ整数値を3で割った結果を表示
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/02
+ */
 public class Exercise03_07 {
-
+	
+	/*
+	 *関数名:main
+	 *概要:読み込んだ整数値を3で割った結果を表示
+	 *引数:なし
+	 *戻り値:なし
+	 *作成者:S.Hiruta
+	 *作成日:2024/04/02
+	 */
 	public static void main(String[] args) {
-		Scanner stdIn = new Scanner(System.in);
 		
-		System.out.print("整数値:"); int n = stdIn.nextInt();  //整数値の入力と読み込み
+		//Scannerクラスの変数の定義
+		Scanner standerdImput = new Scanner(System.in);
 		
-		if ( n > 0 )  //構文と制御式
-			if ( n % 3 == 0 )  //構文と制御式
-				System.out.println("その値は3で割り切れます。");  //文字の出力
-			else  if ( n % 3 == 1 )//構文と制御式
-				System.out.println("その値を3で割った余りは1です。");  //文字の出力
-			else
-				System.out.println("その値を3で割った余りは2です。");  //文字の出力
+		//整数値の入力および読み込み
+		System.out.print("整数値:"); int integralNumber = standerdImput.nextInt();  //整数値の入力と読み込み
 		
-		else  //構文
-			System.out.println("正ではない値が入力されました。");  //文字の出力
+		//入力された整数が0よりも大きい場合
+		if ( integralNumber > 0 ) {
+			//入力された整数が上記の条件であり、なおかつ3の倍数である場合
+			if ( integralNumber % 3 == 0 ) {
+				//入力された値は3で割り切れる事を伝える。
+				System.out.println("その値は3で割り切れます。");
+			}
+			//入力された整数が上記の条件であり、なおかつ3の商が1である場合
+			else  if ( integralNumber % 3 == 1 ) {
+				//入力された整数の3の商が1である事を伝える
+				System.out.println("その値を3で割った余りは1です。");
+			}
+			//入力された整数が上記の条件であり、なおかつ3の商が1である場合
+			else {
+				//入力された整数の3の商が2である事を伝える
+				System.out.println("その値を3で割った余りは2です。");
+			}
+		}
+		//入力された整数が0よりも小さい場合
+		else {
+			//正ではない値が入力されたことを伝える
+			System.out.println("正ではない値が入力されました。");
+		}
 
 	}
 
