@@ -1,16 +1,32 @@
 package Chap02.Exercises;
-
+//Scannerライブラリの読み込み
 import java.util.Scanner;
-//クラスの宣言
+/*
+ * クラス名:Exercise02_03
+ * 概要:読み込んだ整数値を反復して表示
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/01
+ */
 public class Exercise02_03 {
-	//mainメソッドの宣言
-	public static void main(String[] args) {
-		Scanner stdIn = new Scanner(System.in);
-		
-		System.out.print("整数値:");  //整数値の入力を促す
-		int x = stdIn.nextInt();         //xに整数値を読み込む
-		
-		System.out.println( x + "と入力しましたね");       //整数値を表示
-	}
+	/*
+	 *関数名:main
+	 *概要:読み込んだ整数値を反復して表示
+	 *引数:なし
+	 *戻り値:なし
+	 *作成者:S.Hiruta
+	 *作成日:2024/04/01
+	 */
+	    static void main(String[] args) {
+	    	//Scannerクラスの変数を宣言
+	    	Scanner standerdImput = new Scanner(System.in);
+	    	
+	    	//整数値の入を促す
+	    	System.out.print("整数値:");
+	    	//integralValueに整数を読み込む
+	    	int integralNumber = standerdImput.nextInt();
+	    	//整数値を表示
+	    	System.out.println( integralNumber + "と入力しましたね");  
+	    	
+	    }
 
 }

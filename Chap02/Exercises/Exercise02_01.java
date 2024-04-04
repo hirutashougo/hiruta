@@ -1,20 +1,40 @@
 package Chap02.Exercises;
-//クラスの宣言
+/*
+ * クラス名:Exercise02_01
+ * 概要:int型に実数を代入する試み
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/01
+ */
 public class Exercise02_01 {
-	//mainメソッドの宣言
+	/*
+	 *関数名:main
+	 *概要:int型に実数を代入する試み
+	 *引数:なし
+	 *戻り値:なし
+	 *作成者:S.Hiruta
+	 *作成日:2024/04/01
+	 */
 	public static void main(String[] args) {
-		int x;        //xはint型の変数
-		int y;        //yはint型の変数
+		//xを初期値0でint型の変数
+		int x = 0;
+		//yを初期値0でint型の変数
+		int y = 0;
 		
-		x = 63.3;       //xに63.3を代入
-		y = 18.2;       //yに18.2を代入
+		//xに63.3を代入
+		x = 63.3;
+		//yに18.2を代入
+		y = 18.2;
+		//int型変数には整数値しか入らない為エラー
 		
-		
-		System.out.println("xの値は" + x + "です。");                 //xの値を表示
-		System.out.println("yの値は" + y + "です。");                 //yの値を表示
-		System.out.println("合計は" + ( x + y ) + "です。");      //合計を表示
-		System.out.println("平均は" + ( x + y ) / 2 + "です。");  //平均を表示
-
+		//コンソールにxの値を出力して終了
+		System.out.println("xの値は" + x + "です。");
+		//コンソールにyの値を出力して終了
+		System.out.println("yの値は" + y + "です。"); 
+		//コンソールにxとyの合計値を出力して終了
+		System.out.println("合計は" + ( x + y ) + "です。");
+		//コンソールにxとyの平均値を出力して終了
+		System.out.println("平均は" + ( x + y ) / 2 + "です。");
 	}
 
 }
+        

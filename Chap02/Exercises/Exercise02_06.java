@@ -1,21 +1,36 @@
 package Chap02.Exercises;
-
+//Scannerライブラリの読み込み
 import java.util.Scanner;
-//クラスの宣言
+/*
+ * クラス名:Exercise02_06
+ * 概要:入力された底辺と高さの数値から、三角形の面積を求める
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/01
+ */
 public class Exercise02_06 {
-	//mainメソッドの宣言
+	/*
+	 *関数名:main
+	 *概要:入力された底辺と高さの数値から、三角形の面積を求める
+	 *引数:なし
+	 *戻り値:なし
+	 *作成者:S.Hiruta
+	 *作成日:2024/04/01
+	 */
 	public static void main(String[] args) {
-		//標準入力ストリーム
-		Scanner stdIn = new Scanner(System.in);
+		//Scannerクラスの変数を宣言
+		Scanner standardInput = new Scanner(System.in);
 		
-		System.out.print("底辺:");          //底辺の値の入力を促す
-		double x = stdIn.nextDouble();      //底辺の実数値を読み込む
-		
-		System.out.print("高さ:");          //高さの値の入力を促す
-		double y = stdIn.nextDouble();      //高さの実数値を読み込む
+		//底辺の値の入力を促す
+		System.out.print("底辺:");
+		//底辺の実数値を読み込む
+		double triangleBase = standardInput.nextDouble();
+		 //高さの値の入力を促す
+		System.out.print("高さ:");
+		//高さの値の入力を促す
+		double triangleHeight = standardInput.nextDouble();
 		
 		// 面積の値を表示
-		System.out.println("面積は" + ( x * y ) / 2 + "です。");
+		System.out.println("面積は" + ( triangleBase * triangleHeight ) / 2 + "です。");
 
 	}
 }
