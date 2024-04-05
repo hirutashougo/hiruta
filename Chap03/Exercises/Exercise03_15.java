@@ -21,34 +21,42 @@ public class Exercise03_15 {
 	 */
 	public static void main(String[] arg) {
 		
-		//入力ストリームの指定
+		//Scannerクラスの変数の定義
 		Scanner standerdImput = new Scanner(System.in);
-		//
-		System.out.print("整数a:");
-		//
-		int integralNumberA = standerdImput.nextInt();
-		//
-		System.out.print("整数b:");
-		//
-		int integralNumberB = standerdImput.nextInt();
+		
+		//1つめの整数を入力
+		System.out.print("１つめの整数:");
+		
+		//入力された1つめの整数を読み込む
+		int firstIntegralNumber = standerdImput.nextInt();
+		
+		//2つめの整数
+		System.out.print("2つめの整数:");
+		//入力された整数を読み込む
+		int secondIntegralNumber = standerdImput.nextInt();
 		
 		
-		if ( integralNumberA < integralNumberB ) {
-			//
-			int assignmentValue = integralNumberA;
-			//
-			integralNumberA = integralNumberB; 
-			//
-			integralNumberB = assignmentValue;
+		/*1つめの整数が2つめの整数よりも小さい場合
+		  作業用変数を用いて二値の交換を行う*/
+		if ( firstIntegralNumber < secondIntegralNumber ) {
+			
+			//1つめの整数を作業用変数に代入
+			int assignmentValue = firstIntegralNumber;
+			
+			//2つめの整数を1つめの整数に代入
+			firstIntegralNumber = secondIntegralNumber; 
+			
+			//作業用変数を2つめの整数に代入
+			secondIntegralNumber = assignmentValue;
 		}
 		
 		
-		//
-		System.out.println("a≧bとなるようにソートしました。" );
-		//
-		System.out.println("変数aは" + integralNumberA + "です。" );
-		//
-		System.out.println("変数bは" + integralNumberB + "です。" );
+		//降順の説明を表示
+		System.out.println("大きい順になるようにソートしました。" );
+		//大きい値の表示
+		System.out.println("大きい整数は" + firstIntegralNumber + "です。" );
+		//小さい値の表示
+		System.out.println("小さい整数は" + secondIntegralNumber + "です。" );
 		
 	}
 	

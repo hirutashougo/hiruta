@@ -3,7 +3,12 @@ package Chap03.Exercises;
 //スキャナのインポート
 import java.util.Scanner;
 
-//クラスの宣言
+/*
+ * クラス名:Exercise03_13
+ * 概要:入力した月に対応する季節を表示するプログラム
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/18
+ */
 public class Exercise03_18 {
 	
 	/*
