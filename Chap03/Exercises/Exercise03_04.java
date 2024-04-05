@@ -22,24 +22,39 @@ public class Exercise03_04 {
 	public static void main(String[] args) {
 		
 		//Scannerクラスの変数の定義
-		Scanner standerdImput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
-		//変数aの入力と読み込み
-		System.out.print("変数a:"); double a = standerdImput.nextDouble();
-		//変数bの入力と読み込み
-		System.out.print("変数b:"); double b = standerdImput.nextDouble();
+		//変数aの入力と読み込み(変数aは教科書準拠)
+		System.out.print("変数a:");
 		
-		//変数aが変数bよりも大きい場合
+		//入力された変数aを読み込む
+		double a = standardInput.nextDouble();
+		
+		//変数bの入力と読み込み(変数bは教科書準拠)
+		System.out.print("変数b:");
+		
+		//入力された変数bを読み込む
+		double b = standardInput.nextDouble();
+		
+		
+		/*
+		 * 3つの条件分けによる分岐
+		 *①変数aが変数bよりも大きい場合
+		 */
 		if ( a > b ) {
+			
 			//変数aの方が大きいと伝える
 			System.out.println("aの方が大きいです。");
 		}
-		//変数aが変数bよりも小さい場合
+		
+		//②変数aが変数bよりも小さい場合
 		else if  ( a < b ) {
+			
 			//変数bの方が大きいと伝える
 			System.out.println("bの方が大きいです。");
 		}
-		//変数aと変数bが同じ値の場合
+		
+		//③変数aと変数bが同じ値の場合
 		else {
 			//変数aと変数bが同じ値であると伝える
 			System.out.println("aとbは等しいです。");

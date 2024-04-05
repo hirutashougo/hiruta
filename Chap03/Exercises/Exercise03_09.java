@@ -22,16 +22,16 @@ public class Exercise03_09 {
 	public static void main(String[] args) {
 		
 		//Scannerクラスの変数の定義
-		Scanner standerdImput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//実数aの入力を促す
 		System.out.print("実数a:"); 
 		//入力された実数aを読み込む
-		double realNumberA = standerdImput.nextDouble();
+		double realNumberA = standardInput.nextDouble();
 		//実数bの入力を促す
 		System.out.print("実数b:"); 
 		//入力された実数bを読み込む
-		double realNuuberB = standerdImput.nextDouble();
+		double realNuuberB = standardInput.nextDouble();
 		
 		//実数Aと実数Bのうち大きいほうの数値をmaximumNumberとする。
 		double maximumNumber = realNumberA > realNuuberB ? realNumberA : realNuuberB;

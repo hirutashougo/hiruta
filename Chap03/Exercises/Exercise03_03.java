@@ -22,25 +22,33 @@ public class Exercise03_03 {
 	public static void main(String[] args) {
 		
 		//Scannerクラスの変数の定義
-		Scanner standerdImput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//整数値の入力
 		System.out.print("整数値:");
+		
 		//入力された整数値の読み込み
-		int integralNumber = standerdImput.nextInt();
+		int integralNumber = standardInput.nextInt();
+		
 		
 		//入力された整数が0より大きい場合
 		if ( integralNumber > 0 )  {
+			
 			//入力された整数の符号が正だと伝える
 			System.out.println("その値は正です。");
 		}
+		
 		//入力された整数が0より小さい場合
 		else if  ( integralNumber < 0 ) {
+			
 			//入力された整数の符号が負だと伝える
 			System.out.println("その値は負です。");
 		}
-		//入力された整数が0である場合
+		
+		/*入力された整数が0である場合。
+		 この部分をelse ifに置き換えても動作に影響なし*/
 		else if  ( integralNumber == 0 ) {
+			
 			//入力された整数が0である事を伝える
 			System.out.println("その値は0です。");
 		}

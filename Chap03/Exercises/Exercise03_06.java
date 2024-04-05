@@ -22,24 +22,28 @@ public class Exercise03_06 {
 	public static void main(String[] args) {
 		
 		//Scannerクラスの変数の定義
-		Scanner staderdImput = new Scanner(System.in);
+		Scanner stadardInput = new Scanner(System.in);
 		
 		//整数値の入力および読み込み
-		System.out.print("整数値:"); int integralNumber = staderdImput.nextInt();
+		System.out.print("整数値:"); int integralNumber = stadardInput.nextInt();
 		
 		//入力された整数が0よりも大きい場合
 		if ( integralNumber > 0 ) {
+			
 			//入力された整数が上記の条件であり、なおかつ10の倍数である場合
 			if ( integralNumber % 10 == 0 ) {
 				//入力された整数が10で割り切れることを伝える。
 				System.out.println("その値は10で割り切れます。");
 			}
+			
 			//入力された整数が上記の条件であり、なおかつ10の倍数でない場合
 			else {
 				//入力された整数が10で割り切れないことを伝える。
 				System.out.println("その値は10で割り切れません。");
 			}
+			
 		}
+		
 		//入力された整数が0よりも小さい場合
 		else {
 			//入力された整数が正ではないことを伝える

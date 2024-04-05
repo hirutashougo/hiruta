@@ -22,21 +22,32 @@ public class Exercise03_02 {
 	public static void main(String[] args) {
 		
 		//Scannerクラスの変数の定義
-		Scanner standerdImput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
-		//整数値Aの入力及び読み込み
-		System.out.print("整数A:"); int integralNumberA = standerdImput.nextInt();
-		//整数値Bの入力及び読み込み
-		System.out.print("整数B:"); int integralNumberB = standerdImput.nextInt();
+		//整数値Aの入力及び読み込み(変数Aは教科書準拠 )
+		System.out.print("整数A:");
+		
+		//入力された整数値Aの読み込み
+		int integralNumberA = standardInput.nextInt();
+		
+		//整数値Bの入力及び読み込み(変数Bは教科書準拠 )
+		System.out.print("整数B:");
+		
+		//入力された整数値Bの読み込み
+		int integralNumberB = standardInput.nextInt();
+		
 		
 		//整数BとAの商の余りが0の場合
 		if ( integralNumberA % integralNumberB == 0 ) {
-			//約数であることを伝える
+			
+			//BはAの約数であることを伝える
 			System.out.println("BはAの約数です。");
 		}
+		
 		//整数BとAの商の余りが0以外の場合
 		else  {
-			//約数ではないことを伝える。
+			
+			//BはAの約数ではないことを伝える。
 			System.out.println("BはAの約数ではありません。");
 		}
 

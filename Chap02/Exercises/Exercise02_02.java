@@ -1,4 +1,5 @@
 package Chap02.Exercises;
+
 /*
  * クラス名:Exercise02_02
  * 概要:3つのint型変数に値を代入し、合計と平均を求める
@@ -6,6 +7,7 @@ package Chap02.Exercises;
  * 作成日:2024/04/01
  */
 public class Exercise02_02 {
+	
 	/*
 	 *関数名:main
 	 *概要:3つのint型変数に値を代入し、合計と平均を求める
@@ -15,30 +17,31 @@ public class Exercise02_02 {
 	 *作成日:2024/04/01
 	 */
 	public static void main(String[] args) {
-		//xはint型の変数
-		int numberX;
-		//yはint型の変数
-		int numberY;
-		//zはint型の変数
-		int numberZ;
 		
-		//xに63を代入
-		numberX = 63;
-		//yに18を代入
-		numberY = 18;
-		//zに44を代入
-		numberZ = 44;
+		//1つめのint型の変数を設定
+		int firstNumber = 0 ;
+		//2つめのint型の変数を設定
+		int secondNumber = 0 ;
+		//3つめのint型の変数を設定
+		int thirdNumber = 0 ;
 		
-		//xの値を表示
-		System.out.println("xの値は" + numberX + "です。");
-		//yの値を表示
-		System.out.println("yの値は" + numberY + "です。");
-		//zの値を表示
-		System.out.println("zの値は" + numberZ + "です。");
-		//合計を表示
-		System.out.println("合計は" + ( numberX + numberY + numberZ ) + "です。");
-		//平均を表示
-		System.out.println("平均は" + ( numberX + numberY + numberZ ) / 3 + "です。");
+		//1つめの変数に63を代入
+		firstNumber = 63;
+		//2つめの変数に18を代入
+		secondNumber = 18;
+		//3つめの変数に44を代入
+		thirdNumber = 44;
+		
+		//1つめの変数に入力された値を表示
+		System.out.println("xの値は" + firstNumber + "です。");
+		//2つめの変数に入力された値を表示
+		System.out.println("yの値は" + secondNumber + "です。");
+		//3つめの変数に入力された値を表示
+		System.out.println("zの値は" + thirdNumber + "です。");
+		//3つの合計を表示
+		System.out.println("合計は" + ( firstNumber + secondNumber + thirdNumber ) + "です。");
+		//3つの平均を表示
+		System.out.println("平均は" + ( firstNumber + secondNumber + thirdNumber ) / 3 + "です。");
 		
 
 	}

@@ -18,16 +18,16 @@ public class Exercise02_04 {
 	 */
 	public static void main(String[] args) {
 		//Scannerクラスの変数を宣言
-    	Scanner standerdImput = new Scanner(System.in);
+    	Scanner standardInput = new Scanner(System.in);
     	
     	//整数値の入力を促す
 		System.out.print("整数値:");
-		//loadedNumberに整数値を読み込む
-		int integralNumber = standerdImput.nextInt();
+		//入力された整数値を読み込む
+		int integralNumber = standardInput.nextInt();
 		
-		// loadedNumber + 10の値を表示
+		// 入力された整数値 + 10の値を表示
 		System.out.println("10を加えた値は" + ( integralNumber + 10 ) + "です。");
-		// loadedNumber - 10の値を表示
+		// 入力された整数値 - 10の値を表示
 		System.out.println("10を減じた値は" + ( integralNumber - 10 ) + "です。");
 				
 	}

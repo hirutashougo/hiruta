@@ -20,20 +20,20 @@ public class Exercise02_05 {
 		//Scannerクラスの変数を宣言
 		Scanner standardInput = new Scanner(System.in);
 		
-		//xの値の入力を促す
+		//xの値の入力を促す( 変数xは教科書準拠 )
 		System.out.print("xの値:");
 		//xの実数値を読み込む
-		double realNumberX = standardInput.nextDouble(); 
+		double x = standardInput.nextDouble(); 
 		
-		//yの値の入力を促す
+		//yの値の入力を促す( 変数yは教科書準拠 )
 		System.out.print("yの値:");
 		//yの実数値を読み込む
-		double realNumberY = standardInput.nextDouble();
+		double y = standardInput.nextDouble();
 		
-		// xNumberとyNumberの合計値を表示
-		System.out.println("合計は" + ( realNumberX + realNumberY ) + "です。");
-		// xxNumberとyNumberの平均値を表示
-		System.out.println("平均は" + ( realNumberX + realNumberY ) / 2 + "です。");
+		// 合計値を表示
+		System.out.println("合計は" + ( x + y ) + "です。");
+		// 平均値を表示
+		System.out.println("平均は" + ( x + y ) / 2 + "です。");
 				
 	}
 }
