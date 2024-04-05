@@ -22,25 +22,33 @@ public class Exercise03_11 {
 	public static void main(String[] args) {
 		
 		//Scannerクラスの変数の定義
-		Scanner standerdImput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
-		//整数aの入力を促す
-		System.out.print("整数a:"); 
-		//入力された整数aを読み込む
-		int integralNumberA = standerdImput.nextInt();
-		///整数bの入力を促す
-		System.out.print("整数b:"); 
-		//入力された整数bを読み込む
-		int integralNumberB = standerdImput.nextInt();
+		//整数Aの入力を促す(変数Aは教科書準拠)
+		System.out.print("整数B:");
+		
+		//入力された整数Aを読み込む
+		int A = standardInput.nextInt();
+		
+		///整数Bの入力を促す(変数Bは教科書準拠)
+		System.out.print("整数B:"); 
+		
+		//入力された整数Bを読み込む
+		int B = standardInput.nextInt();
 		
 		
-		//整数AとBの値の差が10以下であるとき
-		if ( integralNumberA - integralNumberB >= 10 && integralNumberA - integralNumberB <= -10 ) {
+		//２つの条件による分岐
+		//①整数AとBの値の差が10以下であるとき
+		if ( A - B >= 10 && A - B <= -10 ) {
+			
 			//整数AとBの値の差が10以下であると伝える
 			System.out.println("それらの差は10以下です。");
 		}
-		//整数AとBの値の差が10以上であるとき
+		
+		//②整数AとBの値の差が10以上であるとき
+		
 		else {
+			
 			//整数AとBの値の差が10以上であると伝える
 			System.out.println("それらの差は10以上です。");
 		}

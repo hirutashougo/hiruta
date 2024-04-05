@@ -25,8 +25,8 @@ public class Exercise03_05 {
 		//Scannerクラスの変数の定義
 		Scanner stadardInput = new Scanner(System.in);
 		
-		//整数値の入力および読み込み
-		System.out.print("整数値:"); int integralNumber = stadardInput.nextInt();
+		//正の整数値の入力および読み込み
+		System.out.print("正の整数を入力してください:"); int integralNumber = stadardInput.nextInt();
 		
 		//２つの条件分けによる分岐
 		//①入力された整数が0よりも大きい場合

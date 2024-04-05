@@ -35,11 +35,11 @@ public class Exercise03_15 {
 		
 		if ( integralNumberA < integralNumberB ) {
 			//
-			int assignmentValue = integralNumberA;   
+			int assignmentValue = integralNumberA;
 			//
-			integralNumberA = integralNumberB;       
+			integralNumberA = integralNumberB; 
 			//
-			integralNumberB = assignmentValue;       
+			integralNumberB = assignmentValue;
 		}
 		
 		

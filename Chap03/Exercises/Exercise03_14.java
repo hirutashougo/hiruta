@@ -22,44 +22,61 @@ public class Exercise03_14 {
 	public static void main(String[] arg) {
 		
 		//入力ストリームの指定
-		Scanner standedImput = new Scanner(System.in);
+		Scanner standedInput = new Scanner(System.in);
 		
-		//整数aの入力と読み込み
-		System.out.print("整数a:");  
+		//整数aの入力と読み込み( 変数aは教科書準拠 )
+		System.out.print("整数a:");
+		
 		//入力された整数aを読み込む
-		int integralNumberA = standedImput.nextInt();
-		//整数bの入力と読み込み
-		System.out.print("整数b:");  
+		int a = standedInput.nextInt();
+		
+		//整数bの入力と読み込み( 変数bは教科書準拠 )
+		System.out.print("整数b:");
+		
 		//入力された整数bを読み込む
-		int integralNumberB = standedImput.nextInt();
+		int b = standedInput.nextInt();
 		
-		//大小関係を明らかにするために、まず最小値と最大値を0で初期設定
-		int minimumNumber, maximumNumber = 0 ;
 		
-		//整数aと整数bの値が異なる場合
-		if ( integralNumberA != integralNumberB ) {
-			//整数aが整数bよりも小さい場合
-			if ( integralNumberA < integralNumberB ) { 
-				//整数aを最小値に代入する
-				minimumNumber = integralNumberA;                    
-				//整数bを最大値に代入する
-				maximumNumber = integralNumberB;                    
-			//整数aが整数bよりも大きい場合
-			} else {                       
-				//整数bを最小値に代入する
-				minimumNumber = integralNumberB;                    
-				//整数aを最大値に代入する
-				maximumNumber =integralNumberA;                    
+		/*大小関係を明らかにするため、
+		  まず「小さい値」と「大きい値」を0で初期設定*/
+		int smallValue, largerValue = 0 ;
+		
+		
+		//2つの条件による分岐
+		//①整数aと整数bの値が異なる場合
+		if ( a != b ) {
+			
+			//２つの条件による分岐
+			//①整数aが整数bよりも小さい場合
+			if ( a < b ) { 
+				
+				//整数aを「小さい値」に代入する
+				smallValue = a;    
+				
+				//整数bを「大きい値」に代入する
+				largerValue = b;  
+				
+			//②整数aが整数bよりも大きい場合
+			} else {
+				
+				//整数bを「小さい値」に代入する
+				smallValue = b;
+				
+				//整数aを「大きい値」に代入する
+				largerValue =a;
 			}
 			
-			//比較的小さい値として最小値を表示する
-			System.out.println("小さいほうの値は" + minimumNumber + "です。" );
-			//比較的大きい値として最大値を表示する
-			System.out.println("大きいほうの値は" + maximumNumber + "です。" );
+			//「小さい値」を表示する
+			System.out.println("小さいほうの値は" + smallValue + "です。" );
+			
+			//「大きい値」を表示する
+			System.out.println("大きいほうの値は" + largerValue + "です。" );
 			
 		}
-		//整数aと整数bの値が同じである場合
+		
+		//②整数aと整数bの値が同じである場合
 		else {
+			
 			//整数aと整数bが同じであることを表示
 			System.out.println("二つの値は同じです" );
 			
