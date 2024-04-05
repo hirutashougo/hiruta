@@ -18,12 +18,12 @@ public class Exercise02_03 {
 	 */
 	    static void main(String[] args) {
 	    	//Scannerクラスの変数を宣言
-	    	Scanner standerdImput = new Scanner(System.in);
+	    	Scanner standardImput = new Scanner(System.in);
 	    	
 	    	//整数値の入を促す
 	    	System.out.print("整数値:");
-	    	//integralValueに整数を読み込む
-	    	int integralNumber = standerdImput.nextInt();
+	    	//入力された整数を読み込む
+	    	int integralNumber = standardImput.nextInt();
 	    	//整数値を表示
 	    	System.out.println( integralNumber + "と入力しましたね");  
 	    	

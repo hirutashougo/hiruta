@@ -1,31 +1,54 @@
 package Chap03.Exercises;
 
-//二つの変数を大きい順にソート
-
-//スキャナのインポート
+//Scannerの読み込み
 import java.util.Scanner;
 
-//クラスの宣言
+/*
+ * クラス名:Exercise03_15
+ * 概要:二つの変数を大きい順にソート
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/03
+ */
 public class Exercise03_15 {
-	//mainメソッドの宣言
+	
+	/*
+	 *関数名:main
+	 *概要:二つの変数を大きい順にソート
+	 *引数:なし
+	 *戻り値:なし
+	 *作成者:S.Hiruta
+	 *作成日:2024/04/03
+	 */
 	public static void main(String[] arg) {
+		
 		//入力ストリームの指定
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standerdImput = new Scanner(System.in);
+		//
+		System.out.print("整数a:");
+		//
+		int integralNumberA = standerdImput.nextInt();
+		//
+		System.out.print("整数b:");
+		//
+		int integralNumberB = standerdImput.nextInt();
 		
-		System.out.print("整数a:");  int a = stdIn.nextInt();  //整数aの入力を促し、読み込む
-		System.out.print("整数b:");  int b = stdIn.nextInt();  //整数bの入力を促し、読み込む
 		
-		if ( a < b ) {   //aがbより大きい場合
-			int t = a;   //aをtに代入
-			a = b;       //bをaに代入
-			b = t;       //tをbに代入
+		if ( integralNumberA < integralNumberB ) {
+			//
+			int assignmentValue = integralNumberA;   
+			//
+			integralNumberA = integralNumberB;       
+			//
+			integralNumberB = assignmentValue;       
 		}
 		
 		
-		//結果の表示
+		//
 		System.out.println("a≧bとなるようにソートしました。" );
-		System.out.println("変数aは" + a + "です。" );
-		System.out.println("変数bは" + b + "です。" );
+		//
+		System.out.println("変数aは" + integralNumberA + "です。" );
+		//
+		System.out.println("変数bは" + integralNumberB + "です。" );
 		
 	}
 	
