@@ -22,18 +22,18 @@ public class Exercise03_15 {
 	public static void main(String[] arg) {
 		
 		//Scannerクラスの変数の定義
-		Scanner standerdImput = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//1つめの整数を入力
 		System.out.print("１つめの整数:");
 		
 		//入力された1つめの整数を読み込む
-		int firstIntegralNumber = standerdImput.nextInt();
+		int firstIntegralNumber = standardInput.nextInt();
 		
 		//2つめの整数
 		System.out.print("2つめの整数:");
 		//入力された整数を読み込む
-		int secondIntegralNumber = standerdImput.nextInt();
+		int secondIntegralNumber = standardInput.nextInt();
 		
 		
 		/*1つめの整数が2つめの整数よりも小さい場合

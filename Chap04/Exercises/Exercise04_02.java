@@ -1,9 +1,16 @@
 package Chap04.Exercises;
 
+//Randomライブラリの読み込み
 import java.util.Random;
 //スキャナーのインポート
 import java.util.Scanner;
 
+/*
+ * クラス名:Exercise04_02
+ * 概要：数当てゲーム(10～99を当てさせる)
+ * 作成者:S.Hiruta
+ * 作成日:2024/04/08
+ */
 public class Exercise04_02 {
 	
     /*
@@ -12,40 +19,52 @@ public class Exercise04_02 {
     ・引数：なし
     ・戻り値：なし
     ・作成者：hiruta
-    ・作成日：2024/04/04
+    ・作成日：2024/04/08
     */
-    
     public static void main(String[] arg) {
+    	
+    	//ランダムの範囲を表す定数を定義
+    	final int RANDOM_RANGE = 90;
 
-        //入力ストリームの指定
-        Scanner stdIn = new Scanner(System.in);
-        //乱数生成ストリーム
+        //Scannerクラスの変数を定義
+        Scanner standerdInput = new Scanner(System.in);
+        //Randomクラスの変数を定義
         Random rand = new Random();
         
-        int no = rand.nextInt(90);			//0～89の乱数を生成
+        //10～99の乱数を生成
+        int randomNumber = rand.nextInt(RANDOM_RANGE) + 10;
         
         //ゲームへ誘導する表示
-        System.out.println("数当てゲーム開始！！");	
+        System.out.println("数当てゲーム開始！！");
+        //ゲームへ誘導する表示
         System.out.println("0～99の数を当ててください。");
         
-        int x ;		//変数xを宣言
-        do {	//do文の開始
-        	System.out.print("いくつかな：");		//文字の表示
-        	//xを入れる
-        	x = stdIn.nextInt();
+        //変数xを宣言(変数xは教科書準拠)
+        int x ;
+        
+        //数値を入力し、生成された整数を当てる処理
+        //do文の開始
+        do {
         	
-        	//正解よりも小さい場合
-        	if ( x > no + 10 )
+        	//文字の表示
+        	System.out.print("いくつかな：");
+        	//入力された数値を読み込み、変数xに代入
+        	x = standerdInput.nextInt();
+        	
+        	//変数xが生成された整数( 正解 )よりも小さい場合
+        	if ( x > randomNumber + 10 )
+        		//もっと小さいと表示
         		System.out.println("もっと小さいよ：");
         	//正解よりも大きい場合
-        	else if ( x < no + 10 )
+        	else if ( x < randomNumber + 10 )
+        		//もっと大きいと表示
         		System.out.println("もっと大きいよ：");
         	
-        //xがno+10でないの場合、繰り返し
-        } while ( x != no + 10 );
+        //生成された整数を入力しない限り、繰り返し
+        } while ( x != randomNumber );
         
-        System.out.println("正解です。");    //正解の場合
-        
+        //正解であると表示
+        System.out.println("正解です。");       
         
     }
     

@@ -22,97 +22,97 @@ public class Exercise03_16_re {
 	public static void main(String[] arg) {
 		
 		///Scannerクラスの変数の定義
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardImput = new Scanner(System.in);
 		
 		
 		//1つめの整数を入力
 		System.out.print("整数a:");
 		
 		//1つめの整数を読み込み
-		int firstIntegralNumber = stdIn.nextInt();
+		int firstIntegralNumber = standardImput.nextInt();
 		
 		//2つめの整数を入力
 		System.out.print("整数b:");
 		
 		//2つめの整数を読み込み
-		int secondIntegralNumber = stdIn.nextInt();
+		int secondIntegralNumber = standardImput.nextInt();
 		
 		//3つめの整数を入力
 		System.out.print("整数c:");
 		
 		//3つめの整数を読み込み
-		int thirdIntegralNumber = stdIn.nextInt();
+		int thirdIntegralNumber = standardImput.nextInt();
 		
 		//3つの整数の順番と大小関係によって処理を分岐
-		//
-		/*111が222よりも大きい場合
-		  s1を用いて二値の交換を行う*/
+		
+		/*1つめの整数が2つめの整数よりも大きい場合
+		  作業用変数1を用いて二値の交換を行う*/
 		if ( firstIntegralNumber > secondIntegralNumber ) {   
 			
-			//111を作業用変数1に代入
+			//1つめの整数を作業用変数1に代入
 			int firstReplacedValue = firstIntegralNumber;
 			
-			//222を111代入
+			//2つめの整数を1つめの整数代入
 			firstIntegralNumber = secondIntegralNumber;
 			
-			//作業用変数1を222に代入
+			//作業用変数1を2つめの整数に代入
 			secondIntegralNumber = firstReplacedValue;					
 		} 
 		
-		/*111が333よりも大きい場合
-		  s1を用いて二値の交換を行う*/
+		/*1つめの整数が3つめの整数よりも大きい場合
+		  作業用変数1を用いて二値の交換を行う*/
 		else if ( firstIntegralNumber > thirdIntegralNumber ) { 
 			
-			//111を作業用変数1に代入
+			//1つめの整数を作業用変数1に代入
 			int firstReplacedValue = firstIntegralNumber;
 			
-			//333を111代入
+			//3つめの整数を1つめの整数代入
 			firstIntegralNumber = thirdIntegralNumber;
 			
-			//作業用変数1を333に代入
+			//作業用変数1を3つめの整数に代入
 			thirdIntegralNumber = firstReplacedValue;			
 		}
 		
-		/*222が333よりも大きい場合
-		  s1を用いて二値の交換を行う*/
+		/*2つめの整数が3つめの整数よりも大きい場合
+		  作業用変数1を用いて二値の交換を行う*/
 		if ( secondIntegralNumber > thirdIntegralNumber )  {
 			
-			//s2を222に代入
+			//作業用変数2を2つめの整数に代入
 			int secondReplacedValue = secondIntegralNumber;
 			
-			//333を222に代入
+			//3つめの整数を2つめの整数に代入
 			secondIntegralNumber = thirdIntegralNumber;
 			
-			//s2を333に代入
+			//作業用変数2を3つめの整数に代入
 			thirdIntegralNumber = secondReplacedValue;
 		}
 		
-		/*111が222よりも大きい場合
-		  s1を用いて二値の交換を行う*/
+		/*1つめの整数が2つめの整数よりも大きい場合
+		  作業用変数1を用いて二値の交換を行う*/
 		if ( firstIntegralNumber > secondIntegralNumber )  {
 			
-			//111をs2に代入
+			//1つめの整数を作業用変数2に代入
 			int secondReplacedValue = firstIntegralNumber;
 			
-			//222をs1に代入
+			//2つめの整数を作業用変数1に代入
 			firstIntegralNumber = secondIntegralNumber;
 			
-			//s2を222に代入
+			//作業用変数2を2つめの整数に代入
 			secondIntegralNumber = secondReplacedValue;
 		}
 		
 		
-		//文字の表示
+		//ソートの説明の表示
 		System.out.println("a≦b≦cとなるようにソートしました。" );
 		
-		//
-		System.out.println("変数aは" + firstIntegralNumber + "です。" );
+		//整数Aに関する表示
+		System.out.println("整数aは" + firstIntegralNumber + "です。" );
 		
-		//
-		System.out.println("変数bは" + secondIntegralNumber + "です。" );
+		//整数Bに関する表示
+		System.out.println("整数bは" + secondIntegralNumber + "です。" );
 		
-		//
-		System.out.println("変数cは" + thirdIntegralNumber + "です。" );
+		//整数Cに関する表示
+		System.out.println("整数cは" + thirdIntegralNumber + "です。" );
 		
 	}
 	

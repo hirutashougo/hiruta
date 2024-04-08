@@ -19,24 +19,27 @@ public class Exercise03_17 {
 	・作成日：2024/04/03
 	*/
 	public static void main(String[] arg) {
-		//乱数ジェネレータの指定
-		Random rand = new Random();
+		
+		//ランダムの範囲を表す定数を定義
+		final int RANDOM_RANGE = 3;
+		
+		//Randomクラスの変数の定義
+		Random randomNumber = new Random();
 		
 		//0～2の乱数を生成する
-		int hand = rand.nextInt(3);
+		int handNnmber = randomNumber.nextInt(RANDOM_RANGE);
 		
 		
-		//
-		//
-		switch ( hand ) {
+		//生成される整数により処理を分岐
+		switch ( handNnmber ) {
 		
-		//
+		//生成された整数が0の場合、グーを表示
 		case 0: System.out.println("グー");   break;
 		
-		//
+		//生成された整数が1の場合、チョキを表示
 		case 1: System.out.println("チョキ"); break;
 		
-		//
+		//生成された整数が2の場合、パーを表示
 		case 2: System.out.println("パー");   break;
 		
 		}
