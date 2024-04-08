@@ -31,10 +31,10 @@ public class Exercise03_09 {
 		//入力された1つめの実数を読み込む
 		double firstRealNumber = standardInput.nextDouble();
 		
-		//2つめ実数bの入力を促す
+		//2つめ実数の入力を促す
 		System.out.print("２つめの実数:"); 
 		
-		//入力された実数bを読み込む
+		//入力された実数bを読み込む ////
 		double secondRealNuuber = standardInput.nextDouble();
 		
 				

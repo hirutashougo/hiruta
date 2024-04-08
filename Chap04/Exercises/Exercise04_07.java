@@ -32,6 +32,7 @@ public class Exercise04_07 {
     	 を初期状態1で宣言*/
     	int incrementVariable = 0;
     	
+    	if (countNumber > 0) {
     	//インクリメント変数が偶数か奇数かで表示する記号を変える
     	//do文の開始
     	do {
@@ -54,7 +55,12 @@ public class Exercise04_07 {
     		
     		else {}
     	//インクリメント変数が入力された個数値を上回るまで繰り返される	
-    	} while (incrementVariable > countNumber);
+    	} while (incrementVariable < countNumber);
+    	}
+    	
+    	else {
+    		System.out.print("正の整数を入力してください");
+    	}
 
     	//改行文字を出力
     	System.out.println();
