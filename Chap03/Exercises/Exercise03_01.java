@@ -31,13 +31,13 @@ public class Exercise03_01 {
 		
 		//入力された整数値が0より大きい場合
 		if ( integralNumber >= 0 ) {
-			//入力された整数値が0以上であると表示
+			//入力された整数値の絶対値を表示
 			System.out.println("その絶対値は" + integralNumber + "です。");
 		}
 		//それ以外の場合(入力された整数値が0より小さい)
 		else  {
-			//入力された整数値が0より小さいと表示
-			System.out.println("その絶対値は" + -integralNumber + "です。");
+			//入力された整数値に(-1)を乗じた値を表示
+			System.out.println("その絶対値は" + (-1) * integralNumber + "です。");
 		}
 		
 	}

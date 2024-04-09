@@ -3,6 +3,8 @@ package Chap03.Exercises;
 //Scannerの読み込み
 import java.util.Scanner;
 
+//////0の約数の定義を見直し、再検討の必要あり
+
 /*
  * クラス名:Exercise03_02
  * 概要:読み込んだ二つの整数値が約数関係にあるか判定する
@@ -13,7 +15,7 @@ public class Exercise03_02 {
 	
 	/*
 	 *関数名:main
-	 *概要:読み込んだ整数の絶対値を表示する
+	 *概要:読み込んだ二つの整数値が約数関係にあるか判定する
 	 *引数:なし
 	 *戻り値:なし
 	 *作成者:S.Hiruta

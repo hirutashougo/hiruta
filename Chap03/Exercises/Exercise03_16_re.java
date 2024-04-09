@@ -35,70 +35,70 @@ public class Exercise03_16_re {
 		System.out.print("整数b:");
 		
 		//2つめの整数を読み込み
-		int secondIntegralNumber = standardImput.nextInt();
+		int secondNumber = standardImput.nextInt();
 		
 		//3つめの整数を入力
 		System.out.print("整数c:");
 		
 		//3つめの整数を読み込み
-		int thirdIntegralNumber = standardImput.nextInt();
+		int thirdNumber = standardImput.nextInt();
 		
 		//3つの整数の順番と大小関係によって処理を分岐
 		
 		/*1つめの整数が2つめの整数よりも大きい場合
 		  作業用変数1を用いて二値の交換を行う*/
-		if ( firstIntegralNumber > secondIntegralNumber ) {   
+		if ( firstIntegralNumber > secondNumber ) {   
 			
 			//1つめの整数を作業用変数1に代入
 			int firstReplacedValue = firstIntegralNumber;
 			
 			//2つめの整数を1つめの整数代入
-			firstIntegralNumber = secondIntegralNumber;
+			firstIntegralNumber = secondNumber;
 			
 			//作業用変数1を2つめの整数に代入
-			secondIntegralNumber = firstReplacedValue;					
+			secondNumber = firstReplacedValue;					
 		} 
 		
 		/*1つめの整数が3つめの整数よりも大きい場合
 		  作業用変数1を用いて二値の交換を行う*/
-		else if ( firstIntegralNumber > thirdIntegralNumber ) { 
+		else if ( firstIntegralNumber > thirdNumber ) { 
 			
 			//1つめの整数を作業用変数1に代入
 			int firstReplacedValue = firstIntegralNumber;
 			
 			//3つめの整数を1つめの整数代入
-			firstIntegralNumber = thirdIntegralNumber;
+			firstIntegralNumber = thirdNumber;
 			
 			//作業用変数1を3つめの整数に代入
-			thirdIntegralNumber = firstReplacedValue;			
+			thirdNumber = firstReplacedValue;			
 		}
 		
 		/*2つめの整数が3つめの整数よりも大きい場合
 		  作業用変数1を用いて二値の交換を行う*/
-		if ( secondIntegralNumber > thirdIntegralNumber )  {
+		if ( secondNumber > thirdNumber )  {
 			
 			//作業用変数2を2つめの整数に代入
-			int secondReplacedValue = secondIntegralNumber;
+			int secondReplacedValue = secondNumber;
 			
 			//3つめの整数を2つめの整数に代入
-			secondIntegralNumber = thirdIntegralNumber;
+			secondNumber = thirdNumber;
 			
 			//作業用変数2を3つめの整数に代入
-			thirdIntegralNumber = secondReplacedValue;
+			thirdNumber = secondReplacedValue;
 		}
 		
 		/*1つめの整数が2つめの整数よりも大きい場合
 		  作業用変数1を用いて二値の交換を行う*/
-		if ( firstIntegralNumber > secondIntegralNumber )  {
+		if ( firstIntegralNumber > secondNumber )  {
 			
 			//1つめの整数を作業用変数2に代入
 			int secondReplacedValue = firstIntegralNumber;
 			
 			//2つめの整数を作業用変数1に代入
-			firstIntegralNumber = secondIntegralNumber;
+			firstIntegralNumber = secondNumber;
 			
 			//作業用変数2を2つめの整数に代入
-			secondIntegralNumber = secondReplacedValue;
+			secondNumber = secondReplacedValue;
 		}
 		
 		
@@ -109,10 +109,10 @@ public class Exercise03_16_re {
 		System.out.println("整数aは" + firstIntegralNumber + "です。" );
 		
 		//整数Bに関する表示
-		System.out.println("整数bは" + secondIntegralNumber + "です。" );
+		System.out.println("整数bは" + secondNumber + "です。" );
 		
 		//整数Cに関する表示
-		System.out.println("整数cは" + thirdIntegralNumber + "です。" );
+		System.out.println("整数cは" + thirdNumber + "です。" );
 		
 	}
 	

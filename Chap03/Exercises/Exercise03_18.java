@@ -4,7 +4,7 @@ package Chap03.Exercises;
 import java.util.Scanner;
 
 /*
- * クラス名:Exercise03_13    ////
+ * クラス名:Exercise03_18  
  * 概要:入力した月に対応する季節を表示するプログラム
  * 作成者:S.Hiruta
  * 作成日:2024/04/18

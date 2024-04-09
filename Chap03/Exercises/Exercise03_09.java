@@ -34,7 +34,7 @@ public class Exercise03_09 {
 		//2つめ実数の入力を促す
 		System.out.print("２つめの実数:"); 
 		
-		//入力された実数bを読み込む ////
+		//入力された2つめ実数を読み込む
 		double secondRealNuuber = standardInput.nextDouble();
 		
 				

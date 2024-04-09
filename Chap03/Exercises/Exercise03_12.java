@@ -33,7 +33,7 @@ public class Exercise03_12 {
 		int firsIntegralNumber = standerdImput.nextInt();
 		
 		//2つめの整数の入力を促す
-		System.out.print("2つめ整数");
+		System.out.print("2つめ整数:");
 		
 		//入力された2つめの整数を読み込む
 		int secondIntegralNumber = standerdImput.nextInt();
