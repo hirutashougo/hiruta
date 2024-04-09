@@ -47,15 +47,19 @@ public class Exercise04_03 {
         
         /*整数Aが整数B以下の場合、
          整数Aに1つ追加した値を表示する処理を繰り返す*/
+        
+        //インクリメントの増加幅の定数
+        final int increaseNumer = 1;
+        
         //do分の開始
         do  {
         	//整数Aと空白を表示
         	System.out.print( a + " " );
         	//整数Aに1を追加
-        	a = a + 1;
+        	a = a + increaseNumer;
         	
+        //変数aが変数b以下になるまで処理を繰り返す
         } while ( a <= b );
-
     }
     
 }

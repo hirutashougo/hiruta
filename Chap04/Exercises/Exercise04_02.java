@@ -25,14 +25,16 @@ public class Exercise04_02 {
     	
     	//ランダムの範囲を表す定数を定義
     	final int RANDOM_RANGE = 90;
+        //乱数の調整用の定数を定義
+        final int adjustmentNumber = 10;
 
         //Scannerクラスの変数を定義
         Scanner standerdInput = new Scanner(System.in);
         //Randomクラスの変数を定義
-        Random rand = new Random();
+        Random randomValiable = new Random();/////////////////
         
         //10～99の乱数を生成
-        int randomNumber = rand.nextInt(RANDOM_RANGE) + 10;
+        int randomNumber = randomValiable.nextInt(RANDOM_RANGE) + adjustmentNumber;/////////////
         
         //ゲームへ誘導する表示
         System.out.println("数当てゲーム開始！！");
@@ -52,11 +54,11 @@ public class Exercise04_02 {
         	x = standerdInput.nextInt();
         	
         	//変数xが生成された整数( 正解 )よりも小さい場合
-        	if ( x > randomNumber + 10 )
+        	if ( x > randomNumber )
         		//もっと小さいと表示
         		System.out.println("もっと小さいよ：");
         	//正解よりも大きい場合
-        	else if ( x < randomNumber + 10 )
+        	else if ( x < randomNumber )
         		//もっと大きいと表示
         		System.out.println("もっと大きいよ：");
         	
