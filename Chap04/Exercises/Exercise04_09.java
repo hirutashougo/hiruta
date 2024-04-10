@@ -15,7 +15,7 @@ public class Exercise04_09 {
      * 概要：1から入力した値までの積の値を表示する
      * 引数：なし
      * 戻り値：なし
-     * 作成者：hiruta
+     * 作成者：S.Hiruta
      * 作成日：2024/04/09
     */
     public static void main(String[] args) {
@@ -26,20 +26,19 @@ public class Exercise04_09 {
     			//整数の入力を促す
     			System.out.println("1からnまでの積を求めます。");
     			
-    			//変数nを宣言
+    			//変数nを宣言(変数nは教科書準拠)
     			int n;
     			
     			//do文の開始
     			do {
-    				
-    				//入力を促す
+    				//正の整数値の入力を促す
     				System.out.print("nの値：");
-    				//読み込む
+    				//正の整数値の読み込む
     				n = standardInput.nextInt();
     				
-    				//
+    				//入力された整数が負である場合
     				if (n <= 0) {
-    					//
+    					//正の整数値を入力するように促す
     					System.out.println("正の整数を入力してください。");
     				}
     				
@@ -55,7 +54,7 @@ public class Exercise04_09 {
     			while (repeatVariable <= n) {
     				//複合代入演算子を用いて変数sumに変数iを追加していく
     				multipleSum *= repeatVariable;
-    				//後置増分演算子を用いて変数iに1ずつ追加
+    				//後置増分演算子を用いて変数に1ずつ追加
     				repeatVariable++;
     			}
     			

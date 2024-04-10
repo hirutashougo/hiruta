@@ -12,7 +12,7 @@ public class Exercise04_10 {
 
 	/*
 	 * 関数名：main
-	 * 概要：List4-11を変更。1未満の入力の場合、改行文字を表示しない
+	 * 概要：入力された個数の*を表示する(1未満の入力の場合、改行文字を表示しない)
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：hiruta
@@ -23,20 +23,29 @@ public class Exercise04_10 {
 		//Scannerクラスの変数の宣言
 		Scanner standardInput = new Scanner(System.in);
 		
-		//個数を表す整数の入力を促す
+		//個数値の入力を促す
 		System.out.print("何個*を表示しますか：");
-		//入力された整数値を変数nに読み込む(変数nは教科書準拠)
-		int n = standardInput.nextInt();
+		//*を表示する個数値の変数を定義
+		int countNumber = 0;
+		//個数値を読み込む
+		countNumber = standardInput.nextInt();
 		
-		//変数i(教科書準拠)を初期状態0で設定
-		//変数iが変数n未満であることが条件
-		//for文の更新毎に変数iに1追加する
-		for (int i = 0; i < n; i++) {
+		//正の整数が入力されるまで入力を促す
+		while (countNumber <= 0) {
+			//正の整数を入力するように促す
+			System.out.print("正の整数を入力してください：");
+			//再度、個数値を読み込む
+			countNumber = standardInput.nextInt();
+		}
+		
+		//個数値分の*を表示する
+		for (int i = 0; i < countNumber; i++) {
 			//*を表示する
 			System.out.print("*");
 		}
 		
-		if (n > 1) {
+		//入力された個数値が1以上であるとき
+		if (countNumber >= 1) {
 		//改行文字を表示
 		System.out.println();
 		}

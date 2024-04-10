@@ -15,7 +15,7 @@ public class List04_10 {
 	 * 概要：正の整数を読み込んで逆順に表示
 	 * 引数：なし
 	 * 戻り値：なし
-	 * 作成者：hiruta
+	 * 作成者：S.Hiruta
 	 * 作成日：2024/04/08
 	*/
 	public static void main(String[] args) {
