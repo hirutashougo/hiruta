@@ -41,8 +41,12 @@ public class Exercise04_02 {
         //ゲームへ誘導する表示
         System.out.println("0～99の数を当ててください。");
         
-        //変数xを宣言(変数xは教科書準拠)
-        int x ;
+        //入力する値初期状態0で宣言
+        int integralNumber = 0 ;
+        //入力値の上限を99で宣言
+        final int MUXIMUM_NUMBER = 99;
+        //入力値の下限を0で宣言
+        final int MINIMUM_NUMBER = 0;
         
         //数値を入力し、生成された整数を当てる処理
         //do文の開始
@@ -51,19 +55,28 @@ public class Exercise04_02 {
         	//文字の表示
         	System.out.print("いくつかな：");
         	//入力された数値を読み込み、変数xに代入
-        	x = standerdInput.nextInt();
+        	integralNumber = standerdInput.nextInt();
         	
+        	//0～99以外の数値が入力された場合
+        	if (integralNumber > MUXIMUM_NUMBER || integralNumber < MINIMUM_NUMBER) {
+        		//0～99の数値を入力するように促す
+        		System.out.println("0～99の値を入力してください。");
+        	}
+        	
+        	//0～99の数値が入力された場合
+        	else {
         	//変数xが生成された整数( 正解 )よりも小さい場合
-        	if ( x > randomNumber )
+        	if ( integralNumber > randomNumber )
         		//もっと小さいと表示
         		System.out.println("もっと小さいよ：");
         	//正解よりも大きい場合
-        	else if ( x < randomNumber )
+        	else if ( integralNumber < randomNumber )
         		//もっと大きいと表示
         		System.out.println("もっと大きいよ：");
+        	}
         	
         //生成された整数を入力しない限り、繰り返し
-        } while ( x != randomNumber );
+        } while ( integralNumber != randomNumber );
         
         //正解であると表示
         System.out.println("正解です。");       
