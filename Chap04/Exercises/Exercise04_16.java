@@ -24,20 +24,34 @@ public class Exercise04_16 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		
-		//「*」の個数の変数の定義
+		//「*」の個数値の変数の定義
 		int countNumber = 0;
-		//「*」の個数の入力を促す
-		System.out.print("何cmから：");
-		//入力された身長値を読み込む
+		//「*」の個数値の入力を促す
+		System.out.print("何個*を表示しますか：");
+		//入力された個数値を読み込む
 		countNumber = standardInput.nextInt();
 		//正の整数ではない数値が入力された場合
 		while (countNumber <= 0) {
 			//正の整数値の入力を促す
-			System.out.print("正の整数値で入力してください");
-			//入力された身長値を読み込む
+			System.out.print("正の整数値で入力してください:");
+			//入力された個数値を読み込む
 			countNumber = standardInput.nextInt();
 		}
+		
+		//個数を割る定数の定義
+		final int divisionNumber = 5;
 
 		//「*」を5個出力したら改行して出力しなおす
+		for (int i = 1; i <= countNumber; i++) {
+			//「*」の個数が5の倍数でない場合
+			if (i % divisionNumber != 0) {
+				//改行せずに「*」を表示
+				System.out.print("*");
+			//「*」の個数が5の倍数の場合
+			} else {
+				//改行して「*」を表示
+				System.out.println("*");
+			}
+		}
 	}
 }
