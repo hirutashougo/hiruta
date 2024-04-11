@@ -3,8 +3,8 @@ package Chap04.Exercises;
 import java.util.Scanner;
 
 /*
- * クラス名:Exercise04_14
- * 概要：Exercise04_13の変更。出力結果を式の形にする。
+ * クラス名:Exercise04_16
+ * 概要：Exercise04_11の変更。*を5個おきに改行して出力する。
  * 作成者:S.Hiruta
  * 作成日:2024/04/10
  */
@@ -12,7 +12,7 @@ public class Exercise04_16 {
 
 	/*
 	 * 関数名：main
-	 * 概要：Exercise04_13の変更。出力結果を式の形にする。
+	 * 概要：入力された個数だけ*を表示する。5個おきに改行する。
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
@@ -23,35 +23,36 @@ public class Exercise04_16 {
 		//Scannerクラスの変数の宣言
 		Scanner standardInput = new Scanner(System.in);
 		
-		
-		//「*」の個数値の変数の定義
-		int countNumber = 0;
-		//「*」の個数値の入力を促す
+		//個数の入力を促す
 		System.out.print("何個*を表示しますか：");
-		//入力された個数値を読み込む
-		countNumber = standardInput.nextInt();
-		//正の整数ではない数値が入力された場合
+		//入力された個数を読み込む
+		int countNumber = standardInput.nextInt();
+		
+		//個数に、正の整数が入力されるように繰り返す処理
 		while (countNumber <= 0) {
-			//正の整数値の入力を促す
-			System.out.print("正の整数値で入力してください:");
-			//入力された個数値を読み込む
+			//正の整数を入力するように促す
+			System.out.print("正の整数を入力してください：");
+			//入力された個数を読み込む
 			countNumber = standardInput.nextInt();
 		}
 		
-		//個数を割る定数の定義
-		final int divisionNumber = 5;
-
-		//「*」を5個出力したら改行して出力しなおす
+		//個数が5の倍数であるか確かめる定数
+		final int DIVISION_NUMBER = 5;
+		
+		//記号「*」を表示。個数の数だけ、5個おきに改行して表示する。
 		for (int i = 1; i <= countNumber; i++) {
-			//「*」の個数が5の倍数でない場合
-			if (i % divisionNumber != 0) {
-				//改行せずに「*」を表示
-				System.out.print("*");
-			//「*」の個数が5の倍数の場合
-			} else {
-				//改行して「*」を表示
+			//*の個数が5の倍数の場合
+			if (i % DIVISION_NUMBER == 0) {
+				//改行文字を含んで*を表示
 				System.out.println("*");
+			//*の個数が5の倍数ではない場合
+			} else {
+			//*を表示する
+			System.out.print("*");
 			}
 		}
+		//改行文字を表示
+		System.out.println();
+
 	}
 }

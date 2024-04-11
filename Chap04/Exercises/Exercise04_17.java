@@ -34,10 +34,10 @@ public class Exercise04_17 {
 			System.out.println("0は全ての倍数です。");
 		//入力された値が負の整数の場合
 		} else if (integralNumber < 0) {
-			//負の整数を正の整数に変換する定数の定義
-			int negativeConstant = -1;
-			//負の整数を正の整数に変換
-			integralNumber *= (negativeConstant);
+			//正の整数値の入力を促す
+			System.out.print("正の整数値を入力してください:");
+			//入力された整数値の読み込み
+			integralNumber = standardInput.nextInt();
 		}
 		
 		//約数の個数を記録する変数の定義
