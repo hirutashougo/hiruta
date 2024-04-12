@@ -24,7 +24,7 @@ public class Exercise04_22 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		//記号「　」の表示を調整する定数の定義
-		final int adjustmentNumber = 1;
+		final int ADJUSTMENT_NUMBER = 1;
 		//記号「＊」の表示を調整する為に減じる定数の定義
 		final int SUBTRACT_NUMBER = 1;
 		//記号「＊」の表示を調整する為にかける定数の定義
@@ -47,7 +47,7 @@ public class Exercise04_22 {
 		//段数分の、記号「＊」と「　」でできた列の、段を組む
 		for (int i = 1; i <= stepCount; i++) {
 			//「　」を段数の数値から1引いた数だけ表示。段数はデクリメントされる
-			for (int j = stepCount - adjustmentNumber; j >= i; j--) {
+			for (int j = stepCount - ADJUSTMENT_NUMBER; j >= i; j--) {
 				//記号「　」を表示
 				System.out.print('　');
 			}

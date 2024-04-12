@@ -3,7 +3,7 @@ package Chap04.Exercises;
 import java.util.Scanner;
 
 /*
- * クラス名:Exercise04_21
+ * クラス名:Exercise04_23 /////////////////
  * 概要:入力された段数の二等辺三角形を表示させる。表示は段数の一の位の数字で行う
  * 作成者:S.Hiruta
  * 作成日:2024/04/11
@@ -24,7 +24,9 @@ public class Exercise04_23 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		//記号「 」の表示を調整する定数の定義
-		final int adjustmentNumber = 1;
+		final int ADJUSTMENT_NUMBER = 1;
+		//三角形として表示する数値の算出に用いる定数の定義
+		final int DIVISION_NUMBER = 10;
 		//記号「＊」の表示を調整する為に減じる定数の定義
 		final int SUBTRACT_NUMBER = 1;
 		//記号「＊」の表示を調整する為にかける定数の定義
@@ -50,9 +52,9 @@ public class Exercise04_23 {
 		//段数分の、記号「＊」と「 」でできた列の、段を組む
 		for (int i = 1; i <= stepCount; i++) {
 			//段数の一の位の数字を算出する
-			int stepFirst = i % 10;
+			int stepFirst = i % DIVISION_NUMBER;
 			//「 」を段数の数値から1引いた数だけ表示。段数はデクリメントされる
-			for (int j = stepCount - adjustmentNumber; j >= i; j--) {
+			for (int j = stepCount - ADJUSTMENT_NUMBER; j >= i; j--) {
 				//記号「 」を表示
 				System.out.print(' ');
 			}
