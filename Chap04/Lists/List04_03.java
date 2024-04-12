@@ -50,3 +50,30 @@ public class List04_03 {
     }
     
 }
+
+/*
+ * //入力回数以内で数当ての入力を繰り返す
+        for (int i = 0; i <= inputTimes; i++) {
+        	//いくつか尋ねる表示
+        	System.out.print("いくつかな：");
+        	//入力された数を読み込む
+        	integralNumber = stndardInput.nextInt();
+        	//0～99の整数が入力されるまで繰り返される処理
+        	while (integralNumber < 0 || integralNumber > 99) {
+        		//0～99の整数で入力されるように促す
+        		System.out.println("0～99の整数で入力してください。\nいくつかな:");
+        		//入力された整数を読み込む
+        		integralNumber = stndardInput.nextInt();
+        	}
+        	//正解よりも小さい
+        	if ( integralNumber > correctNumber )
+        		//
+        		System.out.println("もっと小さいよ：");
+        	//正解よりも大きい
+        	else if ( integralNumber < correctNumber )
+        		//
+        		System.out.println("もっと大きいよ：");
+        //
+        } while ( integralNumber != correctNumber );
+        //
+        System.out.println("正解です。"); */
