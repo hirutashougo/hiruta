@@ -44,7 +44,7 @@ public class Exercise04_26 {
 		int integralAverage = 0;
 		//整数が加算された回数をカウントする定数の定義
 		int addtionCount = 0;
-		//正の整数値の加算を繰り返す処理///////////////////////////////////
+		//正の整数値の加算を繰り返す処理
 		for (int i = 1; i <= countNumber; i++) {
 			//整数値の入力を促す
 			System.out.print("整数値：");

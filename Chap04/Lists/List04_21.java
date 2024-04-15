@@ -3,7 +3,7 @@ package Chap04.Lists;
 import java.util.Scanner;
 
 /*
- * クラス名:List4_20
+ * クラス名:List4_21
  * 概要：読み込んだ整数のグループを加算(整数5個×10グループ)
  * 作成者:S.Hiruta
  * 作成日:2024/04/12

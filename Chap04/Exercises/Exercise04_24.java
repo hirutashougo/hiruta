@@ -31,13 +31,15 @@ public class Exercise04_24 {
 		//正の整数が入力されるまで
 		while (integralNumber <= 0) {
 			//正の整数値を入力するように促す
-			System.out.print("正の整数で入力してください。\n正の整数値:");//////////////
+			System.out.print("正の整数で入力してください。\n正の整数値:");
 			//入力された整数値を読み込む
 			integralNumber = standardInput.nextInt();
 		}
 
 		//繰り返す処理の処理回数を調整するための定数の定義
 		final int TIMES_ADJUSTMENT = 1;
+		//整数1を判定するために用いる定数
+		final int INTEGRAL_ONE = 1;
 
 		//整数値をインクリメントした数値で割っていく処理
 		for (int i = 1; i < integralNumber; i++) {
@@ -55,7 +57,7 @@ public class Exercise04_24 {
 			}
 		}
 		//1が入力された場合
-		if (integralNumber == 1) {
+		if (integralNumber == INTEGRAL_ONE) {
 			//1は双腕はないと表示
 			System.out.println("その整数は素数ではありません。");
 		}

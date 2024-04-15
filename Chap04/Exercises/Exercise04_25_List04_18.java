@@ -54,7 +54,7 @@ public class Exercise04_25_List04_18 {
 			System.out.print("整数値：");
 			//入力された整数値を読み込む
 			int integralNumber = standardInput.nextInt();
-			//加算合計値が1000を超えたら繰り返しを終了////////////////////////////////////////////////
+			//加算合計値が1000を超えたら繰り返しを終了
 			if (integralSum + integralNumber > MAXIMUM_NUMBER) {
 				//合計値が1000を超えたことを伝える
 				System.out.println("合計値が" + MAXIMUM_NUMBER + "を超えました。");
