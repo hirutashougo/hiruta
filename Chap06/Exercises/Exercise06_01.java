@@ -18,14 +18,14 @@ public class Exercise06_01 {
 	*/
 	public static void main(String[] arg) {
 		
-		//構成要素数5のdouble型配列を宣言
+		//要素数5のdouble型配列を宣言
 		double [] doubleNumber = new double[5];
 		
 		//インデックス1に37を代入
 		doubleNumber[1] = 37;
 		//インデックス2に51を代入
 		doubleNumber[2] = 51;
-		//インデックス4に「インデックス1×2」の計算式を代入
+		//インデックス4に、インデックス1に2をかけた値を代入
 		doubleNumber[4] = doubleNumber[1] * 2;
 		
 		//インデックス0に代入された値を表示

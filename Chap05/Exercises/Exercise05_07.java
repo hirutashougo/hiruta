@@ -18,7 +18,7 @@ public class Exercise05_07 {
 	*/
 	public static void main(String[] args) {
 
-		//float型・int型の表示
+		//普通の数値とその2乗値の表示
 		System.out.println("0.001ずつ増加    2乗");
 		//横線の表示
 		System.out.println("------------------------------");
