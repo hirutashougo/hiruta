@@ -100,15 +100,15 @@ public class Exercise06_04 {
 			System.out.print((i % DECIMAL_NUMBER) + " ");
 		}
 
-//		//確認表示の回数調整する定数の定義
-//		final int TIMES_ADJUSTMENT = 1;
-//
-//		//見やすくするための改行
-//		System.out.println("\n");
-//		//処理内容の確認のための表示を行う
-//		for (int i = 0; i < elementCount; i++) {
-//			//確認の為の要素番号の表示
-//			System.out.println("verticalGraph[" + (i + TIMES_ADJUSTMENT) + "] = " + verticalValue[i]);
-//		}
+		//確認表示の回数調整する定数の定義
+		final int TIMES_ADJUSTMENT = 1;
+
+		//見やすくするための改行
+		System.out.println("\n");
+		//処理内容の確認のための表示を行う
+		for (int i = 0; i < elementCount; i++) {
+			//確認の為の要素番号の表示
+			System.out.println("verticalGraph[" + (i + TIMES_ADJUSTMENT) + "] = " + verticalValue[i]);
+		}
 	}
 }

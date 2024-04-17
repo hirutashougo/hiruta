@@ -43,9 +43,9 @@ public class Exercise06_06 {
 		//点数入力を促す表示において、人数調整に用いる定数の定義
 		final int ADJUSTMENT_CONSTANT = 1;
 		//点数の上限を表す定数の定義
-		final int MAXIMUM_SCORE = 100;////////
+		final int MAXIMUM_SCORE = 100;
 		//点数の下限を表す定数の定義
-		final int MINIMUM_SCORE = 0;/////////
+		final int MINIMUM_SCORE = 0;
 		
 		//点数の入力を促す
 		System.out.println("点数を入力してください(0点～100点)。");
@@ -58,7 +58,7 @@ public class Exercise06_06 {
 			//点数に0～100の点数が入力されるまで繰り返す処理
 			while (examScore[i] < MINIMUM_SCORE || examScore[i] > MAXIMUM_SCORE) {
 				//0～100の範囲で入力するように促す
-				System.out.println("0～100の範囲で入力してください。");//////////////
+				System.out.println("0～100の範囲で入力してください。");
 				//点数の入力を促す
 				System.out.print(i + ADJUSTMENT_CONSTANT + "人目の受験者の点数：");
 				//入力された点数を読み込む
