@@ -41,29 +41,29 @@ public class Exercise06_05 {
 		//入力された要素数のint型配列を宣言する
 		int[] indexNumber = new int[elementCount];
 
-		//各インデックスの値を読み込ませる
+		//各要素の値を読み込ませる
 		for (int i = 0; i < elementCount; i++) {
-			//インデックスの値の入力を促す
+			//要素の値の入力を促す
 			System.out.print("a[" + i + "] = ");
 			//入力された数値を読み込む
 			indexNumber[i] = standardInput.nextInt();
 		}
 
-		//インデックスの数値表示の際の処理回数調整の定数
+		//要素の数値表示の際の処理回数調整の定数
 		final int TIMES_ADJUSTMENT = 1;
 
-		//インデックスの数値の表示の前段階の表示
+		//要素の数値の表示の前段階の表示
 		System.out.print("a = {");
 
-		//入力されたインデックスの数値を表示する
+		//入力された要素の数値を表示する
 		for (int i = 0; i < elementCount; i++) {
-			//インデクスの最終要素でない場合
+			//表示する要素が最終要素でない場合
 			if (i < elementCount - TIMES_ADJUSTMENT) {
-				//インデックスに入力されている数値と空白を表示していく
+				//その要素に入力されている数値と空白を表示していく
 				System.out.print(indexNumber[i] + ", ");
-				//インデクスの最終要素の場合
+				//表示する要素が最終要素の場合
 			} else {
-				//インデックスに入力されている数値と閉じ括弧を表示していく
+				//その要素に入力されている数値と閉じ括弧を表示していく
 				System.out.print(indexNumber[i] + "}");
 			}
 		}

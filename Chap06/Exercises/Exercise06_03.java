@@ -18,19 +18,26 @@ public class Exercise06_03 {
 	*/
 	public static void main(String[] arg) {
 
+		//要素数を表す定数の定義
+		final int ELEMENT_COUNT = 5;
+		//小数点以下の算出に用いる定数の定義
+		final int DECIMAL_CONSTANT = 10;
+		//要素の数値の調節に用いる定数の定義
+		final int ADJUSTMENT_CONSTANT = 1;
+
 		//要素数5のint型配列を宣言
-		double [] numberArray = new double[5];
-		
-		//要素の数だけ各インデックスに数値の代入を繰り返す
+		double[] numberArray = new double[ELEMENT_COUNT];
+
+		//要素の数だけ各要素に数値の代入を繰り返す
 		for (int i = 0; i < numberArray.length; i++) {
-			//インクリメントする値を、double型の変数に代入する
-			double realNumber = i;
-			//インデックスに、double型に変換した数値を用いて算出した値を代入する
-			numberArray[i] = realNumber + (realNumber / 10);
+			//要素の数値を調節し、double型の変数に代入する//////////
+			double realNumber = i + ADJUSTMENT_CONSTANT;
+			//要素に、double型に変換した数値を用いて算出した値を代入する
+			numberArray[i] = realNumber + (realNumber / DECIMAL_CONSTANT);
 		}
-		//要素の数だけ各インデックスに代入された数値の表示を繰り返す
+		//要素の数だけ各要素に代入された数値の表示を繰り返す
 		for (int i = 0; i < numberArray.length; i++) {
-			//各インデックスに代入された数値の表示
+			//各要素に代入された数値の表示
 			System.out.println("a[" + i + "] = " + numberArray[i]);
 		}
 	}
