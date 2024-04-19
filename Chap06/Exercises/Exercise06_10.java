@@ -26,7 +26,7 @@ public class Exercise06_10 {
 		Random randomNumber = new Random();
 		//Randomクラスの変数の定義
 		Scanner standardInput = new Scanner(System.in);
-
+		
 		//要素数の入力を促す
 		System.out.print("要素数：");
 		//入力された要素数を読み込む
@@ -40,26 +40,30 @@ public class Exercise06_10 {
 			//入力された要素数を読み込む
 			elementCount = standardInput.nextInt();
 		}
-
+		
 		//乱数の範囲を表す定数を定義
 		final int RANDOM_RANGE = 10;
+		//生成する乱数の範囲を調節する定数の定義
+		final int ADJUSTMENT_NUMBER = 1;
+		//要素のインデックスを調整する定数の定義
+		final int ADJUSTMENT_COMSTANT = 1;
 
 		//入力された要素数を持つ配列を宣言
 		int[] numberArray = new int[elementCount];
 		//配列の各要素に乱数を代入していく
 		for (int j = 0; j < elementCount; j++) {
-			//各要素に乱数を代入していく
-			numberArray[j] = randomNumber.nextInt(RANDOM_RANGE);
+			//乱数の生成範囲を1～10に調整して、各要素に代入していく
+			numberArray[j] = ADJUSTMENT_NUMBER + randomNumber.nextInt(RANDOM_RANGE);
 			//2回目以降の処理の場合
 			if (j > 0) {
 				//1つ前の要素と違う数値が代入されるまで繰り返す処理
-				while (numberArray[j] == numberArray[j - 1]) {
+				while (numberArray[j] == numberArray[j - ADJUSTMENT_COMSTANT]) {
 					//要素に乱数を代入する
 					numberArray[j] = randomNumber.nextInt(RANDOM_RANGE);
 				}
 			}
 		}
-
+		
 		//配列の要素数を表示すると示唆(配列aの表示は教科書準拠)
 		System.out.print("配列aの全要素の値\n{ ");
 		//int型配列の各インデックスの値を表示する
@@ -69,30 +73,5 @@ public class Exercise06_10 {
 		}
 		//括弧を閉じる
 		System.out.println("}");
-		//線形探索の対象の入力を促す
-		System.out.print("探す数値：");
-		//入力された線形探索の対象値を読み込む
-		int searchNumber = standardInput.nextInt();
-
-		//繰り返し処理を行うための変数を宣言
-		int i = 0;
-		//対象を線形探索する
-		for (i = 0; i < elementCount; i++) {
-			//対象が見つかった場合
-			if (numberArray[i] == searchNumber) {
-				//探索処理を抜ける
-				break;
-			}
-		}
-
-		//探索対象が見つかった場合
-		if (i < elementCount) {
-			//どの配列に対象が存在するか表示する
-			System.out.println("それはa[" + i + "]にあります。");
-			//探索対象が見つからなかった場合
-		} else {
-			//探索対象が見つからなかったと表示
-			System.out.println("それはありません。");
-		}
 	}
 }
