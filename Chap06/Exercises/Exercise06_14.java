@@ -50,6 +50,8 @@ public class Exercise06_14 {
 
 		//問題への導入
 		System.out.println("英語の月名を入力してください。");
+		//解答の表記方法に関する表示
+		System.out.println("なお、先頭は大文字で、２文字目以降は小文字とします。");
 
 		//1が入力される限り繰り返すクイズ
 		for (int i = 0; i <= repeatCount; i++) {

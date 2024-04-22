@@ -27,7 +27,7 @@ public class Exercise06_19 {
 		Scanner standardInput = new Scanner(System.in);
 
 		//学校の全生徒の点数を格納する2次元配列を宣言
-		int[][] scoreRecord = new int[0][0];
+		double [][] scoreRecord = new double[0][0];
 
 		//クラス数の入力を促す
 		System.out.print("クラス数：");
@@ -44,7 +44,7 @@ public class Exercise06_19 {
 		}
 
 		//凹凸な行列の列数が確定したため、改めて宣言
-		scoreRecord = new int[classCount][];
+		scoreRecord = new double[classCount][];
 
 		//クラス数表記の為の調整数を、定数で定義
 		final int ADJUSTMENT_NUMBER = 1;
@@ -70,7 +70,7 @@ public class Exercise06_19 {
 			}
 
 			//入力された人数のクラス(の配列)を宣言
-			scoreRecord[i] = new int[studentCount];
+			scoreRecord[i] = new double[studentCount];
 
 			//各クラスの全て生徒の点数を入力させる
 			for (int j = 0; j < studentCount; j++) {
@@ -91,9 +91,9 @@ public class Exercise06_19 {
 		}
 
 		//全校生徒の総点数を記録するための変数
-		int totalscore = 0;
+		double totalScore = 0;
 		//全校生徒の総数を記録するための変数
-		int totalStudent = 0;
+		double totalStudent = 0;
 
 		//合計点及び平均点表示の開始を示す
 		System.out.println("   組 |    合計      平均");
@@ -109,27 +109,25 @@ public class Exercise06_19 {
 			System.out.print("組 |");
 
 			//クラスの全得点を記憶するための変数を宣言
-			int scoreSum = 0;
-			//クラスの平均点を記憶するための変数を宣言
-			int scoreAverage = 0;
+			double scoreSum = 0;
 
 			//各クラスの生徒の点数を合計していく
 			for (int j = 0; j < scoreRecord[i].length; j++) {
 				//生徒の点数を合計していく
-				scoreSum += scoreRecord[i][j];
+				scoreSum += (double)scoreRecord[i][j];
 			}
 			//合計した点数から平均点を算出
-			scoreAverage = scoreSum / scoreRecord[i].length;
+			double scoreAverage = scoreSum / scoreRecord[i].length;
 
 			//合計点を表示
-			System.out.printf("%8d", scoreSum);
+			System.out.printf("%8.0f", scoreSum);
 			//合計点を表示
-			System.out.printf("%10.1f", (double) scoreAverage);
+			System.out.printf("%10.1f", scoreAverage);
 			//空白を表示
 			System.out.println(" ");
 
 			//各クラスの合計点を集計
-			totalscore += scoreSum;
+			totalScore += scoreSum;
 			//各クラスの人数を集計
 			totalStudent += scoreRecord[i].length;
 		}
@@ -139,9 +137,9 @@ public class Exercise06_19 {
 		//学校全体の数値の表示を示す
 		System.out.print("   計 |");
 		//合計点を表示
-		System.out.printf("%8d", totalscore);
+		System.out.printf("%8.0f", totalScore);
 		//合計点を表示
-		System.out.printf("%10.1f", (double) totalscore / totalStudent);
+		System.out.printf("%10.1f", totalScore / totalStudent);
 		//空白を表示
 		System.out.println(" ");
 	}

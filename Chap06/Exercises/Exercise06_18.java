@@ -33,12 +33,12 @@ public class Exercise06_18 {
 		System.out.print("行数:");
 		//入力された行数を読み込む
 		int columunCount = standardInput.nextInt();
-		//行数が0以上の整数で入力されるまで繰り返す処理
+		//行数が正の整数で入力されるまで繰り返す処理
 		while (columunCount <= 0) {
-			//0以上の整数で入力するように表示
-			System.out.println("0以上の整数で入力してください。");
+			//正の整数で入力するように表示
+			System.out.println("正の整数で入力してください。");
 			//再度、行数の入力を促す
-			System.out.print("列数:");
+			System.out.print("行数:");
 			//入力された行数を読み込む
 			columunCount = standardInput.nextInt();
 		}
@@ -57,10 +57,10 @@ public class Exercise06_18 {
 			System.out.print((i + ADJUSTMENT_NUMBER) + "行目の列数:");
 			//入力された列数の読み込み
 			int lineCount = standardInput.nextInt();
-			//列数が0以上の整数で入力されるまで繰り返す処理
+			//列数が正の整数で入力されるまで繰り返す処理
 			while (lineCount <= 0) {
-				//0以上の整数で入力するように表示
-				System.out.println("0以上の整数で入力してください。");
+				//正の整数で入力するように表示
+				System.out.println("正の整数で入力してください。");
 				//再度、行列の入力を促す
 				System.out.print((i + ADJUSTMENT_NUMBER) +"行目の列数:");
 				//入力された行数を読み込む
@@ -77,15 +77,6 @@ public class Exercise06_18 {
 				System.out.print((i + ADJUSTMENT_NUMBER) + "行の" + (j + ADJUSTMENT_NUMBER) + "列目の点数：");
 				//入力された要素を配列に読み込む
 				irregularityArray[i][j] = standardInput.nextInt();
-				//要素が0以上の整数で入力されない限り繰り返される処理
-				while (irregularityArray[i][j] < 0) {
-					//0以上の値を入力するように伝える
-					System.out.println("0以上の値を入力してください");
-					//要素に代入する値を入力させる
-					System.out.print((i + ADJUSTMENT_NUMBER) + "行の" + (j + ADJUSTMENT_NUMBER) + "列目の点数：");
-					//入力された要素の値を読み込む
-					irregularityArray[i][j] = standardInput.nextInt();
-				}
 			}
 		}
 		
@@ -93,7 +84,7 @@ public class Exercise06_18 {
 		for (int i = 0; i < irregularityArray.length; i++) {
 			//各行の要素を出力
 			for (int j = 0; j < irregularityArray[i].length; j++) {
-				//行列の要素部分に初期子「0」を表示
+				//行列の要素部分に入力された要素を表示
 				System.out.printf("%3d", irregularityArray[i][j]);
 			}
 			//出力の終わった行を改行し、列を進める

@@ -55,26 +55,26 @@ public class Exercise06_15 {
 
 		//1が入力される限り繰り返すクイズ
 		for (int i = 0; i <= repeatCount; i++) {
-			//月の数字を格納する配列の宣言
+			//曜日の数字を格納する配列の宣言
 			int[] weekNumber = new int[i + ADJUSTMENT_NUMBER];
-			//月の数字を表わす変数に、1～12の数字をランダムに表示
+			//問題となる曜日を示す数字をランダムに格納
 			weekNumber[i] = randomNumber.nextInt(WEEK_NUMBER);
 			//クイズが二回目以降の場合
 			if (i >= ADJUSTMENT_COUNT) {//////////////////////////////////////////////////////////////////////////////
-				//前回と同じ月が表示されないようにする処理
+				//前回と同じ曜日が表示されないようにする処理
 				while (weekNumber[i] == weekNumber[i - ADJUSTMENT_NUMBER]) {
-					//もう一度配列に乱数を代入する
+					//格納された数値が同じ場合「、もう一度配列に乱数を代入する
 					weekNumber[i] = randomNumber.nextInt(WEEK_NUMBER);
 				}
 			}
-			//何月が問題であるか表記する。入力を促す
+			//何曜日が問題であるか表記する。入力を促す
 			System.out.print(japaneseString[(weekNumber[i])] + ":");
-			//正解の月を読み込む
-			String answerMonth = weekString[weekNumber[i]];
-			//入力された回答を読み込む
-			String monthName = standardInput.next();
+			//正解の曜日を読み込む
+			String answerWeek = weekString[weekNumber[i]];
+			//入力された英語を読み込む
+			String weekName = standardInput.next();
 			//入力した英語が正解の場合
-			if (answerMonth.equals(monthName)) {
+			if (answerWeek.equals(weekName)) {
 				//正解であると表示
 				System.out.print("正解です。");
 				//入力した英語が不正解の場合
