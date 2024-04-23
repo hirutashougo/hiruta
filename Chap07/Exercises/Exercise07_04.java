@@ -13,9 +13,9 @@ public class Exercise07_04 {
 
 	/*
 	 * 関数名：sumUp
-	 * 概要:1～引数nまでの全整数の和を求める
-	 * 引数：整数(int型)
-	 * 戻り値：全整数の和(int型)
+	 * 概要:1から引数nまでの全整数の和を求める
+	 * 引数：1からの総和計算の範囲を指定する整数(int型)
+	 * 戻り値：1から指定数までの全整数の和(int型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/04/22
 	*/
@@ -46,7 +46,7 @@ public class Exercise07_04 {
 		Scanner standardInput = new Scanner(System.in);
 
 		//これから行う計算を説明する
-		System.out.println("1～nまでの全整数の和を求めます。");
+		System.out.println("1からnまでの全整数の和を求めます。");
 		
 		//整数の入力を促す
 		System.out.print("整数nを入力してください\n整数n：");
@@ -63,7 +63,7 @@ public class Exercise07_04 {
 		}
 
 		//1から入力された整数までの整数の和を求める
-		System.out.print("1～" + integralNumbr + "までの全整数の和は" + sumUp(integralNumbr) + "です。");
+		System.out.print("1から" + integralNumbr + "までの全整数の和は" + sumUp(integralNumbr) + "です。");
 	}
 
 }

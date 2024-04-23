@@ -1,8 +1,5 @@
 package Chap07.Exercises;
 
-//Scannerのインポート
-import java.util.Scanner;
-
 /*
 * クラス名:Exercise07_05
 * 概要:「こんにちは。」と表示して改行する
@@ -35,8 +32,6 @@ public class Exercise07_05 {
 	 * 作成日：2024/04/22
 	*/
 	public static void main(String[] arg) {
-		//Scannerクラスの変数の定義
-		Scanner standardInput = new Scanner(System.in);
 
 		//「こんにちは。」と表示して改行する
 		hello();
