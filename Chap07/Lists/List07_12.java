@@ -51,33 +51,33 @@ public class List07_12 {
 		//
 		int b = standardInput.nextInt();
 		
-		//
+		//入力値
 		System.out.print(  "a      = ");
 		//
 		printBits(a);
-		//
+		//入力値b
 		System.out.print("\nb      = ");
 		//
 		printBits(b);
 		//
 		System.out.print("\na  & b = ");
-		//
+		//論理積
 		printBits(a & b);
 		//
 		System.out.print("\na  | b = ");
-		//
+		//論理和
 		printBits(a | b);
 		//
 		System.out.print("\na  ^ b = ");
-		//
+		//排他的論理和
 		printBits(a ^ b);
 		//
 		System.out.print("\n~a     = ");
-		//
+		//補数
 		printBits(~a);
 		//
 		System.out.print("\n~b     = ");
-		//
+		//補数
 		printBits(~b);
 	}
 }
