@@ -9,7 +9,7 @@ import java.util.Scanner;
 * 作成者:S.Hiruta
 * 作成日:2024/04/25
 */
-public class Exercise07_12 {
+public class Exercise07_12_02 {
 
 	//Scannerクラスの変数の定義
 	static Scanner standardInput = new Scanner(System.in);
@@ -63,50 +63,6 @@ public class Exercise07_12 {
 	}
 
 	/*
-	 * 関数名：shiftLeft
-	 * 概要:指定された数分、整数を左にシフトさせた値を算出する
-	 * 引数::整数(int型),ビット回転数(int型)
-	 * 戻り値：左にシフトさせた値(int型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/04/25
-	*/
-	static int shiftLeft(int integralNumber, int shiftCount) {
-		//整数への乗算・除算に用いる定数2を定義
-		final int BINARY_NUMBER = 2;
-		//入力した整数に、2のべき乗を乗算した値を格納する変数を定義
-		int multiplicationNumber = integralNumber;
-		//入力された回数分、2のべき乗の乗算を行う
-		for (int i = 0; i < shiftCount; i++) {
-			//入力した整数に、シフト数分の2のべき乗を乗算していく
-			multiplicationNumber *= BINARY_NUMBER;
-		}
-		//左にシフトさせた値を返却する
-		return multiplicationNumber;
-	}
-
-	/*
-	 * 関数名：shiftRight
-	 * 概要:指定された数分、整数を右にシフトさせた値を算出する
-	 * 引数:整数(int型),ビット回転数(int型)
-	 * 戻り値：右にシフトさせた値(int型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/04/25
-	*/
-	static int shiftRight(int integralNumber, int shiftCount) {
-		//整数への乗算・除算に用いる定数2を定義
-		final int BINARY_NUMBER = 2;
-		//入力した整数に、2のべき乗を除算した値を格納する変数を定義
-		int divisionNumber = integralNumber;
-		//入力された回数分、2のべき乗の除乗を行う
-		for (int i = 0; i < shiftCount; i++) {
-			//整数xが入力した整数に、シフト数の2のべき乗を除算する
-			divisionNumber /= BINARY_NUMBER;
-		}
-		//右にシフトさせた値を返却する
-		return divisionNumber;
-	}
-
-	/*
 	 * 関数名：lRotate
 	 * 概要:整数を、指定されたビット数分左回転させる
 	 * 引数:整数(int型),回転させるビット数(int型)
@@ -124,7 +80,7 @@ public class Exercise07_12 {
 			x = ~x;
 		}
 		//整数xが左にシフトした数値と対応して右にシフトした数値の合計を返却
-		return (shiftLeft(x, n) + shiftRight(x, (BITS_LIMIT - n)));
+		return ((x << n) + (x >>> (BITS_LIMIT - n)));
 	}
 
 	/*
@@ -145,7 +101,7 @@ public class Exercise07_12 {
 			x = ~x;
 		}
 		//整数xが右にシフトした数値と対応して左にシフトした数値の合計を返却
-		return (shiftRight(x, n) + shiftLeft(x, (BITS_LIMIT - n)));
+		return ((x >>> n) + (x << (BITS_LIMIT - n)));
 	}
 
 	/*
@@ -157,34 +113,26 @@ public class Exercise07_12 {
 	* 作成日：2024/04/25
 	*/
 	public static void main(String[] arg) {
-		/*
-		 * 整数の入力
-		 */
+
 		//整数の入力を促す
 		System.out.print("整数：");
 		//入力された整数を読み込む(整数xは教科書準拠)
 		int x = standardInput.nextInt();
 
-		/*
-		 * ビット回転させる回数の入力
-		 */
 		//ビット回転させる数を入力を促す
 		System.out.print("ビット回転させる数を入力してください。\nビット回転回数：");
 		//入力されたビット回転数を読み込む
 		int shiftCount = standardInput.nextInt();
-		//ビット回転させる回として正の整数が入力されるまで繰り返し促す
+		//ビット回転させる回として0以上が入力されるまで繰り返し促す
 		while (shiftCount < 0) {
-			//正の整数が入力するように促す
-			System.out.println("正の整数で入力してください。");
+			//0以上で入力するように促す
+			System.out.println("0以上で入力してください。");
 			//再度ビット回転させる数を入力を促す
 			System.out.print("ビット回転回数：");
 			//入力されたビット回転数を読み込む
 			shiftCount = standardInput.nextInt();
 		}
 
-		/*
-		 * 結果の出力
-		 */
 		//入力した整数を、二進数表記で表示すると伝える
 		System.out.println("\n二進数に変換した場合：");
 		//入力した整数を、二進数表記で表示する
