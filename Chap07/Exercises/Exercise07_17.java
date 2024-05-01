@@ -27,16 +27,20 @@ public class Exercise07_17 {
 	static int linearSearchR(int[] a, int searchValue) {
 		//配列のインデックス数を調整するための定数1を定義
 		final int ADJUSTMENT_NUMBER = 1;
+		//返却する要素を格納する変数を宣言
+		int returnValue = 0;
 		//配列の要素の線形探索を、末尾から行う
 		for (int i = a.length - ADJUSTMENT_NUMBER; i >= 0; i--) {
 			//探索対象の数値が見つかった場合
 			if (a[i] == searchValue) {
-				//見つかった要素のインデックスを返却する
-				return i;
+				//見つかった要素のインデックスを返却する変数に格納する
+				returnValue = i;
 			}
 		}
-		//探索対象の数値が見つから無ければ、-1を返却する
-		return NOT_FOUND_CONSTANT;
+		//探索対象の数値が見つから無ければ、-1を返却する変数に格納する
+		returnValue = NOT_FOUND_CONSTANT;
+		//最終的な値を返却する
+		return returnValue;
 	}
 
 	/*
@@ -53,10 +57,10 @@ public class Exercise07_17 {
 		System.out.print("要素数：");
 		//入力された要素数を読み込む
 		int elementCount = standardInput.nextInt();
-		//配列の要素数として正の整数が入力されるまで繰り返し促す
-		while (elementCount < 0) {
-			//正の整数で入力するように促す
-			System.out.println("正の整数で入力してください。");
+		//配列の要素数として0以上の整数が入力されるまで繰り返し促す
+		while (elementCount <= 0) {
+			//0以上の整数で入力するように促す
+			System.out.println("0以上の整数で入力してください。");
 			//再度配列の要素数を入力を促す
 			System.out.print("要素数：");
 			//入力された配列の要素数を読み込む
@@ -66,10 +70,12 @@ public class Exercise07_17 {
 		//入力された要素数を持つ配列(配列a)を定義
 		int[] integralArray = new int[elementCount];
 
+		//配列のインデックス数を調整するための定数1を定義
+		final int ADJUSTMENT_NUMBER = 1;
 		//各要素の値を入力させる
 		for (int i = 0; i < elementCount; i++) {
 			//何番目の要素か伝える
-			System.out.print((i + 1) + "番目の要素：");
+			System.out.print((i + ADJUSTMENT_NUMBER) + "番目の要素：");
 			//入力された要素の値を読み込む
 			integralArray[i] = standardInput.nextInt();
 		}
@@ -86,7 +92,7 @@ public class Exercise07_17 {
 		if (searchIndex == NOT_FOUND_CONSTANT) {
 			//探索対象が見つからなかったと表示
 			System.out.println("その値の要素は存在しません。");
-			//探索対象が見つかった場合
+		//探索対象が見つかった場合
 		} else {
 			//探索対象の値が入っている要素のインデックスを表示
 			System.out.println("その値はx[" + searchIndex + "]にあります。");

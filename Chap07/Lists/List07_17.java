@@ -13,48 +13,33 @@ public class List07_17 {
 	
 	/*
 	 * 関数名：swap
-	 * 概要:配列
+	 * 概要:配列の要素a[idx1]とa[idx2]を交換
 	 * 引数：配列(int型)
-	 * 戻り値：要素の並びを反転した配列(int型)
+	 		配列の要素その1(int型),配列の要素その2(int型)
+	 * 戻り値：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/04/30
 	*/
-	static int swap(int[] a) {
-		//
-		int max = a[0];
-		//
-		for (int i = 0; i < a.length; i++) {
-			//
-			if (a[i] == key) {
-				//
-				return i;
-			}
-		}
-		//
-		return -1;
+	static void swap(int[] a, int idx1, int idx2) {
+		int t = a[idx1]; 
+		a[idx1] = a[idx2];
+		a[idx2] = t;
 	}
 	
 	/*
-	 * 関数名：swap
+	 * 関数名：reverse
 	 * 概要:配列の要素の並びを反転する
 	 * 引数：配列(int型)
-	 * 戻り値：要素の並びを反転した配列(int型)
+	 * 戻り値：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/04/30
 	*/
-	static int swap(int[] a) {
+	static void reverse(int[] a) {
 		//
-		int max = a[0];
-		//
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 0; i < a.length / 2; i++) {
 			//
-			if (a[i] == key) {
-				//
-				return i;
-			}
+			swap(a, i, a.length - i - 1);
 		}
-		//
-		return -1;
 	}
 	
 	/*
@@ -86,21 +71,14 @@ public class List07_17 {
 		}
 		
 		//
-		System.out.print("探す値：");
-		//
-		int key = standardInput.nextInt();
+		reverse(x);
 		
 		//
-		int idx = linearSearch(x, key);
-		
+		System.out.println("要素の並びを逆転しました。");
 		//
-		if (idx == -1) {
+		for (int i = 0; i < num; i++) {
 			//
-			System.out.println("その値の要素は存在しません。");
-			//
-		} else {
-			//
-			System.out.println("その値はx[" + idx + "]にあります。");
+			System.out.println("x{" + i + "] = " + x[i]);
 		}
 	}
 }

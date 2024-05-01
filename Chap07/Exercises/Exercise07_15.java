@@ -48,10 +48,10 @@ public class Exercise07_15 {
 		System.out.print("要素数：");
 		//入力された要素数を読み込む
 		int elementCount = standardInput.nextInt();
-		//配列の要素数として正の整数が入力されるまで繰り返し促す
-		while (elementCount < 0) {
-			//正の整数で入力するように促す
-			System.out.println("正の整数で入力してください。");
+		//配列の要素数として0以上の整数が入力されるまで繰り返し促す
+		while (elementCount <= 0) {
+			//0以上の整数で入力するように促す
+			System.out.println("0以上の整数で入力してください。");
 			//再度配列の要素数を入力を促す
 			System.out.print("要素数：");
 			//入力された配列の要素数を読み込む
@@ -60,18 +60,20 @@ public class Exercise07_15 {
 
 		//入力された要素数を持つ配列(配列a)を定義
 		int[] integralArray = new int[elementCount];
-		
+
+		//配列のインデックス数を調整するための定数1を定義
+		final int ADJUSTMENT_NUMBER = 1;
 		//各要素の値を入力させる
 		for (int i = 0; i < elementCount; i++) {
 			//何番目の要素か伝える
-			System.out.print((i + 1) + "番目の要素：");
+			System.out.print((i + ADJUSTMENT_NUMBER) + "番目の要素：");
 			//入力された要素の値を読み込む
 			integralArray[i] = standardInput.nextInt();
 		}
 
 		//配列の全要素の合計値を表示すると伝える
 		System.out.println("配列の全要素の合計値：");
-		//
+		//配列の全要素の合計値を表示する
 		System.out.println(totalElements(integralArray) + "です。");
 	}
 }
