@@ -58,9 +58,9 @@ public class Exercise07_33 {
 
 	/*
 	 * 関数名：createMatrix
-	 * 概要:二次元行列の行数・列数・各要素の値を入力し、行列を作成する
+	 * 概要:二次元配列の行数・列数・各要素の値を入力し、行列を作成する
 	 * 引数：なし
-	 * 戻り値：行列(2次元行列)(int型)
+	 * 戻り値：2次元配列(int型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/07
 	*/
@@ -123,7 +123,7 @@ public class Exercise07_33 {
 
 	/*
 	 * 関数名：printArray
-	 * 概要:1次元配列mの全要素を表示
+	 * 概要:1次元配列の全要素を表示
 	 * 引数：1次元配列(int型)
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
@@ -133,7 +133,7 @@ public class Exercise07_33 {
 		//各行の列ごと(要素ごと)に表示する
 		for (int i = 0; i < integralArray.length; i++) {
 			//個々の要素の値を表示する
-			System.out.print(integralArray[i] + "  ");
+			System.out.print(integralArray[i] + " ");
 		}
 		//1行表示し終わったら改行する
 		System.out.println();
@@ -141,20 +141,30 @@ public class Exercise07_33 {
 
 	/*
 	 * 関数名：printArray
-	 * 概要:2次元配列mの全要素を表示
+	 * 概要:2次元配列の全要素を表示
 	 * 引数：2次元配列(int型)
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/06
 	*/
 	static void printArray(int[][] integralMatrix) {
-		
+
 		//----各列の、要素の値の表示に必要なスペースを測る----//
 		//行列の各要素の値の文字数を格納する配列を宣言
 		int[][] lengthMatrix = new int[integralMatrix.length][];
+		//仮に、第一行目の列数を引数の行列における最大列数とする
+		int maximumColumnCount = integralMatrix[0].length;
+		//引数である配列の最大列数を求める
+		for (int i = 0; i < integralMatrix.length; i++) {
+			//その行が以前までの最大列数よりも大きい場合
+			if (integralMatrix[i].length > maximumColumnCount) {
+				//最大列数を更新する
+				maximumColumnCount = integralMatrix[i].length;
+			}
+		}
 		//各列の、要素の値の最大文字数を格納する配列を宣言
-		int[] maximumLength = new int[100];
-		
+		int[] maximumLength = new int[maximumColumnCount];
+
 		//行列の要素の文字数を計測する
 		for (int i = 0; i < integralMatrix.length; i++) {
 			//各行の要素数が確定した、行列の各要素の値の文字数を格納する配列を宣言
@@ -170,7 +180,7 @@ public class Exercise07_33 {
 					//マイナスを表わす符号があるため、1文字分多く文字数をカウント
 					valueLength++;
 				}
-				
+
 				//要素の値の桁数を1つ下げるために使う定数10を宣言
 				final int DECIMAL_CONSTANT = 10;
 				//要素の桁数を数える
@@ -181,7 +191,7 @@ public class Exercise07_33 {
 					valueLength++;
 				//要素の値を0になるまで割り切ったら処理を終了
 				} while (decimalRemainder != 0);
-				
+
 				//要素の文字数を配列に格納する
 				lengthMatrix[i][j] = valueLength;
 				//カウントされた文字数が、その列の最大値である場合
@@ -191,7 +201,7 @@ public class Exercise07_33 {
 				}
 			}
 		}
-		
+
 		//----行列の表示----//
 		//各行の要素を表示する
 		for (int i = 0; i < integralMatrix.length; i++) {
@@ -203,8 +213,8 @@ public class Exercise07_33 {
 				int remainingSpace = maximumLength[j] - lengthMatrix[i][j];
 				//各列で必要なスペースと、間をあける為の間隔分、空白を表示する
 				for (int k = 0; k <= remainingSpace; k++) {
-				//空白を表示する
-				System.out.print(" ");
+					//空白を表示する
+					System.out.print(" ");
 				}
 			}
 			//1行表示し終わったら改行する
@@ -237,11 +247,11 @@ public class Exercise07_33 {
 		int[][] integralMatrix = createMatrix();
 
 		//1次元配列の値の表示を行うと伝える
-		System.out.println("\n1次元配列の値の表示");
+		System.out.println("\n1次元配列の値の表示：\n");
 		//1次元配列の値を表示
 		printArray(integralArray);
 		//2次元配列の値の表示を行うと伝える
-		System.out.println("\n12元配列の値の表示");
+		System.out.println("\n2次元配列の値の表示：\n");
 		//2次元配列の値を表示
 		printArray(integralMatrix);
 	}
