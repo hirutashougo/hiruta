@@ -43,7 +43,7 @@ public class DayTester {
 		 int dateData = standardInput.nextInt();
 		 
 		 //入力者の誕生日に関するインスタンスを生成
-		 Day myBirthday = new Day(yearData, monthData, dateData);
+		 Day1 myBirthday = new Day1(yearData, monthData, dateData);
 		 
 		 //誕生日の表示を始める
 		 System.out.println("あなたの誕生日は\n"

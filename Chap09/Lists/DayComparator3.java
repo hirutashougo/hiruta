@@ -19,7 +19,7 @@ public class DayComparator3 {
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/13
 	*/
-	static boolean compareDay(Day firstDay, Day secondDay) {
+	static boolean compareDay(Day1 firstDay, Day1 secondDay) {
 		//返却する値を変数に格納しておく
 		boolean returnValue = false;
 		//1つめの日付と2つめの日付が等しい場合
@@ -60,7 +60,7 @@ public class DayComparator3 {
 		int firstDateData = standardInput.nextInt();
 
 		//日付(その1)に関するインスタンスを生成
-		Day firstDate = new Day(firstYearData, firstMonthData, firstDateData);
+		Day1 firstDate = new Day1(firstYearData, firstMonthData, firstDateData);
 
 		//日付(その2)を西暦で入力するように促す
 		System.out.println("日付(その2)を西暦で入力せよ。");
@@ -78,7 +78,7 @@ public class DayComparator3 {
 		int secondDateData = standardInput.nextInt();
 
 		//日付(その2)に関するインスタンスを生成
-		Day secondDate = new Day(secondYearData, secondMonthData, secondDateData);
+		Day1 secondDate = new Day1(secondYearData, secondMonthData, secondDateData);
 
 		//二つの日付が等しい場合
 		if (compareDay(firstDate, secondDate)) {

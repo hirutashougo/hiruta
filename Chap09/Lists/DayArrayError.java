@@ -4,36 +4,16 @@ package Chap09.Lists;
 import java.util.Scanner;
 
 /*
-* クラス名:DayAssign3(List09_06)
-* 概要:2つの日付を入力させ、等しいか比較する
+* クラス名:DayArrayError(List09_07, List09_08)
+* 概要:クラスDay型インスタンスの配列を作成、表示する
 * 作成者:S.Hiruta
 * 作成日:2024/05/13
 */
 public class DayArrayError {
 
 	/*
-	 * 関数名：compareDay
-	 * 概要:入力された2つの日付が等しいか比較する
-	 * 引数：二つの日付
-	 * 戻り値：true,false
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/13
-	*/
-	static boolean compareDay(Day firstDay, Day secondDay) {
-		//返却する値を変数に格納しておく
-		boolean returnValue = false;
-		//1つめの日付と2つめの日付が等しい場合
-		if (firstDay.getYear() == secondDay.getYear() && firstDay.getMonth() == secondDay.getMonth() && firstDay.getDate() == secondDay.getDate()) {
-			//返却値にtrueを格納する
-			returnValue = true;
-		}
-		//最終的な返却値を返却する
-		return returnValue;
-	}
-
-	/*
 	 * 関数名：main
-	 * 概要:2つの日付を入力させ、等しいか比較する
+	 * 概要:クラスDay型インスタンスの配列を作成、表示する
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
@@ -44,51 +24,31 @@ public class DayArrayError {
 		//Scannerクラスの変数の定義
 		Scanner standardInput = new Scanner(System.in);
 
-		//日付(その1)を西暦で入力するように促す
-		System.out.println("日付(その1)を西暦で入力せよ。");
-		//年の入力を促す
-		System.out.print("年:");
-		//入力された年を読み込む
-		int firstYearData = standardInput.nextInt();
-		//月の入力を促す
-		System.out.print("月:");
-		//入力された月を読み込む
-		int firstMonthData = standardInput.nextInt();
-		//日の入力を促す
-		System.out.print("日:");
-		//入力された日を読み込む
-		int firstDateData = standardInput.nextInt();
+		//一週間の曜日の表記を格納する配列を定義
+		String[] weekDays = { "日", "月", "火", "水", "木", "金", "土", };
 
-		//日付(その1)に関するインスタンスを生成
-		Day firstDate = new Day(firstYearData, firstMonthData, firstDateData);
-
-		//日付(その2)を西暦で入力するように促す
-		System.out.println("日付(その2)を西暦で入力せよ。");
-		//年の入力を促す
-		System.out.print("年:");
-		//入力された年を読み込む
-		int secondYearData = standardInput.nextInt();
-		//月の入力を促す
-		System.out.print("月:");
-		//入力された月を読み込む
-		int secondMonthData = standardInput.nextInt();
-		//日の入力を促す
-		System.out.print("日:");
-		//入力された日を読み込む
-		int secondDateData = standardInput.nextInt();
-
-		//日付(その2)に関するインスタンスを生成
-		Day secondDate = new Day(secondYearData, secondMonthData, secondDateData);
-
-		//二つの日付が等しい場合
-		if (compareDay(firstDate, secondDate)) {
-			//等しいと表示
-			System.out.println("等しいです。");
-			//二つの日付が等しくない場合
-		} else {
-			//等しくないと表示
-			System.out.println("等しくないです。");
+		//表示する日付の数の入力を促す
+		System.out.print("日付は何個：");
+		//入力されは日付の個数を読み込む
+		int dayCount = standardInput.nextInt();
+		
+		//表示する日付の個数分の要素数を持つクラスDay型の配列を宣言
+		Day1[] firstDay = new Day1[dayCount];
+		
+//		//日付を格納している配列の各要素に日付を与えていく(エラーが出る)
+//		for (int i = 0; i < firstDay.length; i++) {
+//			//要素に日付を与える
+//			firstDay[i].setData(2017, 10, 15);
+//		}
+		//日付を格納している配列の各要素に日付のインスタンスを与えていく
+		for (int i = 0; i < firstDay.length; i++) {
+			//要素に日付のインスタンスを与える
+			firstDay[i] = new Day1(2017, 10, 15);
+		}
+		//日付を格納している配列を表示していく
+		for (int i = 0; i < firstDay.length; i++) {
+			//各要素の日付を表示する
+			System.out.println("a[" + i + "] = " + firstDay[i].getYear() + "年" + firstDay[i].getMonth() + "月" + firstDay[i].getDate() + "日(" + weekDays[firstDay[i].deriveDayOfWeek()] + ")");
 		}
 	}
-
 }

@@ -40,7 +40,7 @@ public class DayComparator2 {
 		int firstDateData = standardInput.nextInt();
 
 		//日付(その1)に関するインスタンスを生成
-		Day firstDate = new Day(firstYearData, firstMonthData, firstDateData);
+		Day1 firstDate = new Day1(firstYearData, firstMonthData, firstDateData);
 
 		//日付(その2)を西暦で入力するように促す
 		System.out.println("日付(その2)を西暦で入力せよ。");
@@ -58,7 +58,7 @@ public class DayComparator2 {
 		int secondDateData = standardInput.nextInt();
 
 		//日付(その2)に関するインスタンスを生成
-		Day secondDate = new Day(secondYearData, secondMonthData, secondDateData);
+		Day1 secondDate = new Day1(secondYearData, secondMonthData, secondDateData);
 		
 		//日付(その1)と日付(その2)が等しい場合
 		if (firstDate == secondDate) {

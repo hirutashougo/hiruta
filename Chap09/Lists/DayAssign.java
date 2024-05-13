@@ -43,7 +43,7 @@ public class DayAssign {
 		 int dateData = standardInput.nextInt();
 		 
 		 //入力者の誕生日に関するインスタンスを生成
-		 Day myBirthDay = new Day(yearData, monthData, dateData);
+		 Day1 myBirthDay = new Day1(yearData, monthData, dateData);
 		 
 		 //誕生日の表示を始める
 		 System.out.println("あなたの誕生日は\n"
@@ -57,7 +57,7 @@ public class DayAssign {
 				 			+ weekDays[(myBirthDay.deriveDayOfWeek())] + "曜日です。");
 		 
 		 //入力者の誕生日に関するインスタンスを参照するインスタンスを生成
-		 Day paticularDate = myBirthDay;
+		 Day1 paticularDate = myBirthDay;
 		 
 		 //誕生日を西暦で入力するように促す
 		 System.out.println("誕生日を西暦で入力せよ。");
