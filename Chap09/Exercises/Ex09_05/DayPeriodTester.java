@@ -1,15 +1,15 @@
-package Chap09.Exercises.Ex09_03;
+package Chap09.Exercises.Ex09_05;
 
 //Scannerのインポート
 import java.util.Scanner;
 
 /*
-* クラス名:AccountTster
-* 概要:口座の情報と開設日を入力し、表示する
+* クラス名:DayPeriodTester
+* 概要:期間の開始日と終了日を入力させ、その期間の開始・終了を表示する
 * 作成者:S.Hiruta
-* 作成日:2024/05/15
+* 作成日:2024/05/16
 */
-public class AccountTster {
+public class DayPeriodTester {
 
 	//Scannerクラスの変数の定義
 	static Scanner standardInput = new Scanner(System.in);
@@ -57,16 +57,14 @@ public class AccountTster {
 	 * 作成日：2024/05/14
 	*/
 	static int inputYear() {
-		//グレゴリオ暦が採用された年を表す定数を宣言
-		final int GUREGORIAN_YEAR = 1582;
 		//年の入力を促す
 		System.out.print("何年?：");
 		//入力された年の数値を読み込む
 		int yearData = standardInput.nextInt();
-		//グレゴリオ暦の範囲内で数値を入力させる
-		while (yearData < GUREGORIAN_YEAR) {
-			//グレゴリオ暦採用以降の日付の入力を促す
-			System.out.println("グレゴリオ暦採用(" + GUREGORIAN_YEAR + "年)以降の年で入力してください。");
+		//1以上の年数で数値を入力させる
+		while (yearData <= 0) {
+			//1以上の年数での入力を促す
+			System.out.println("1以上の年数で入力してください。");
 			//再度、年の入力を促す
 			System.out.print("何年?：");
 			//入力された年の数値を読み込む
@@ -87,15 +85,15 @@ public class AccountTster {
 	static int inputMonth() {
 
 		//存在する月数の上限を表す定数
-		final int MONTH_UPPER_LIMIT = 1;
+		final int MONTH_UPPER_LIMIT = 12;
 		//存在する月数の下限を表す定数
-		final int MONTH_LOWER_LIMIT = 12;
+		final int MONTH_LOWER_LIMIT = 1;
 		//月の入力を促す
 		System.out.print("何月?：");
 		//入力された月の数値を読み込む
 		int monthData = standardInput.nextInt();
 		//存在する月の範囲内で数値を入力させる
-		while (monthData > MONTH_LOWER_LIMIT || monthData < MONTH_UPPER_LIMIT) {
+		while (monthData < MONTH_LOWER_LIMIT || monthData > MONTH_UPPER_LIMIT) {
 			//存在する月の入力を促す
 			System.out.println("存在する月(" + MONTH_UPPER_LIMIT + "～" + MONTH_LOWER_LIMIT + "月)で入力してください。");
 			//再度、月の入力を促す
@@ -134,74 +132,74 @@ public class AccountTster {
 		//入力された日数を返却
 		return dateData;
 	}
-	
-	/*
-	 * 関数名：inputInteger
-	 * 概要:0以上の整数を入力させる
-	 * 引数：なし
-	 * 戻り値：0以上の整数(long型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/15
-	*/
-	static long inputInteger() {
-		long integralNumber = 0;
-		//入力された整数を読み込む
-		integralNumber = standardInput.nextLong();
-		//入力された整数が負である場合
-		while (integralNumber < 0) {
-			//0以上の整数での入力を促す
-			System.out.print("0以上の整数で入力してください;");
-			//入力された整数を読み込む
-			integralNumber = standardInput.nextLong();
-		}
-		//0以上の整数を返却
-		return integralNumber;
-	}
 
 	/*
 	 * 関数名：main
-	 * 概要:口座の情報と開設日を入力し、表示する
+	 * 概要：期間の開始日と終了日を入力させ、その期間の開始・終了を表示する
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/15
+	 * 作成日：2024/05/16
 	*/
 	public static void main(String[] args) {
 
-		//口座名義を入力させる
-		System.out.print("口座名義；");
-		//入力された口座名義を読み込む
-		String accountName = standardInput.next();
-		//口座番号を入力させる
-		System.out.print("口座番号：");
-		//入力された口座番号を読み込む
-		String accountNumber = standardInput.next();
-		//預金残高を入力させる
-		System.out.print("預金残高：");
-		//入力された預金残高を読み込む
-		long depositBalance = inputInteger();
-
-		//口座の情報に関するインスタンスを生成
-		Account pticularAcccount = new Account(accountName, accountNumber, depositBalance);
-		//口座の情報を表示
-		pticularAcccount.putAccountSpec();
-
-		//口座開設日の入力を促す
-		System.out.println("口座開設日を入力してください。");
+		//期間開始日の入力を促す
+		System.out.println("期間開始日を入力してください。");
 		//入力された年数を読み込む
-		int openingYear = inputYear();
+		int startYear = inputYear();
 		//入力された月数を読み込む
-		int openingMonth = inputMonth();
+		int startMonth = inputMonth();
 		//入力された日数を読み込む
-		int openingDate = inputDate(openingYear, openingMonth);
+		int startDate = inputDate(startYear, startMonth);
 
-		//口座開設日に関するインスタンスを生成
-		Day openingDay = new Day(openingYear, openingMonth, openingDate);
+		//期間開始日に関するインスタンスを生成
+		Day startDay = new Day(startYear, startMonth, startDate);
 
-		//口座の情報に関するインスタンスを生成
-		Account acccountInformation = new Account(accountName, accountNumber, depositBalance, openingDay);
-		//口座に関する全ての情報を表示
-		System.out.println(acccountInformation.toString());
+		//期間終了日の入力を促す
+		System.out.println("期間終了日を入力してください。");
+		//入力された年数を読み込む
+		int endYear = inputYear();
+		//期間開始年よりも少ない年数が入力された場合
+		while (endYear < startYear) {
+			//開始年以上の値を入力を促す
+			System.out.println("開始年以上の値を入力してください:");
+			//入力された年数を読み込む
+			endYear = inputYear();
+		}
+
+		//入力された月数を読み込む
+		int endMonth = inputMonth();
+		//開始年と終了年が等しい場合
+		if (startYear == endYear) {
+			//期間開始月よりも少ない月数が入力された場合
+			while (endMonth < startMonth) {
+				//開始月以上の値を入力を促す
+				System.out.println("開始月以上の値を入力してください:");
+				//入力された月数を読み込む
+				endMonth = inputMonth();
+			}
+		}
+
+		//入力された日数を読み込む
+		int endDate = inputDate(endYear, endMonth);
+		//開始年月と終了年月が等しい場合
+		if (startYear == endYear && startMonth == endMonth) {
+			//期間開始日よりも少ない日数が入力された場合
+			while (endDate < startDate) {
+				//開始日以上の値を入力を促す
+				System.out.println("開始日以上の値を入力してください:");
+				//入力された日数を読み込む
+				endDate = inputDate(endYear, endMonth);
+			}
+		}
+
+		//期間開始日に関するインスタンスを生成
+		Day endDay = new Day(endYear, endMonth, endDate);
+
+		//入力された開始日・終了日を持つ期間インスタンスを生成
+		Period particularPeriod = new Period(startDay, endDay);
+
+		//入力された開始日・終了日を持つ期間の情報を表示
+		System.out.println(particularPeriod);
 	}
-
 }

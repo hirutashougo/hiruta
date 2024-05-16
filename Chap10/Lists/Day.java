@@ -1,12 +1,12 @@
-package Chap09.Exercises.Ex09_04;
+package Chap10.Lists;
 
 /*
 * クラス名:Day
 * 概要:日付に関する情報を管理する
 * 作成者:S.Hiruta
-* 作成日:2024/05/14
+* 作成日:2024/05/16
 */
-class Day {
+public class Day {
 
 	//年数の初期値を表す定数を定義
 	final int DEFAULT_YEAR = 1;
@@ -23,13 +23,27 @@ class Day {
 	private int dateData = DEFAULT_DATE;
 
 	/*
+	 * 関数名：isLeapYear
+	 * 概要:入力された年がうるう年か判定
+	 * 引数：年数(int型)
+	 * 戻り値：うるう年かどうかの判定(true, false)
+	 * 作成者：S.Hiruta
+	 * 作成日：2024/05/16
+	*/
+	public static boolean isLeapYear(int yearData) {
+		//入力された年がうるう年であればtrue、そうでなければfalseを返却
+		return yearData % 4 == 0 && yearData % 100 != 0 || yearData % 400 == 0;
+	}
+
+	/*
 	 * コンストラクタ名：Day
 	 * 概要:日付に関する情報のインスタンスを、各クラス型変数を初期値で宣言
 	 * 引数：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/14
 	*/
-	public Day() {}
+	public Day() {
+	}
 
 	/*
 	 * コンストラクタ名：Day
@@ -160,7 +174,7 @@ class Day {
 		//日の情報のクラス型変数を初期化
 		this.dateData = dateData;
 	}
-
+	
 	/*
 	 * 関数名：setDate
 	 * 概要:日付に関するオブジェクトの全てのフィールドに値を設定する
@@ -178,6 +192,12 @@ class Day {
 		this.dateData = dateData;
 	}
 
+	//うるう年であるか判定するインスタンスメソッドを生成
+	public boolean isLeapYear() {
+		//入力された年がうるう年であればtrue、そうでなければfalseを返却
+		return isLeapYear(yearData);
+	}
+	
 	/*
 	 * 関数名：deriveDayOfWeek
 	 * 概要:日付の曜日を求める
@@ -216,30 +236,10 @@ class Day {
 		//算出された曜日を表す数字を返却
 		return dayOfWeek;
 	}
-
-	/*
-	 * 関数名：isSameDay
-	 * 概要：とある日付と等しいか比較
-	 * 引数：とある日付の情報(Day型)
-	 * 戻り値：等しいか等しくないか(true,false)(boolean型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/14
-	*/
-	public boolean isSameDay(Day someDay) {
-		//日付の一致の判定結果を格納する変数を初期値falseで宣言
-		boolean retrnValue = false;
-		//日付が一致している場合
-		if (yearData == someDay.yearData && monthData == someDay.monthData && dateData == someDay.dateData) {
-			//返却値にtrueを代入
-			retrnValue = true;
-		}
-		//日付の一致の判定結果を返却
-		return retrnValue;
-	}
-
+	
 	/*
 	 * 関数名：toString
-	 * 概要：特定の日付の曜日を表示
+	 * 概要：特定の日付と、その曜日を表示
 	 * 引数：なし
 	 * 戻り値：日付と、その曜日の表記(String型)
 	 * 作成者：S.Hiruta

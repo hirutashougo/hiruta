@@ -59,10 +59,6 @@ public class DayTester {
 	static int inputYear() {
 		//グレゴリオ暦が採用された年を表す定数を宣言
 		final int GUREGORIAN_YEAR = 1582;
-		//グレゴリオ暦が採用された月を表す定数を宣言
-		final int GUREGORIAN_MONTH = 10;
-		//グレゴリオ暦が採用された日を表す定数を宣言
-		final int GUREGORIAN_DAY = 15;
 		//年の入力を促す
 		System.out.print("何年?：");
 		//入力された年の数値を読み込む
