@@ -13,6 +13,19 @@ public class DayTester {
 
 	//Scannerクラスの変数の定義
 	static Scanner standardInput = new Scanner(System.in);
+	
+	/*
+	 * 関数名：isLeap
+	 * 概要:特定の年が閏年であるか判定
+	 * 引数：年数(int型)
+	 * 戻り値：閏年であればtrue、そうでなければfalse(boolean型)
+	 * 作成者：S.Hiruta
+	 * 作成日：2024/05/14
+	*/
+	static boolean isLeap(int targetYear) {
+		//閏年であればtrue、そうでなければfalseを返却
+		return targetYear % 4 == 0 && targetYear % 100 != 0 || targetYear % 400 == 0;
+	}
 
 	/*
 	 * 関数名：outputMonthDayCount
@@ -23,29 +36,11 @@ public class DayTester {
 	 * 作成日：2024/05/14
 	*/
 	static int outputMonthDayCount(int yearNumber, int monthNumber) {
-		//返却する月の二数を格納する変数を宣言
-		int dayCount = 0;
-		//月の数値を、配列のインデックスに調整(-1する)
-		monthNumber--;
-		//平年における1～12月の日数を格納する定数配列を宣言(順番に1月～12月の日数を格納)
-		final int[] NORMAL_YEAR_MONTH_DAY_COUNT = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-		//うるう年における1～12月の日数を格納する定数配列を宣言(順番に1月～12月の日数を格納)
-		final int[] REAP_YEAR_MONTH_DAY_COUNT = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-		//うるう年を算出する条件に用いる定数を格納する配列を宣言
-		final int[] REAP_YEAR_CALCULATION_CONSTANT = { 4, 100, 400 };
-		//その年がうるう年でない場合
-		if (yearNumber % REAP_YEAR_CALCULATION_CONSTANT[0] != 0
-				|| (yearNumber % REAP_YEAR_CALCULATION_CONSTANT[1] == 0
-						&& yearNumber % REAP_YEAR_CALCULATION_CONSTANT[2] != 0)) {
-			//平年の各月の日数を返却値に格納
-			dayCount = NORMAL_YEAR_MONTH_DAY_COUNT[monthNumber];
-			//その年がうるう年の場合
-		} else {
-			//平年の各月の日数を返却値に格納
-			dayCount = REAP_YEAR_MONTH_DAY_COUNT[monthNumber];
-		}
-		//指定の年月の日数を返却
-		return dayCount;
+		//年間における1～12月の日数を格納する定数配列を宣言(順番に1月～12月の日数を格納)
+		//閏年の場合、2月の日数が変化
+		final int[] MONTH_DAY_COUNT = { 31, (isLeap(yearNumber) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		//月数を日う列のインデックスに対応させる。該当の月の日数を返却
+		return MONTH_DAY_COUNT[--monthNumber];
 	}
 
 	/*
