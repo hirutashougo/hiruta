@@ -1,7 +1,9 @@
 package Chap09.Exercises.Ex09_03;
 
+//
 import static java.util.Calendar.*;
 
+//
 import java.util.GregorianCalendar;
 
 /*
@@ -10,35 +12,39 @@ import java.util.GregorianCalendar;
 * 作成者:S.Hiruta
 * 作成日:2024/05/20
 */
-class Day {
-
-	//年数の初期値を表す定数を定義
-	final int DEFAULT_YEAR = 1;
-	//月数の初期値を表す定数を定義
-	final int DEFAULT_MONTH = 1;
-	//日数の初期値を表す定数を定義
-	final int DEFAULT_DATE = 1;
+public class Day {
 	
 	//
-	GregorianCalendar today = new GregorianCalendar();
+	private static int yearCount = 0;
+	//
+	private static int monthCount = 0;
+	//
+	private static int dateCount = 0;
 
 	//年を表わすフィールドを宣言
-	private int yearData = DEFAULT_YEAR;
+	private int yearData = yearCount;
 	//月を表わすフィールドを宣言
-	private int monthData = DEFAULT_MONTH;
+	private int monthData = monthCount;
 	//日を表わすフィールドを宣言
-	private int dateData = DEFAULT_DATE;
+	private int dateData = dateCount;
 
 	//
 	static {
 		//
 		GregorianCalendar today = new GregorianCalendar();
 		//
-		int yearData = today.get(YEAR);
+		int todaYear = today.get(YEAR);
 		//
-		int monthData = today.get(MONTH) + 1;
+		int todayMonth = today.get(MONTH) + 1;
 		//
-		int dateData = today.get(DATE);
+		int todayDate = today.get(DATE);
+		
+		//
+		yearCount = todaYear;
+		//
+		monthCount = todayMonth;
+		//
+		dateCount = todayDate;
 	}
 
 	/*
