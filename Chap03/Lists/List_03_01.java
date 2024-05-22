@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class List_03_01 {
 
 	public static void main(String[] args) {
+		// test
 		Scanner stdIn = new Scanner(System.in);
 		
 		System.out.print("整数値:");  //整数値の入力を促す
