@@ -150,6 +150,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//年・月・日を順に初期化して宣言していく
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -188,6 +189,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//日付の年間における経過日数を表示
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -199,7 +201,7 @@ public class DayTester {
 			Day forthDay = new Day(secondDate[0], secondDate[1], secondDate[2]);
 
 			//その日付の年間における経過日数を表示
-			System.out.println(forthDay.calculateElapsedDays());
+			System.out.println("経過日数：" + forthDay.calculateElapsedDays());
 
 			//見やすくするため改行
 			System.out.println();
@@ -210,6 +212,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//付の年間における残り日数を表示
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -221,7 +224,7 @@ public class DayTester {
 			Day fifthDay = new Day(thirdDate[0], thirdDate[1], thirdDate[2]);
 
 			//日付の年間における残り日数を表示
-			System.out.println(fifthDay.caluculateRemainingDays());
+			System.out.println("残り日数" + fifthDay.caluculateRemainingDays());
 
 			//見やすくするため改行
 			System.out.println();
@@ -232,6 +235,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//2つの日数の比較(インスタンス変数)
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -259,6 +263,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//2つの日数の比較(クラス変数)
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -288,6 +293,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//1日後の日付を表示
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -297,9 +303,14 @@ public class DayTester {
 			int[] eigthDate = inputDate();
 			//入力された年数・月数・日数を引数としてインスタンスを生成
 			Day eleventhDay = new Day(eigthDate[0], eigthDate[1], eigthDate[2]);
-
+			
+			//1日後の日付を変数に置き換える
+			Day assignmentDay = new Day(eleventhDay.returnAdvanceDay());
+			
+			//1日後の日付のインスタンスを表示
+			System.out.println("\n返却された日付：" + assignmentDay);
 			//入力された日付の1日後の日付を表示
-			System.out.println(eleventhDay.printAdvanceDay());
+			System.out.println(assignmentDay.printAdvancedDay());
 
 			//見やすくするため改行
 			System.out.println();
@@ -310,6 +321,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//1日前の日付を表示
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -320,8 +332,13 @@ public class DayTester {
 			//入力された年数・月数・日数を引数としてインスタンスを生成
 			Day twelfthDay = new Day(ninthDate[0], ninthDate[1], ninthDate[2]);
 
+			//1日前の日付を変数に置き換える
+			Day assignmentDay = new Day(twelfthDay.returnReturnedDay());
+			
+			//1日前の日付のインスタンスを表示
+			System.out.println("\n返却された日付：" + assignmentDay);
 			//入力された日付の1日前の日付を表示
-			System.out.println(twelfthDay.printReturnedDay());
+			System.out.println(assignmentDay.printReturnedDay());
 
 			//見やすくするため改行
 			System.out.println();
@@ -332,6 +349,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//数日後の日付を表示
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -344,8 +362,13 @@ public class DayTester {
 			//進める日数を入力させる
 			int advanceCount = inputPlusInteger("何日進めますか?：");
 
+			//数日後の日付を変数に置き換える
+			Day assignmentDay = new Day(thirteenthDay.returnAdvancedDays(advanceCount));
+			
+			//指定日数後の日付のインスタンスを表示
+			System.out.println("\n返却された日付：" + assignmentDay);
 			//入力された日付から指定日数だけ進んだ日付を表示
-			System.out.println(thirteenthDay.printAdvancedDays(advanceCount));
+			System.out.println(assignmentDay.printAdvancedDay());
 
 			//見やすくするため改行
 			System.out.println();
@@ -356,6 +379,7 @@ public class DayTester {
 		//見やすくするため改行
 		System.out.println();
 
+		//数日前の日付を表示
 		//繰り返し可能の処理
 		do {
 			//処理の説明
@@ -367,9 +391,14 @@ public class DayTester {
 			Day fourteenthDay = new Day(eleventhDate[0], eleventhDate[1], eleventhDate[2]);
 			//戻る日数を入力させる
 			int returnCount = inputPlusInteger("何日戻りますか?：");
+			
+			//数日前の日付を変数に置き換える
+			Day assignmentDay = new Day(fourteenthDay.returnReturnedDays(returnCount));
 
+			//指定日数前の日付のインスタンスを表示
+			System.out.println("\n返却された日付：" + assignmentDay);
 			//入力された日付から指定日数だけ戻った日付を表示
-			System.out.println(fourteenthDay.printReturnedDays(returnCount));
+			System.out.println(assignmentDay.printReturnedDay());
 
 			//見やすくするため改行
 			System.out.println();

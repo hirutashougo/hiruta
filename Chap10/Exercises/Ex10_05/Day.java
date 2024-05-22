@@ -1,4 +1,4 @@
-package Chap10.Exercises.Ex10_04;
+package Chap10.Exercises.Ex10_05;
 
 //
 import static java.util.Calendar.*;
@@ -272,8 +272,8 @@ public class Day {
 	 * 作成日：2024/05/20
 	*/
 	public int calculateElapsedDays() {
-		//経過日数を表わす変数を初期状態-1(定数：BACK_DATE)で宣言(指定日を含まないため)
-		int elapsedDays = BACK_DATE;
+		//経過日数を表わす変数を初期状態-1で宣言(指定日を含まない)
+		int elapsedDays = -1;
 		//月数をカウントする変数を宣言
 		int monthCount = 0;
 		//年内経過日数を、月ごとに加算して求めていく
@@ -297,7 +297,8 @@ public class Day {
 	*/
 	public int caluculateRemainingDays() {
 		//その年の日数(365 or 366)から、日付の年内での経過日数を引いた値を返却
-		return ((isLeap(yearData)) ? LEAP_ANNUAL_DAYS : NORMAL_ANNUAL_DAYS)
+		//年内残り日数に、対象の日付は含めない為、-1(定数:BACK_DATE)を加算
+		return ((isLeap(yearData)) ? LEAP_ANNUAL_DAYS + BACK_DATE : NORMAL_ANNUAL_DAYS + BACK_DATE)
 				- calculateElapsedDays();
 	}
 
@@ -378,36 +379,20 @@ public class Day {
 	}
 
 	/*
-	 * 関数名：returnAdvanceDay
+	 * 関数名：printAdvanceDay
 	 * 概要:日付を1つ後ろに進めた日付を表示
 	 * 引数：進める日数(int型)
 	 * 戻り値：進めた後の日付(Day型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day returnAdvanceDay() {
+	public Day printAdvanceDay() {
 		//入力値と同じインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//日付を1つ後ろに進める
 		returnDay.advanceDay();
 		//日付を1つ後ろに進めた日付を返却
 		return returnDay;
-	}
-
-	/*
-	 * 関数名：prinAdvncedDay
-	 * 概要:日付を表示
-	 * 引数：なし
-	 * 戻り値：なし
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/22
-	*/
-	public String printAdvancedDay() {
-		//進行した日付を表示
-		//一週間の曜日の表記を格納する配列を定義
-		String[] weekDays = { "日", "月", "火", "水", "木", "金", "土", };
-		//日付と曜日の表記を返却
-		return String.format("進行した日付：%04d年%02d月%02d日(%s)", yearData, monthData, dateData, weekDays[deriveDayOfWeek()]);
 	}
 
 	/*
@@ -435,6 +420,8 @@ public class Day {
 		} else if (isSameOriginDay()) {
 			//日付は0001年01月01日のままで設定
 			setData(MINIMUM_YEAR, MINIMUM_MONTH, MINIMUM_DATE);
+			//以降には遡れないことを伝える
+			System.out.println("以降には遡れません。");
 			//日数が2以上の場合
 		} else {
 			//日数を1下げて設定
@@ -443,14 +430,14 @@ public class Day {
 	}
 
 	/*
-	 * 関数名：returnReturnedDay
+	 * 関数名：printReturnedDay
 	 * 概要:日付を一つ前に戻した日付を返却
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day returnReturnedDay() {
+	public Day printReturnedDay() {
 		//対象の日付と同じ年月日を持つインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//インスタンスの日付を一つ前に戻す
@@ -459,32 +446,6 @@ public class Day {
 		return returnDay;
 	}
 
-	/*
-	 * 関数名：printReturnedDay
-	 * 概要:戻した日付または対応する文言を表示
-	 * 引数：なし
-	 * 戻り値：なし
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/22
-	*/
-	public String printReturnedDay() {
-		//返却する文言の変数を設定
-		String returnText = "";
-		//日付が戻った結果、0001年01月01日だった場合
-		if (isSameOriginDay()) {
-			//1年1月1日以降は遡れないと表示
-			returnText = "戻した値：0001年01月01日(月)(最少の日付)";
-		} else {
-			//進行した日付を表示
-			//一週間の曜日の表記を格納する配列を定義
-			String[] weekDays = { "日", "月", "火", "水", "木", "金", "土", };
-			//日付と曜日の表記を返却
-			returnText = String.format("戻した日付：%04d年%02d月%02d日(%s)", yearData, monthData, dateData, weekDays[deriveDayOfWeek()]);
-		}
-		//
-		return returnText;
-	}
-	
 	/*
 	 * 関数名：advanceDays
 	 * 概要:日付を数日進める
@@ -502,14 +463,14 @@ public class Day {
 	}
 
 	/*
-	 * 関数名：returnAdvancedDays
-	 * 概要:日付を一つ前に戻した日付を返却
+	 * 関数名：printAdvancedDays
+	 * 概要:日付を一つ前に戻す
 	 * 引数：進める日数(int型)
 	 * 戻り値：指定の日数進行した日付(Day型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day returnAdvancedDays(int advancecount) {
+	public Day printAdvancedDays(int advancecount) {
 		//対象の日付と同じ年月日を持つインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//インスタンスを指定日数分進行させる
@@ -527,29 +488,29 @@ public class Day {
 	 * 作成日：2024/05/20
 	*/
 	public void returnDays(int returnCount) {
-		//日付が0001年01月01日である場合
-		if (isSameOriginDay()) {
-			//日付は0001年01月01日のままで設定
-			setData(MINIMUM_YEAR, MINIMUM_MONTH, MINIMUM_DATE);
-			//日付が0001年01月01日以外の場合
-		} else {
-			//指定日数分、日付を遡る
-			for (int i = 0; i < returnCount; i++) {
-				//日付を遡る
-				returnDay();
+		//指定日数分、日付を遡る
+		for (int i = 0; i < returnCount; i++) {
+			//日付を遡る
+			returnDay();
+			//付が0001年01月01日であり、1日より多く遡る場合
+			if (isSameOriginDay() && returnCount > 1) {
+				//日付を遡る処理を終わらせるため、処理回数上限を下げる
+				i = returnCount;
+				//0001年01月01日以降には遡れないことを伝える
+				System.out.println("以降には遡れません。");
 			}
 		}
 	}
 
 	/*
-	 * 関数名：returnReturnedDays
+	 * 関数名：printReturnedDays
 	 * 概要:日付を一つ前に戻す
 	 * 引数：戻す日数(int型)
 	 * 戻り値：戻した後の日付(Day型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day returnReturnedDays(int returnCount) {
+	public Day printReturnedDays(int returnCount) {
 		//対象の日付と同じ年月日を持つインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//インスタンスを指定日数分戻す
