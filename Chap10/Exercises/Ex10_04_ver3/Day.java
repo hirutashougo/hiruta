@@ -1,4 +1,4 @@
-package Chap10.Exercises.Ex10_04;
+package Chap10.Exercises.Ex10_04_ver3;
 
 //
 import static java.util.Calendar.*;
@@ -27,8 +27,8 @@ public class Day {
 	private int monthData = monthCount;
 	//日を表わすフィールドを宣言
 	private int dateData = dateCount;
-	//必要に応じて追加する文言を表すフィールドを宣言
-	private String warnningNote = "";
+	//日付に関する文言を表す
+	private String descriptionText = "";
 
 	//グレゴリオカレンダーの月数出ryくの際に用いる定数1を宣言
 	private static final int ADJUSTMENT_NUMBER = 1;
@@ -249,18 +249,6 @@ public class Day {
 	}
 
 	/*
-	 * メソッド名：setNote
-	 * 概要:追加必要のある日付に関する文言を設定
-	 * 引数：日付に関する文言(String型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/20
-	*/
-	public void setNote(String warnningNote) {
-		//追加必要のある日付に関する文言を設定
-		this.warnningNote = warnningNote;
-	}
-
-	/*
 	 * 関数名：setDate
 	 * 概要:日付に関するオブジェクトの全てのフィールドに値を設定する
 	 * 引数：年数、月数、日数(int型)
@@ -275,6 +263,19 @@ public class Day {
 		this.monthData = monthData;
 		//日の情報のクラス型変数を初期化
 		this.dateData = dateData;
+	}
+	
+	/*
+	 * 関数名：setText
+	 * 概要:日付に関する文言を設定
+	 * 引数：文言(String型)
+	 * 戻り値：なし
+	 * 作成者：S.Hiruta
+	 * 作成日：2024/05/22
+	*/
+	public void setText(String descriptionText) {
+		//文言を設定
+		this.descriptionText = descriptionText;
 	}
 
 	/*
@@ -409,22 +410,6 @@ public class Day {
 	}
 
 	/*
-	 * 関数名：prinAdvncedDay
-	 * 概要:日付を表示
-	 * 引数：なし
-	 * 戻り値：なし
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/22
-	*/
-	public String printAdvancedDay() {
-		//進行した日付を表示
-		//一週間の曜日の表記を格納する配列を定義
-		String[] weekDays = { "日", "月", "火", "水", "木", "金", "土", };
-		//日付と曜日の表記を返却
-		return String.format("進行した日付：%04d年%02d月%02d日(%s)", yearData, monthData, dateData, weekDays[deriveDayOfWeek()]);
-	}
-
-	/*
 	 * 関数名：returnDay
 	 * 概要:日付を一つ前に戻す
 	 * 引数：なし
@@ -450,7 +435,7 @@ public class Day {
 			//日付は0001年01月01日のままで設定
 			setData(MINIMUM_YEAR, MINIMUM_MONTH, MINIMUM_DATE);
 			//想定していない日付であると説明
-			setNote("より前の日付は想定しておりません。");
+			setText("1年1月1日の日付は想定しておりません。");
 			//日数が2以上の場合
 		} else {
 			//日数を1下げて設定
@@ -473,33 +458,6 @@ public class Day {
 		returnDay.returnDay();
 		//一つ前に戻した日付を返却
 		return returnDay;
-	}
-
-	/*
-	 * 関数名：printReturnedDay
-	 * 概要:戻した日付または対応する文言を表示
-	 * 引数：なし
-	 * 戻り値：なし
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/22
-	*/
-	public String printReturnedDay() {
-		//返却する文言の変数を設定
-		String returnText = "";
-		//日付が戻った結果、0001年01月01日だった場合
-		if (isSameOriginDay()) {
-			//1年1月1日以降は遡れないと表示
-			returnText = "戻した値：0001年01月01日(月)(最少の日付)";
-		} else {
-			//進行した日付を表示
-			//一週間の曜日の表記を格納する配列を定義
-			String[] weekDays = { "日", "月", "火", "水", "木", "金", "土", };
-			//日付と曜日の表記を返却
-			returnText = String.format("戻した日付：%04d年%02d月%02d日(%s)", yearData, monthData, dateData,
-					weekDays[deriveDayOfWeek()]);
-		}
-		//
-		return returnText;
 	}
 
 	/*
@@ -544,9 +502,15 @@ public class Day {
 	 * 作成日：2024/05/20
 	*/
 	public void returnDays(int returnCount) {
-
 		//指定日数分、日付を遡る
 		for (int i = 0; i < returnCount; i++) {
+			//
+			if (isSameOriginDay() && i != returnCount - 1) {
+				//想定していない日付であると説明
+				System.out.println("1年1月1日の日付は想定しておりません。");
+				//処理を終わらせる
+				break;
+			}
 			//日付を遡る
 			returnDay();
 		}
@@ -661,7 +625,6 @@ public class Day {
 		//一週間の曜日の表記を格納する配列を定義
 		String[] weekDays = { "日", "月", "火", "水", "木", "金", "土", };
 		//日付と曜日の表記を返却
-		return String.format("%04d年%02d月%02d日(%s)%s", yearData, monthData, dateData, weekDays[deriveDayOfWeek()],
-				warnningNote);
+		return String.format("%04d年%02d月%02d日(%s)", yearData, monthData, dateData, weekDays[deriveDayOfWeek()]);
 	}
 }
