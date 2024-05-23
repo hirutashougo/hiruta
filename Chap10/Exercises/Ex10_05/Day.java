@@ -1,13 +1,13 @@
 package Chap10.Exercises.Ex10_05;
 
-//
+//カレンダークラスのインポート
 import static java.util.Calendar.*;
 
-//
+//GregorianCalendarクラスのインポート
 import java.util.GregorianCalendar;
 
 /*
-* クラス名:Day3(Exercise10_04)
+* クラス名:Day3
 * 概要:日付に関する情報を管理する
 * 作成者:S.Hiruta
 * 作成日:2024/05/20

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /*
 * クラス名:AccountTster
-* 概要:口座の情報と開設日を入力し、表示する
+* 概要:Accountをテストするt
 * 作成者:S.Hiruta
 * 作成日:2024/05/23
 */
@@ -229,6 +229,7 @@ public class AccountTster {
 	/*
 	 * 関数名：main
 	 * 概要:口座の情報と開設日を入力し、表示する
+	 * 		口座を新設(インスタンスを新しく生成)した場合のみメッセージが表示される
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
@@ -236,7 +237,7 @@ public class AccountTster {
 	*/
 	public static void main(String[] args) {
 
-		//
+		//Accountクラスの銀行口座のインスタンスを生成する
 		do {
 			//口座名義を入力させる
 			System.out.print("口座名義；");
