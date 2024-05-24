@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 
 /*
 * クラス名:RandId
-* 概要:
+* 概要:インスタンス生成時の日付の基づいて、識別番号を付与する(演習11_01)
 * 作成者:S.Hiruta
 * 作成日:2024/05/23
 */

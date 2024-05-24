@@ -3,7 +3,7 @@ import id.DateId;
 
 /*
 * クラス名:RandIdTester
-* 概要:クラスDateIdをテストする
+* 概要:クラスDateIdをテストする(演習11_01)
 * 作成者:S.Hiruta
 * 作成日:2024/05/23
 */
