@@ -3,6 +3,11 @@ package Chap12;
 //Scannerをインポート
 import java.util.Scanner;
 
+//accouuntパッケージのAccountクラスをインポート
+import account.Account;
+//accountパッケージのTimeAccountクラスをインポート
+import account.TimeAccount;
+
 /*
 * クラス名:CompBalanceTester
 * 概要:定期預金付き銀行口座のクラス(TimeAccount)をテストする
@@ -16,9 +21,9 @@ public class CompBalanceTester {
 
 	//二つの口座の総残高が等しいことを表す定数を定義
 	static final int equalResult = 0;
-	//最初の口座の総残高が等しいことを表す定数を定義
+	//最初の口座の総残高が大きいことを表す定数を定義
 	static final int formarLargerResule = 1;
-	//2番目の口座の総残高が等しいことを表す定数を定義
+	//2番目の口座の総残高が大きいことを表す定数を定義
 	static final int latterLargerResule = -1;
 
 	/*
@@ -30,32 +35,32 @@ public class CompBalanceTester {
 	 * 作成日：2024/05/24
 	*/
 	static void printText(String displayText) {
-		//入力された文言を表示して改行
+		//入力された文言を表示
 		System.out.print(displayText);
 	}
 
 	/*
-	 * 関数名：inputLongNumber
-	 * 概要:0以上の整数(long型)を入力させる
+	 * 関数名：returnLongNumber
+	 * 概要:0以上の整数(long型)を入力させ、変数に格納して返却する
 	 * 引数：入力内容の文言(String型)
 	 * 戻り値：0以上の整数(long型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/24
 	*/
-	static int inputLongNumber(String desplayIssue) {
+	static long returnLongNumber(String desplayIssue) {
 
 		//入力内容の文言を表示
 		System.out.print(desplayIssue);
 
 		//入力された整数を読み込む
-		int integralNumber = standardInput.nextInt();
+		long integralNumber = standardInput.nextLong();
 
 		//入力された整数が0未満の場合
 		while (integralNumber < 0) {
 			//0以上の値で入力するように促す
 			printText("0以上の値で入力してください。\n" + desplayIssue);
 			//入力された値を読み込む
-			integralNumber = standardInput.nextInt();
+			integralNumber = standardInput.nextLong();
 		}
 
 		//入力された整数を返却
@@ -100,12 +105,12 @@ public class CompBalanceTester {
 		//口座番号の入力を促す
 		String accountNumber = inputString("口座番号：");
 		//預金残高の入力を促す
-		long depositBalance = inputLongNumber("預金残高：");
+		long depositBalance = returnLongNumber("預金残高：");
 		//銀行口座のインスタンスを宣言
-		Account baukAccount = new Account(accountName, accountNumber, depositBalance);
+		Account bankAccount = new Account(accountName, accountNumber, depositBalance);
 
 		//開設された銀行口座を返却
-		return baukAccount;
+		return bankAccount;
 	}
 
 	/*
@@ -125,10 +130,10 @@ public class CompBalanceTester {
 		//預金残高の入力を促す
 		long depositBalance = 0;
 		//銀行口座のインスタンスを宣言
-		Account baukAccount = new Account(accountName, accountNumber, depositBalance);
+		Account bankAccount = new Account(accountName, accountNumber, depositBalance);
 
 		//開設された銀行口座を返却
-		return baukAccount;
+		return bankAccount;
 	}
 
 	/*
@@ -149,9 +154,9 @@ public class CompBalanceTester {
 		//口座番号の入力を促す
 		String accountNumber = inputString("口座番号：");
 		//預金残高の入力を促す
-		long depositBalance = inputLongNumber("預金残高：");
+		long depositBalance = returnLongNumber("預金残高：");
 		//定期預金残高の入力を促す
-		long timeDeposit = inputLongNumber("定期預金残高：");
+		long timeDeposit = returnLongNumber("定期預金残高：");
 		//定期預金付き銀行口座のインスタンスを生成
 		TimeAccount baukTimeAccount = new TimeAccount(accountName, accountNumber, depositBalance, timeDeposit);
 
@@ -164,7 +169,7 @@ public class CompBalanceTester {
 	 * 概要:定期預金と普通預金の合計額を比較し、結果に応じて-1～1の数字を返却
 	 * 引数：2つの口座(Account型)
 	 * 戻り値：1つめの口座が、2つめの口座よりも合計金額が
-	 			多ければ1、同じなら2、少なければ-1を返却(int型)
+	 			多ければ1、同じなら0、少なければ-1を返却(int型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/24
 	*/

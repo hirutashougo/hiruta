@@ -1,6 +1,11 @@
-package Chap12;
+package account;
 
-
+/*
+ * クラス名：Account
+ * 概要:銀行口座の情報を管理する
+ * 作成者：S.Hiruta
+ * 作成日：2024/05/24
+*/
 public class Account {
 
 	//口座名義を格納する変数を定義
@@ -110,7 +115,7 @@ public class Account {
 
 	/*
 	 * 関数名：toString
-	 * 概要:口座とその開設日に関する情報を表示
+	 * 概要:口座に関する情報を表示
 	 * 引数：なし
 	 * 戻り値：口座に関する全ての情報の表記(String型)
 	 * 作成者：S.Hiruta

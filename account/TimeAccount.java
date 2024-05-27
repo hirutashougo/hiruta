@@ -1,31 +1,32 @@
-package Chap12;
+package account;
 
 /*
-* クラス名:Account
-* 概要:銀行口座クラス。定期預金も含めた銀行利用者の情報を管理する
-* 作成者:S.Hiruta
-* 作成日:2024/05/24
+ * クラス名：TimeAccount
+ * 概要:定期預金付き銀行口座の情報を管理する
+ * 作成者：S.Hiruta
+ * 作成日：2024/05/24
 */
 public class TimeAccount extends Account {
 
+	//定期預金のフィールドを宣言
 	private long timeBalance;
 
 	/*
-	 * コンストラクタ名：Day
-	 * 概要:日付に関する情報のインスタンスを、実行日を初期値として宣言
-	 * 引数：なし
+	 * コンストラクタ名：TimeAccount
+	 * 概要:定期預金付き銀行口座クラス型インスタンスのメンバを初期化
+	 * 引数：口座名義(String型),口座番号(String型),預金残高(long型),定期預金残高(long型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
 	public TimeAccount(String userName, String accountNumber, long depositBalance, long timeBalance) {
-		//
+		//スーパーコンストラクタを呼び出し、上位クラスのメンバを初期化
 		super(userName, accountNumber, depositBalance);
-		//
+		//定期預金の情報を初期化
 		this.timeBalance = timeBalance;
 	}
 
 	/*
-	 * ゲッタ名：getTmeBalance
+	 * ゲッタ名：getTimeBalance
 	 * 概要:定期預金残高を調べる
 	 * 引数：なし
 	 * 戻り値：定期預金残高(long型)
