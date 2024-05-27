@@ -1,68 +1,54 @@
 package Chap12;
 
 /*
-* クラス名:TimeAccount
-* 概要:定期預金付き銀行口座クラス。銀行の口座に関する情報を管理する
+* クラス名:Account
+* 概要:銀行口座クラス。定期預金も含めた銀行利用者の情報を管理する
 * 作成者:S.Hiruta
 * 作成日:2024/05/24
 */
 public class TimeAccount extends Account {
 
-	//定期預金のインスタンス変数を定義
-	private long timeBalance = 0;
-	
+	private long timeBalance;
+
 	/*
-	 * コンストラクタ名：Account
-	 * 概要:銀行口座に関する情報をそれぞれ初期化して、インスタンスを生成する
-	 * 引数：口座名義(String型),口座番号(String型),預金残高(long型)
+	 * コンストラクタ名：Day
+	 * 概要:日付に関する情報のインスタンスを、実行日を初期値として宣言
+	 * 引数：なし
 	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/24
+	 * 作成日：2024/05/20
 	*/
-	public TimeAccount(String accountName, String accountNumber, long depositBalance, long timeBalance) {
-		//Accountクラスｎスーパーコンストラクタを呼び出す
-		super(accountName, accountNumber, depositBalance);
-		//受け取った値で定期預金のフィールドを初期化
+	public TimeAccount(String userName, String accountNumber, long depositBalance, long timeBalance) {
+		//
+		super(userName, accountNumber, depositBalance);
+		//
 		this.timeBalance = timeBalance;
 	}
-	
+
 	/*
-	 * 関数名：gettimeBalance
+	 * ゲッタ名：getTmeBalance
 	 * 概要:定期預金残高を調べる
 	 * 引数：なし
-	 * 戻り値：定期預金額(long型)
+	 * 戻り値：定期預金残高(long型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/24
 	*/
 	public long getTimeBalance() {
-		//定期預金額を返却(long型)
+		//口座名義を返却
 		return timeBalance;
 	}
-	
+
 	/*
-	 * 関数名：canceltimeBalance
-	 * 概要:定期預金を解約して全額を普通預金へ移す
+	 * ゲッタ名：cancelTimeBalance
+	 * 概要:定期預金を解約し、全額を普通預金に移す
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/24
 	*/
-	public void canceltimeBalance() {
-		//
-		depositBalance += timeBalance;
-		//
+	public void cancelTimeBalance() {
+		//定期預金を普通預金に移す
+		depositBalance(timeBalance);
+		//定期預金の残高を0にする
 		timeBalance = 0;
-	}
-	
-	/*
-	 * 関数名：canceltimeBalance
-	 * 概要:定期預金を解約して全額を普通預金へ移す
-	 * 引数：なし
-	 * 戻り値：なし
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/24
-	*/
-	static int compBalance(Account a, Account b) {
-		//
-		
 	}
 }
