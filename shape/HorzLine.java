@@ -30,7 +30,7 @@ public class HorzLine extends AbstLine{
 	*/
 	public String toString() {
 		//水平直線に関する図形情報を表す文字列を返却する
-		return "HorzLine(length:" + getLength() + ")";
+		return "HorzLine(length：" + getLength() + ")";
 	}
 	
 	/*

@@ -59,7 +59,7 @@ public abstract class AbstLine extends Shape{
 	*/
 	public String toString() {
 		//直線に関する図形情報を表す文字列を返却する
-		return "AbstLune(length:" + length + ")";
+		return "AbstLune(length：" + length + ")";
 	}
 
 }

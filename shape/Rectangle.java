@@ -6,13 +6,13 @@ package shape;
 * 作成者:S.Hiruta
 * 作成日:2024/05/27
 */
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements Plane2D{
 
 	//長方形をの幅を表すフィールドを宣言
 	private int width;
 
 	//長方形をの高さを表すフィールドを宣言
-	private int heigth;
+	private int height;
 
 	/*
 	 * コンストラクタ名：Rectangle
@@ -25,7 +25,7 @@ public class Rectangle extends Shape {
 		//長方形の幅を表すフィールドを初期化
 		this.width = width;
 		//長方形の高さを表すフィールドを初期化
-		this.heigth = heigth;
+		this.height = heigth;
 	}
 
 	/*
@@ -38,7 +38,7 @@ public class Rectangle extends Shape {
 	*/
 	public String toString() {
 		//長方形に関する図形情報を表す文字列を返却する
-		return "Rectangle(width：" + width + ",height：" + heigth + ")";
+		return "Rectangle(width：" + width + ", height：" + height + ")\n面積:" + getArea();
 	}
 
 	/*
@@ -51,7 +51,7 @@ public class Rectangle extends Shape {
 	*/
 	public void draw() {
 		//指定高さ分、改行する
-		for (int i = 0; i < heigth; i++) {
+		for (int i = 0; i < height; i++) {
 			//指定幅の分、記号を表示
 			for (int j = 0; j < width; j++) {
 				//長方形の描画のための記号を表示
@@ -62,4 +62,17 @@ public class Rectangle extends Shape {
 		}
 	}
 
+	/*
+	 * メソッド名：getArea
+	 * 概要:長方形の面積を求める
+	 * 引数：なし
+	 * 戻り値：長方形の面積(int型)
+	 * 作成者：S.Hiruta
+	 * 作成日：2024/05/28
+	*/
+	public int getArea() {
+		//長方形の面積を求める
+		return width * height;
+	}
+	
 }

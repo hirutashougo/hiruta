@@ -30,7 +30,7 @@ public class VirtLine extends AbstLine{
 	*/
 	public String toString() {
 		//垂直直線に関する図形情報を表す文字列を返却する
-		return "VirtLine(length:" + getLength() + ")";
+		return "VirtLine(length：" + getLength() + ")";
 	}
 	
 	/*
