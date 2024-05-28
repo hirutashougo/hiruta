@@ -2,7 +2,7 @@ package shape;
 
 /*
 * クラス名:BottomLeft
-* 概要:左下が直角の二等辺三角形を表す抽象メソッド
+* 概要:左下が直角の二等辺三角形を表す
 * 作成者:S.Hiruta
 * 作成日:2024/05/27
 */
@@ -20,32 +20,6 @@ public class BottomLeft extends IsoscelesRightTriangle{
 	*/
 	public BottomLeft(int sideLength) {
 		//直角二等辺三角形の斜辺でない辺の長さを表すフィールドを初期化
-		this.sideLength = sideLength;
-	}
-	
-	/*
-	 * メソッド名：getSideLength
-	 * 概要:直角二等辺三角形の斜辺でない辺の長さを取得
-	 * 引数：なし
-	 * 戻り値：直角二等辺三角形の斜辺でない辺の長さ(int型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/27
-	*/
-	public int getSideLength() {
-		//直直角二等辺三角形の斜辺でない辺の長さとして、記号の最大表示個数を返却
-		return sideLength;
-	}
-	
-	/*
-	 * メソッド名：getSideLength
-	 * 概要:直角二等辺三角形の斜辺でない辺の長さを設定
-	 * 引数：直角二等辺三角形の斜辺でない辺の長さ(int型)
-	 * 戻り値：なし
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/27
-	*/
-	public void setSideLength(int sideLength) {
-		//直直角二等辺三角形の斜辺でない辺の長さとして、記号の最大表示個数を返却
 		this.sideLength = sideLength;
 	}
 	
@@ -70,7 +44,7 @@ public class BottomLeft extends IsoscelesRightTriangle{
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/27
 	*/
-	public void drawTriangle() {
+	public void draw() {
 		//記号を最初に表示する個数を定数化
 		final int FIRST_SYMBOL_COUNT = 1;
 		//直角二等辺三角形の斜辺でない辺の長さ分、記号を表示し、改行する

@@ -2,7 +2,7 @@ package shape;
 
 /*
 * クラス名:TopRight
-* 概要:右上が直角の二等辺三角形を表す抽象メソッド
+* 概要:右上が直角の二等辺三角形を表す
 * 作成者:S.Hiruta
 * 作成日:2024/05/27
 */
@@ -17,7 +17,7 @@ public class TopRight extends IsoscelesRightTriangle {
 
 	/*
 	 * コンストラクタ名：TopRight
-	 * 概要:左上が直角の二等辺三角形を生成する
+	 * 概要:右上が直角の二等辺三角形を生成する
 	 * 引数：直角二等辺三角形の一片の長さ(int型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/27
@@ -32,32 +32,6 @@ public class TopRight extends IsoscelesRightTriangle {
 	}
 
 	/*
-	 * メソッド名：getSideLength
-	 * 概要:直角二等辺三角形の斜辺でない辺の長さを取得
-	 * 引数：なし
-	 * 戻り値：直角二等辺三角形の斜辺でない辺の長さ(int型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/27
-	*/
-	public int getSideLength() {
-		//直直角二等辺三角形の斜辺でない辺の長さとして、記号の最大表示個数を返却
-		return sideLength;
-	}
-
-	/*
-	 * メソッド名：getSideLength
-	 * 概要:直角二等辺三角形の斜辺でない辺の長さを設定
-	 * 引数：直角二等辺三角形の斜辺でない辺の長さ(int型)
-	 * 戻り値：なし
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/27
-	*/
-	public void setSideLength(int sideLength) {
-		//直直角二等辺三角形の斜辺でない辺の長さとして、記号の最大表示個数を返却
-		this.sideLength = sideLength;
-	}
-
-	/*
 	 * メソッド名：toString
 	 * 概要:直角二等辺三角形の情報を表す文字列を返却
 	 * 引数：なし
@@ -66,19 +40,19 @@ public class TopRight extends IsoscelesRightTriangle {
 	 * 作成日：2024/05/27
 	*/
 	public String toString() {
-		//左下が直角の三角形であると表示
+		//右上が直角の三角形であると表示
 		return "直角を挟む2辺の長さ：" + sideLength + "\n右上が直角の二等辺三角形";
 	}
 
 	/*
 	 * メソッド名：draw
-	 * 概要:左上が直角の二等辺三角形を描画する
+	 * 概要:右上が直角の二等辺三角形を描画する
 	 * 引数：なし
 	 * 戻り値：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/27
 	*/
-	public void drawTriangle() {
+	public void draw() {
 		//直角二等辺三角形の斜辺でない辺の長さ分、記号と空白を表示し、改行する
 		for (int i = 0, j = symbolCount, k = spaceCount; i < sideLength; i++, j--, k++) {
 			//空白を表示。徐々に表示個数は減る
