@@ -41,9 +41,9 @@ public class Exercise15_04 {
 		//1以上の整数を返却
 		return integralNumber;
 	}
-
+	
 	/*
-	 * 関数名：main
+	 * 関数名：printDouble
 	 * 概要:入力された浮動小数点数値を、小数点以下の桁数と全体の桁数を指定して表示する
 	 * 引数：浮動小数点数値(doublr型),小数点以下の桁数(int型),全体の桁数(int型)
 	 * 戻り値：小数点以下の桁数と全体の桁数を指定した数値の表記(String型)
@@ -51,12 +51,12 @@ public class Exercise15_04 {
 	 * 作成日：2024/05/29
 	*/
 	static void printDouble(double inputNumber, int desimalLessPoint, int digitsCount) {
-		//9.2とかの数字をする
-		
-		//小数点以下の桁数と全体の桁数を指定して表示する
-		System.out.printf (String.format(String.format("%%%%%%ddf\n", digitsCount), desimalLessPoint), inputNumber);
+		//小数点以下の桁数と全体の桁数を指定するフォーマットを作成
+		String setDigits = String.format("%%%d.%df\n", digitsCount, desimalLessPoint);
+		//入力された浮動小数点数値を、小数点以下の桁数と全体の桁数を指定して表示する
+		System.out.printf(setDigits, inputNumber);
 	}
-
+	
 	/*
 	 * 関数名：main
 	 * 概要:入力した浮動小数点数値を、小数点以下の桁数と全体の桁数を指定して表示する
@@ -71,8 +71,17 @@ public class Exercise15_04 {
 		System.out.print("浮動小数点数値：");
 		//入力された値を読み込む
 		double inputNumber = standardInput.nextDouble();
+		//小数点以下の桁数を入力を促す
+		System.out.print("小数点以下の桁数：");
 		//小数点以下の桁数を入力させる
-		int desimalLessPoint = inputPlusInteger("小数点以下の桁数：");
+		int desimalLessPoint = standardInput.nextInt();;
+		//小数点以下の桁数として負の値が入力された場合
+		while(desimalLessPoint < 0) {
+			//0以上の値の入力を促す
+			System.out.println("0以上の値：");
+			//再び、小数点以下の桁数を入力させる
+			desimalLessPoint = inputPlusInteger("小数点以下の桁数：");
+		}
 		//全体の桁数を入力させる
 		int digitsCount = inputPlusInteger("全体の桁数：");
 

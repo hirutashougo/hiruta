@@ -289,7 +289,7 @@ public class Day {
 
 	/*
 	 * 関数名：caluculateRemainingDays
-	 * 概要:日付の曜日を求める
+	 * 概要:年内の残りに数を求める
 	 * 引数：なし
 	 * 戻り値：年内の残り日数(int型)
 	 * 作成者：S.Hiruta
@@ -557,6 +557,64 @@ public class Day {
 
 		//算出された曜日を表す数字を返却
 		return dayOfweek;
+	}
+
+	/*
+	 * 関数名：printCalender
+	 * 概要：特定の年月のカレンダーを表示
+	 * 引数：表紙したいカレンダーのいずれかの日(Day型)
+	 * 戻り値：なし
+	 * 作成者：S.Hiruta
+	 * 作成日：2024/05/30
+	*/
+	public void printCalender() {
+		//
+		System.out.println(yearData + "年" + monthData + "月");
+		//カレンダーの上部と最初の行の横枠を表示
+		System.out.print("+---------------------+\n| 日 月 火 水 木 金 土|\n|");
+		//指定年月の最初の日のインスタンスを生成
+		Day particularDay = new Day(yearData, monthData, 1);
+		//その月の1日以前の余白を表示
+		for (int i = particularDay.deriveDayOfWeek(); i >= 0 + 1; i--) {
+			//一日分の空白を表示
+			System.out.print("   ");
+		}
+		//日付を表示していく
+		for (int i = 1; i <= outputMonthDayCount(getYear(), getMonth()); i++) {
+			//表示する日付のインスタンスを生成
+			particularDay = new Day(yearData, monthData, i);
+			//表示する日付が日曜日の場合
+			if (particularDay.deriveDayOfWeek() == 0) {
+				//カレンダーの横枠を表示
+				System.out.print("|");
+			}
+			//表示する日付が十日未満の場合
+			if (i < 10) {
+				//十の桁の数字の代わりに空白を表示
+				System.out.print(" ");
+			}
+			
+			//日付を表示
+			System.out.print(" " + i);
+			
+			//表示する日付が土曜日の場合
+			if (particularDay.deriveDayOfWeek() == 6) {
+				//
+				System.out.print("|\n");
+			}
+			//
+			if (i == outputMonthDayCount(getYear(), getMonth())) {
+				//その月の最終日以降の余白を表示
+				for (int j = particularDay.deriveDayOfWeek(); j < 6; j++) {
+					//一日分の空白を表示
+					System.out.print("   ");
+				}
+				//
+				System.out.print("|\n");
+			}
+		}
+		//カレンダーの上部と最初の行の横枠を表示
+		System.out.print("+---------------------+");
 	}
 
 	/*
