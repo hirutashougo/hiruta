@@ -4,12 +4,18 @@ public class tet {
 	
 	    public static void main(String[] args) {
 	        
-	    	String s1 = "ABCDEFGH";
-	    	String s2 = "DF";
+	    	args[0] = "";
+	    	args[1] = "";
 	    	
-	    	int a = s1.indexOf(s2);
-	    	
-	    	System.out.print(a);
+	    	//
+			int[] calenderFaactor = new int[2];
+			//カレンダー表示のための年数を変数に格納
+			calenderFaactor[0] = Integer.parseInt(args[0]);
+			//カレンダー表示のための月数を変数に格納
+			calenderFaactor[1] = Integer.parseInt(args[1]);
+			
+			System.out.println(calenderFaactor[0]);
+			System.out.println(calenderFaactor[1]);
 	}
 
 }

@@ -568,53 +568,65 @@ public class Day {
 	 * 作成日：2024/05/30
 	*/
 	public void printCalender() {
-		//
+		//日曜日を表す数字を定数化して宣言
+		final int SUNDAY_NUMBER = 0;
+		//土曜日を表す数字を定数化して宣言
+		final int SATURDAY_NUMBER = 6;
+		//月の最初の日数を定数化して宣言
+		final int MONTHLY_FIRST_DATE = 1;
+		//最初に二桁になる日数を定数化して宣言
+		final int FIRST_TOW_DIGITS_DATE = 10;
+
+		//表示するカレンダーの年月を表示
 		System.out.println(yearData + "年" + monthData + "月");
 		//カレンダーの上部と最初の行の横枠を表示
 		System.out.print("+---------------------+\n| 日 月 火 水 木 金 土|\n|");
 		//指定年月の最初の日のインスタンスを生成
-		Day particularDay = new Day(yearData, monthData, 1);
+		Day particularDay = new Day(yearData, monthData, MONTHLY_FIRST_DATE);
 		//その月の1日以前の余白を表示
-		for (int i = particularDay.deriveDayOfWeek(); i >= 0 + 1; i--) {
+		for (int i = particularDay.deriveDayOfWeek(); i >= MONTHLY_FIRST_DATE; i--) {
 			//一日分の空白を表示
 			System.out.print("   ");
 		}
 		//日付を表示していく
-		for (int i = 1; i <= outputMonthDayCount(getYear(), getMonth()); i++) {
+		for (int i = MONTHLY_FIRST_DATE; i <= outputMonthDayCount(getYear(), getMonth()); i++) {
+
 			//表示する日付のインスタンスを生成
 			particularDay = new Day(yearData, monthData, i);
-			//表示する日付が日曜日の場合
-			if (particularDay.deriveDayOfWeek() == 0) {
+
+			//月の初日以外で。表示する日付が日曜日の場合
+			if (i != MONTHLY_FIRST_DATE && particularDay.deriveDayOfWeek() == SUNDAY_NUMBER) {
 				//カレンダーの横枠を表示
 				System.out.print("|");
 			}
+
 			//表示する日付が十日未満の場合
-			if (i < 10) {
+			if (i < FIRST_TOW_DIGITS_DATE) {
 				//十の桁の数字の代わりに空白を表示
 				System.out.print(" ");
 			}
-			
+
 			//日付を表示
 			System.out.print(" " + i);
-			
+
 			//表示する日付が土曜日の場合
-			if (particularDay.deriveDayOfWeek() == 6) {
-				//
+			if (particularDay.deriveDayOfWeek() == SATURDAY_NUMBER && i != outputMonthDayCount(getYear(), getMonth())) {
+				//カレンダーの横枠を表示して改行
 				System.out.print("|\n");
-			}
-			//
-			if (i == outputMonthDayCount(getYear(), getMonth())) {
+
+				//月の最終日かつ土曜日でない場合
+			} else if (i == outputMonthDayCount(getYear(), getMonth()) && i != SATURDAY_NUMBER) {
 				//その月の最終日以降の余白を表示
-				for (int j = particularDay.deriveDayOfWeek(); j < 6; j++) {
+				for (int j = particularDay.deriveDayOfWeek(); j < SATURDAY_NUMBER; j++) {
 					//一日分の空白を表示
 					System.out.print("   ");
 				}
-				//
+				//カレンダーの横枠を表示して改行
 				System.out.print("|\n");
 			}
 		}
-		//カレンダーの上部と最初の行の横枠を表示
-		System.out.print("+---------------------+");
+		//カレンダーの上部と最初の行の横枠を表示して改行
+		System.out.println("+---------------------+\n");
 	}
 
 	/*
