@@ -130,7 +130,7 @@ public class JankenTester {
 			//二人目がなんの手を出したのか表示する
 			System.out.println("対戦相手：" + gamePlayer[SECOND_PLAYER_INDEX].printHand());
 			//一人目のプレイヤーの、二人目に対する勝敗結果によって処理を分岐
-			switch (gamePlayer[FIRST_PLAYER_INDEX].playGeme(gamePlayer[SECOND_PLAYER_INDEX])) {
+			switch (gamePlayer[FIRST_PLAYER_INDEX].playGame(gamePlayer[SECOND_PLAYER_INDEX])) {
 			//ジャンケンに勝利した場合
 			case WIN_GAME:
 				//勝利を伝える

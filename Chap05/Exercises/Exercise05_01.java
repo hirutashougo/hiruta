@@ -43,30 +43,3 @@ public class Exercise05_01 {
 		System.out.print("です。");
 	}
 }
-
-//public static void main(String[] args) {
-//
-//	//Scannerのクラスの変数の定義
-//	Scanner standardInput = new Scanner(System.in);
-//	//8進数の算出に用いる定数
-//	final int OCTAL_CONSTANT = 8;
-//	//16進数の算出に用いる定数
-//	final int HEX_CONSTANT = 16;
-//	//10進数の変換に用いる定数
-//	final int DECIMAL_CONSTANT = 10;
-//	
-//	//10進数の入力を促す
-//	System.out.print("10進数で入力してください。\n10進数:");
-//	//入力された10進数を読み込む
-//	int desimalNumber = standardInput.nextInt();
-//	
-//	//10進数を8進数に変換する
-//	int octalNumber = (desimalNumber / OCTAL_CONSTANT) * DECIMAL_CONSTANT + (desimalNumber % OCTAL_CONSTANT);
-//	//10進数を16進数に変換する
-//	int hexNumber = (desimalNumber / HEX_CONSTANT) * DECIMAL_CONSTANT + (desimalNumber % HEX_CONSTANT);
-//	
-//	//入力値を8進数で表示
-//	System.out.println("8進数で表わすと" + octalNumber + "です。");
-//	//入力値を16進数で表示
-//	System.out.println("16進数で表わすと" + hexNumber + "です。");
-//}

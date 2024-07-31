@@ -32,7 +32,7 @@ public class Exercise07_10 {
 		if (integralNumber < 0) {
 			//()を付けた表記を出力
 			System.out.print("(" + integralNumber + ")");
-		//入力された整数が0以上の場合
+			//入力された整数が0以上の場合
 		} else {
 			//そのままの状態で出力
 			System.out.print(integralNumber);
@@ -60,7 +60,7 @@ public class Exercise07_10 {
 			System.out.print("もう一度?<Yes…1/No…0>：");
 			//入力された値を読み込む
 			cont = standardInput.nextInt();
-		//0か1以外が入力されれば処理を繰り返す
+			//0か1以外が入力されれば処理を繰り返す
 		} while (cont != FINISH_NUMBER && cont != RETRY_NUMBER);
 		//1が入力されれば処理を返却する
 		return cont == RETRY_NUMBER;
@@ -224,7 +224,7 @@ public class Exercise07_10 {
 			}
 			//正解であると伝える
 			System.out.print("正解です。");
-		//関数confirmRetryを呼び出し、トレーニングの終了・続行の意思を確認
+			//関数confirmRetryを呼び出し、トレーニングの終了・続行の意思を確認
 		} while (confirmRetry());
 		//終了を伝える
 		System.out.print("お疲れ様でした。");

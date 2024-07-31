@@ -41,15 +41,3 @@ public class Exercise05_07 {
 
 	}
 }
-
-////
-//for (float floatVariable = 0.0F; floatVariable <= 1.0F; floatVariable += 0.001F) {
-//	//その値を表示
-//	System.out.printf("%9.7f", floatVariable);
-//	//
-//	System.out.print("          ");
-//	//その値の2乗を算出
-//	float squareValue = floatVariable * floatVariable;
-//	//その値の2乗を表示
-//	System.out.printf("%9.7f\n", squareValue);
-//}

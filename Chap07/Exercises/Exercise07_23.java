@@ -107,7 +107,7 @@ public class Exercise07_23 {
 		if (searchIndexArray.length == 0) {
 			//索値が見つからなかったと表示
 			System.out.println("\n探索値は見つかりませんでした。");
-		//探索値が配列内にある場合
+			//探索値が配列内にある場合
 		} else {
 			//配列bの生成を伝える
 			System.out.println("\n配列b:");
