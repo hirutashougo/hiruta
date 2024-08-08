@@ -31,7 +31,7 @@ public class CarTester {
 		final int PROCESS_CONTINUE = 1;
 		//処理の終了を表す定数を定義
 		final int PROSESS_END = 0;
-		
+
 		//入力された選択を読み込む
 		int judgementValue = standardInput.nextInt();
 		//0か1が入力されるまで選択を迫る
@@ -155,10 +155,11 @@ public class CarTester {
 			//入力された燃費を読み込む
 			fuelConsumption = standardInput.nextDouble();
 		}
-		
+
 		//車の情報を持ったインスタンスを作成する
-		Car myCar = new Car(carName, carNumber, carWidth, carHeight, carLength, remainingFuel, fuelConsumption, tankCapacity);
-		
+		Car myCar = new Car(carName, carNumber, carWidth, carHeight, carLength, remainingFuel, fuelConsumption,
+				tankCapacity);
+
 		//改行する
 		System.out.println();
 		//入力した車に関する情報を表示
@@ -168,7 +169,7 @@ public class CarTester {
 		do {
 			//車の移動を開始すると伝える
 			System.out.println("\n車の移動を開始します。");
-			
+
 			//現在地のX・Y座標、残存燃料を表示する
 			System.out.println("現在地(" + myCar.getLongitudePosition() + ", " + myCar.getLatitudePosition() + ") 残り燃料"
 					+ myCar.getRemainingFuel() + "(L)");
@@ -188,10 +189,10 @@ public class CarTester {
 				System.out.println("燃料が尽き、これ以上移動できません!");
 				//処理を終了する
 				break;
-			//燃料切れではない場合
+				//燃料切れではない場合
 			} else {
 				//移動後の残存燃料を憑依する
-				System.out.println("残り燃料" + myCar.getRemainingFuel() + "(L)");;
+				System.out.println("残り燃料" + myCar.getRemainingFuel() + "(L)");
 				//燃料の補給の選択を迫る
 				System.out.print("\n燃料を補給しますか？[0…No/1…Yes]：");
 				//燃料を補給する場合

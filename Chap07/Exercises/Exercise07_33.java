@@ -189,7 +189,7 @@ public class Exercise07_33 {
 					decimalRemainder /= DECIMAL_CONSTANT;
 					//文字数をカウントする
 					valueLength++;
-				//要素の値を0になるまで割り切ったら処理を終了
+					//要素の値を0になるまで割り切ったら処理を終了
 				} while (decimalRemainder != 0);
 
 				//要素の文字数を配列に格納する

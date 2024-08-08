@@ -6,7 +6,7 @@ package Chap09.Exercises.Ex09_04;
 * 作成者:S.Hiruta
 * 作成日:2024/05/14
 */
-class Day {
+public class Day {
 
 	//年数の初期値を表す定数を定義
 	final int DEFAULT_YEAR = 1;
@@ -218,28 +218,8 @@ class Day {
 	}
 
 	/*
-	 * 関数名：isSameDay
-	 * 概要：とある日付と等しいか比較
-	 * 引数：とある日付の情報(Day型)
-	 * 戻り値：等しいか等しくないか(true,false)(boolean型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/14
-	*/
-	public boolean isSameDay(Day someDay) {
-		//日付の一致の判定結果を格納する変数を初期値falseで宣言
-		boolean retrnValue = false;
-		//日付が一致している場合
-		if (yearData == someDay.yearData && monthData == someDay.monthData && dateData == someDay.dateData) {
-			//返却値にtrueを代入
-			retrnValue = true;
-		}
-		//日付の一致の判定結果を返却
-		return retrnValue;
-	}
-
-	/*
 	 * 関数名：toString
-	 * 概要：特定の日付の曜日を表示
+	 * 概要：特定の日付と、その曜日を表示
 	 * 引数：なし
 	 * 戻り値：日付と、その曜日の表記(String型)
 	 * 作成者：S.Hiruta

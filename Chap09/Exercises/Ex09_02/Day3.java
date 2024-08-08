@@ -218,26 +218,6 @@ public class Day3 {
 	}
 
 	/*
-	 * 関数名：isSameDay
-	 * 概要：とある日付と等しいか比較
-	 * 引数：なし
-	 * 戻り値：等しいか等しくないか(true,fals)(boolean型)
-	 * 作成者：S.Hiruta
-	 * 作成日：2024/05/14
-	*/
-	public boolean isSameDay(Day3 someDay) {
-		//返却値となる変数にfaiseを代入
-		boolean retrnValue = false;
-		//日付が一致している場合
-		if (yearData == someDay.yearData && monthData == someDay.monthData && dateData == someDay.dateData) {
-			//返却値にtrueを代入
-			retrnValue = true;
-		}
-		//返却値を返却
-		return retrnValue;
-	}
-
-	/*
 	 * 関数名：printWeekDay
 	 * 概要：特定の日付の曜日を表示
 	 * 引数：なし

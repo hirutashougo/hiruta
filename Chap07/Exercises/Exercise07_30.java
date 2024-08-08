@@ -43,16 +43,16 @@ public class Exercise07_30 {
 
 		//入力された要素数の配列を定義
 		int[] returnArray = new int[columunCount];
-		
-			//各要素の値を入力するように促す
-			System.out.println("各要素の値を入力してください。");
-			//各行の全ての要素を入力させる
-			for (int j = 0; j < columunCount; j++) {
-				//行の要素を入力させる
-				System.out.print("[" + j + "]：");
-				//入力された要素を配列に読み込む
-				returnArray[j] = standardInput.nextInt();
-			}
+
+		//各要素の値を入力するように促す
+		System.out.println("各要素の値を入力してください。");
+		//各行の全ての要素を入力させる
+		for (int j = 0; j < columunCount; j++) {
+			//行の要素を入力させる
+			System.out.print("[" + j + "]：");
+			//入力された要素を配列に読み込む
+			returnArray[j] = standardInput.nextInt();
+		}
 		//作成された配列を返却する
 		return returnArray;
 	}
@@ -148,12 +148,12 @@ public class Exercise07_30 {
 
 		//関数createArrayを呼び出して、配列の要素数を呼び要素の値を入力させる
 		int[] integralMatrix = createArray();
-		
+
 		//2つめまでの整数の最小値を求め、表示する
-		System.out.println("\n2つめまでの整数の最小値は" + min(firstIntegralNumber, secondIntegralNumber) +"です。");
+		System.out.println("\n2つめまでの整数の最小値は" + min(firstIntegralNumber, secondIntegralNumber) + "です。");
 		//3つのint型整数の最小値を求め、表示する
-		System.out.println("3つの整数の最小値は" + min(firstIntegralNumber, secondIntegralNumber, thirdIntegralNumber) +"です。");
+		System.out.println("3つの整数の最小値は" + min(firstIntegralNumber, secondIntegralNumber, thirdIntegralNumber) + "です。");
 		//配列の全要素の中の最小値を求め、表示する
-		System.out.println("配列の全要素の値の最小値は" + min(integralMatrix) +"です。");
+		System.out.println("配列の全要素の値の最小値は" + min(integralMatrix) + "です。");
 	}
 }
