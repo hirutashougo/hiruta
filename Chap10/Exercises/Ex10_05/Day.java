@@ -7,42 +7,42 @@ import static java.util.Calendar.*;
 import java.util.GregorianCalendar;
 
 /*
-* クラス名:Day3
+* クラス名:Day
 * 概要:日付に関する情報を管理する
 * 作成者:S.Hiruta
-* 作成日:2024/05/20
+* 作成日:2024/05/22
 */
 public class Day {
 
 	//初期の年数を表すクラス変数を宣言
-	private static int yearCount = 0;
+	private static int yearSetting = 0;
 	//初期の月数を表すクラス変数を宣言
-	private static int monthCount = 0;
+	private static int monthSetting = 0;
 	//初期の日数を表すクラス変数を宣言
-	private static int dateCount = 0;
+	private static int dateSetting = 0;
 
 	//年を表わすフィールドを宣言
-	private int yearData = yearCount;
+	private int yearData = yearSetting;
 	//月を表わすフィールドを宣言
-	private int monthData = monthCount;
+	private int monthData = monthSetting;
 	//日を表わすフィールドを宣言
-	private int dateData = dateCount;
+	private int dateData = dateSetting;
 
-	//グレゴリオカレンダーの月数出ryくの際に用いる定数1を宣言
+	//グレゴリオカレンダーの月数出力の際に用いる定数を宣言
 	private static final int ADJUSTMENT_NUMBER = 1;
-	//今回の処理における最少年数1を定数化
+	//今回の処理における最少年数を定数化
 	final int MINIMUM_YEAR = 1;
-	//実在する最小の月数である1を定数化
+	//実在する最小の月数であるを定数化
 	final int MINIMUM_MONTH = 1;
-	//実在する最大の月数である12を定数化
+	//実在する最大の月数であるを定数化
 	final int MAXIMUM_MONTH = 12;
-	//存在する最小の日数１を定数化
+	//存在する最小の日数を定数化
 	final int MINIMUM_DATE = 1;
-	//閏年の年間日数366を定数化
+	//閏年の年間日数を定数化
 	final int LEAP_ANNUAL_DAYS = 366;
-	//通常年の年間日数366を定数化
+	//通常年の年間日数を定数化
 	final int NORMAL_ANNUAL_DAYS = 365;
-	//日付を1遡る為の定数
+	//日付を遡る為の定数
 	final int BACK_DATE = -1;
 
 	//静的初期化子を用いて、年月日の初期値を実行日に設定
@@ -57,11 +57,11 @@ public class Day {
 		int todayDate = today.get(DATE);
 
 		//初期年数を実行年に設定
-		yearCount = todaYear;
+		yearSetting = todaYear;
 		//初期月数を実行月に設定
-		monthCount = todayMonth;
+		monthSetting = todayMonth;
 		//初期日数を実行日に設定
-		dateCount = todayDate;
+		dateSetting = todayDate;
 	}
 
 	/*
@@ -114,19 +114,20 @@ public class Day {
 	 * 作成日：2024/05/20
 	*/
 	static boolean isLeap(int targetYear) {
+		//4で割り切れる年はうるう年。ただし、100で割り切れて400で割り切れない年は平年。
 		//閏年であればtrue、そうでなければfalseを返却
 		return targetYear % 4 == 0 && targetYear % 100 != 0 || targetYear % 400 == 0;
 	}
 
 	/*
-	 * 関数名：outputMonthDayCount
+	 * 関数名：countMonthMaximumDate
 	 * 概要:特定の年の特定の月の日数を返却
 	 * 引数：年数、月数(int型)
 	 * 戻り値：その年月の日数(int型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	static int outputMonthDayCount(int yearNumber, int monthNumber) {
+	static int countMonthMaximumDate(int yearNumber, int monthNumber) {
 		//年間における1～12月の日数を格納する定数配列を宣言(順番に1月～12月の日数を格納)
 		//閏年の場合、2月の日数が変化
 		final int[] MONTH_DAY_COUNT = { 31, (isLeap(yearNumber) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -152,7 +153,7 @@ public class Day {
 		 * 実在する日数の場合はその日数のまま、
 		 * 初期値としてフィールドを宣言*/
 		this.dateData = (dateData < MINIMUM_DATE) ? MINIMUM_DATE
-				: ((dateData > outputMonthDayCount(yearData, getMonth())) ? outputMonthDayCount(yearData, getMonth())
+				: ((dateData > countMonthMaximumDate(yearData, getMonth())) ? countMonthMaximumDate(yearData, getMonth())
 						: dateData);
 	}
 
@@ -169,7 +170,7 @@ public class Day {
 	}
 
 	/*
-	 * ゲッタ名：getYear
+	 * メソッド名：getYear
 	 * 概要:年に関するフィールドの値を取得
 	 * 引数：なし
 	 * 戻り値：年数(int型)
@@ -182,7 +183,7 @@ public class Day {
 	}
 
 	/*
-	 * ゲッタ名：getMonth
+	 * メソッド名：getMonth
 	 * 概要:月に関するフィールドの値を取得
 	 * 引数：なし
 	 * 戻り値：月数(int型)
@@ -195,7 +196,7 @@ public class Day {
 	}
 
 	/*
-	 * ゲッタ名：getDate
+	 * メソッド名：getDate
 	 * 概要:日に関するフィールドの値を取得
 	 * 引数：なし
 	 * 戻り値：日数(int型)
@@ -203,12 +204,12 @@ public class Day {
 	 * 作成日：2024/05/20
 	*/
 	public int getDate() {
-		//月に関する情報を返却
+		//日に関する情報を返却
 		return dateData;
 	}
 
 	/*
-	 * セッタ名：setYear
+	 * メソッド名：setYear
 	 * 概要:年に関するフィールドの値を設定
 	 * 引数：年に関するフィールド(int型)
 	 * 戻り値：なし
@@ -221,7 +222,7 @@ public class Day {
 	}
 
 	/*
-	 * セッタ名：setMonth
+	 * メソッド名：setMonth
 	 * 概要:月に関するフィールドの値を設定
 	 * 引数：月に関するフィールド(int型)
 	 * 戻り値：なし
@@ -234,7 +235,7 @@ public class Day {
 	}
 
 	/*
-	 * セッタ名：setDate
+	 * メソッド名：setDate
 	 * 概要:日に関するフィールドの値を設定
 	 * 引数：日に関するフィールド(int型)
 	 * 戻り値：なし
@@ -272,15 +273,17 @@ public class Day {
 	 * 作成日：2024/05/20
 	*/
 	public int calculateElapsedDays() {
-		//経過日数を表わす変数を初期状態-1で宣言(指定日を含まない)
-		int elapsedDays = -1;
+		//経過日数を表わす変数を初期状態を定数化
+		final int INITIAL_DATE = -1;
+		//経過日数を表わす変数を宣言
+		int elapsedDays = INITIAL_DATE;
 		//月数をカウントする変数を宣言
 		int monthCount = 0;
 		//年内経過日数を、月ごとに加算して求めていく
 		for (int i = 0; i < monthData; i++) {
 			//日付より前の月ならその月の日数を、日付の月なら日付の日数を加算
 			elapsedDays += (monthData > ++monthCount)
-					? outputMonthDayCount(yearData, monthCount)
+					? countMonthMaximumDate(yearData, monthCount)
 					: dateData;
 		}
 		//日付の年内での経過日数を返却
@@ -289,7 +292,7 @@ public class Day {
 
 	/*
 	 * 関数名：caluculateRemainingDays
-	 * 概要:日付の曜日を求める
+	 * 概要:年内の残り日数を求める
 	 * 引数：なし
 	 * 戻り値：年内の残り日数(int型)
 	 * 作成者：S.Hiruta
@@ -297,7 +300,6 @@ public class Day {
 	*/
 	public int caluculateRemainingDays() {
 		//その年の日数(365 or 366)から、日付の年内での経過日数を引いた値を返却
-		//年内残り日数に、対象の日付は含めない為、-1(定数:BACK_DATE)を加算
 		return ((isLeap(yearData)) ? LEAP_ANNUAL_DAYS + BACK_DATE : NORMAL_ANNUAL_DAYS + BACK_DATE)
 				- calculateElapsedDays();
 	}
@@ -318,8 +320,15 @@ public class Day {
 			//比較対象の日付と同じ日付だったと表示
 			comparedResult = toString() + "と等しい日付です。";
 		}
-		//比較対象の日付よりも後の日付だった場合
-		if (calculateElapsedDays() < particularDate.calculateElapsedDays()) {
+		//比較対象の年数と等しい場合
+		if (getYear() == particularDate.getYear()) {
+			//比較対象の日付よりも後の日付だった場合
+			if (calculateElapsedDays() < particularDate.calculateElapsedDays()) {
+				//比較対象の日付よりも後の日付だったと表示
+				comparedResult = particularDate.toString() + "は\n" + toString() + "より後ろの日付です。";
+			}
+		//比較対象の年数のほうが大きい場合
+		} else if (getYear() < particularDate.getYear()) {
 			//比較対象の日付よりも後の日付だったと表示
 			comparedResult = particularDate.toString() + "は\n" + toString() + "より後ろの日付です。";
 		}
@@ -330,7 +339,7 @@ public class Day {
 	/*
 	 * 関数名：compareOtherDay
 	 * 概要:2つの日付の前後関係(前の日か/同じ日か/後の日か)を判定する
-	 * 引数：なし
+	 * 引数：2つの日付(Day型)
 	 * 戻り値：2つの日付の前後関係(String型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
@@ -343,8 +352,15 @@ public class Day {
 			//2つの日付が同じだったと表示
 			comparedResult = "二つは等しい日付です。";
 		}
-		//最初に入力した日付の方が後の日付だった場合
-		if (firstDate.calculateElapsedDays() > secondDate.calculateElapsedDays()) {
+		//2つの年数が等しい場合
+		if (secondDate.getYear() == firstDate.getYear()) {
+			//最初に入力した日付の方が後の日付だった場合
+			if (firstDate.calculateElapsedDays() > secondDate.calculateElapsedDays()) {
+				//最初に入力した日付の方が後の日付だったと表示
+				comparedResult = firstDate.toString() + "は\n" + secondDate.toString() + "より後ろの日付です。";
+			}
+		//最初に入力した年数の方が後の年数よりも大きかった場合
+		} else if(secondDate.getYear() < firstDate.getYear()) {
 			//最初に入力した日付の方が後の日付だったと表示
 			comparedResult = firstDate.toString() + "は\n" + secondDate.toString() + "より後ろの日付です。";
 		}
@@ -363,7 +379,7 @@ public class Day {
 	public void advanceDay() {
 
 		//日数がその月の最大日数以上の場合
-		if (dateData >= outputMonthDayCount(yearData, monthData)) {
+		if (dateData >= countMonthMaximumDate(yearData, monthData)) {
 			//翌月の1日に設定
 			setData(yearData, ++monthData, MINIMUM_DATE);
 			//月が12を超えてしまった場合
@@ -371,22 +387,22 @@ public class Day {
 				//翌年の元旦に設定
 				setData(++yearData, MINIMUM_MONTH, MINIMUM_DATE);
 			}
-			//日数がその月の最大日数に収まっているの場合
+		//日数がその月の最大日数に収まっているの場合
 		} else {
-			//
+			//日付を1進行させて設定
 			setData(yearData, monthData, ++dateData);
 		}
 	}
 
 	/*
-	 * 関数名：printAdvanceDay
+	 * 関数名：returnAdvanceDay
 	 * 概要:日付を1つ後ろに進めた日付を表示
-	 * 引数：進める日数(int型)
+	 * 引数：なし
 	 * 戻り値：進めた後の日付(Day型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day printAdvanceDay() {
+	public Day returnAdvanceDay() {
 		//入力値と同じインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//日付を1つ後ろに進める
@@ -399,7 +415,7 @@ public class Day {
 	 * 関数名：returnDay
 	 * 概要:日付を一つ前に戻す
 	 * 引数：なし
-	 * 戻り値：一つ前に戻した日付(Day型)
+	 * 戻り値：なし
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
@@ -408,21 +424,19 @@ public class Day {
 		//日数から一つ下げた値を用意
 		int previousDate = dateData + BACK_DATE;
 
-		//日数が1以下で、月数は1より大きい場合
+		//日数から一つ下げた値が0以下で、月数は最小月数より大きい場合
 		if (previousDate <= 0 && monthData > MINIMUM_MONTH) {
 			//前月の最終日で設定
-			setData(yearData, --monthData, outputMonthDayCount(yearData, monthData));
-			//日数が1以下で、月数も1の場合
+			setData(yearData, --monthData, countMonthMaximumDate(yearData, monthData));
+		//日数が1以下で、月数も1の場合
 		} else if (previousDate <= 0 && monthData == MINIMUM_MONTH && yearData > MINIMUM_YEAR) {
 			//前年の大みそかに設定
-			setData(--yearData, MAXIMUM_MONTH, outputMonthDayCount(yearData, MAXIMUM_MONTH));
-			//日付が0001年01月01日だった場合
+			setData(--yearData, MAXIMUM_MONTH, countMonthMaximumDate(yearData, MAXIMUM_MONTH));
+		//日付が0001年01月01日だった場合
 		} else if (isSameOriginDay()) {
 			//日付は0001年01月01日のままで設定
 			setData(MINIMUM_YEAR, MINIMUM_MONTH, MINIMUM_DATE);
-			//以降には遡れないことを伝える
-			System.out.println("以降には遡れません。");
-			//日数が2以上の場合
+		//日数が2以上の場合
 		} else {
 			//日数を1下げて設定
 			setData(yearData, monthData, --dateData);
@@ -430,14 +444,14 @@ public class Day {
 	}
 
 	/*
-	 * 関数名：printReturnedDay
+	 * 関数名：returnReturnedDay
 	 * 概要:日付を一つ前に戻した日付を返却
 	 * 引数：なし
-	 * 戻り値：なし
+	 * 戻り値：日付を一つ前に戻した日付(Day型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day printReturnedDay() {
+	public Day returnReturnedDay() {
 		//対象の日付と同じ年月日を持つインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//インスタンスの日付を一つ前に戻す
@@ -463,14 +477,14 @@ public class Day {
 	}
 
 	/*
-	 * 関数名：printAdvancedDays
-	 * 概要:日付を一つ前に戻す
+	 * 関数名：returnAdvancedDays
+	 * 概要:進行した日付を返却
 	 * 引数：進める日数(int型)
 	 * 戻り値：指定の日数進行した日付(Day型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day printAdvancedDays(int advancecount) {
+	public Day returnAdvancedDays(int advancecount) {
 		//対象の日付と同じ年月日を持つインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//インスタンスを指定日数分進行させる
@@ -490,27 +504,25 @@ public class Day {
 	public void returnDays(int returnCount) {
 		//指定日数分、日付を遡る
 		for (int i = 0; i < returnCount; i++) {
+			//日付が0001年01月01日(月)であり、それ以降に遡ろうとする場合
+			if (isSameOriginDay() && returnCount != 0) {
+				//想定の範囲外の日付のため、処理を終わらせる
+				break;
+			}
 			//日付を遡る
 			returnDay();
-			//付が0001年01月01日であり、1日より多く遡る場合
-			if (isSameOriginDay() && returnCount > 1) {
-				//日付を遡る処理を終わらせるため、処理回数上限を下げる
-				i = returnCount;
-				//0001年01月01日以降には遡れないことを伝える
-				System.out.println("以降には遡れません。");
-			}
 		}
 	}
 
 	/*
-	 * 関数名：printReturnedDays
-	 * 概要:日付を一つ前に戻す
+	 * 関数名：returnReturnedDays
+	 * 概要:戻した後の日付を返却
 	 * 引数：戻す日数(int型)
 	 * 戻り値：戻した後の日付(Day型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
-	public Day printReturnedDays(int returnCount) {
+	public Day returnReturnedDays(int returnCount) {
 		//対象の日付と同じ年月日を持つインスタンスを生成
 		Day returnDay = new Day(yearData, monthData, dateData);
 		//インスタンスを指定日数分戻す
@@ -562,7 +574,7 @@ public class Day {
 	/*
 	 * 関数名：isSameDay
 	 * 概要：とある日付と等しいか比較
-	 * 引数：なし
+	 * 引数：検証対象の日付(Day型)
 	 * 戻り値：等しいか等しくないか(true,fals)(boolean型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
@@ -583,19 +595,19 @@ public class Day {
 	 * 関数名：isSameOriginDay
 	 * 概要：0001年01月01日(最下限の日付)と等しいか比較
 	 * 引数：なし
-	 * 戻り値：等しいか等しくないか(true,fals)(boolean型)
+	 * 戻り値：0001年01月01日(最下限の日付)と等しいか等しくないか(true,fals)(boolean型)
 	 * 作成者：S.Hiruta
 	 * 作成日：2024/05/20
 	*/
 	public boolean isSameOriginDay() {
 		//返却値となる変数にfaiseを代入
 		boolean retrnValue = false;
-		//
+		//0001年01月01日(最下限の日付)と等しい場合
 		if (isSameDay(new Day(MINIMUM_YEAR, MINIMUM_MONTH, MINIMUM_DATE))) {
-			//
+			//返却値をtrueにする
 			retrnValue = true;
 		}
-		//返却値を返却
+		//0001年01月01日(最下限の日付)との判定結果を返却
 		return retrnValue;
 	}
 
